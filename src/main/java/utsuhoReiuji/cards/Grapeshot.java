@@ -46,6 +46,7 @@ public class Grapeshot extends AbstractDynamicCard {
 
 
     // Actions the card should do.
+    //TODO Work out how to make it function like double tap.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
