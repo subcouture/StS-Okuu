@@ -1,5 +1,12 @@
 [
   {
+    "PROPER_NAME": "Chain Reaction",
+    "NAMES": [
+      "Chain Reaction"
+    ],
+    "DESCRIPTION": "Play this card again for each card played this turn."
+  },
+  {
     "NAMES": [
       "keyword",
       "keywords"

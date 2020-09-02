@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import utsuhoReiuji.DefaultMod;
+import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.util.TextureLoader;
 
-import static utsuhoReiuji.DefaultMod.makeRelicOutlinePath;
-import static utsuhoReiuji.DefaultMod.makeRelicPath;
+import static utsuhoReiuji.OkuuMod.makeRelicOutlinePath;
+import static utsuhoReiuji.OkuuMod.makeRelicPath;
 
 public class PlaceholderRelic2 extends CustomRelic {
     /*
@@ -20,7 +20,7 @@ public class PlaceholderRelic2 extends CustomRelic {
      */
 
     // ID, images, text.
-    public static final String ID = DefaultMod.makeID("PlaceholderRelic2");
+    public static final String ID = OkuuMod.makeID("PlaceholderRelic2");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic2.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic2.png"));

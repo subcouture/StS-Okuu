@@ -4,7 +4,7 @@ import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import utsuhoReiuji.cards.AbstractDefaultCard;
 
-import static utsuhoReiuji.DefaultMod.makeID;
+import static utsuhoReiuji.OkuuMod.makeID;
 
 public class DefaultSecondMagicNumber extends DynamicVariable {
 

@@ -6,10 +6,10 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import utsuhoReiuji.DefaultMod;
+import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.characters.TheDefault;
 
-import static utsuhoReiuji.DefaultMod.makeCardPath;
+import static utsuhoReiuji.OkuuMod.makeCardPath;
 
 public class DefaultUncommonAttack extends AbstractDynamicCard {
 
@@ -21,7 +21,7 @@ public class DefaultUncommonAttack extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = DefaultMod.makeID(DefaultUncommonAttack.class.getSimpleName());
+    public static final String ID = OkuuMod.makeID(DefaultUncommonAttack.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     // /TEXT DECLARATION/

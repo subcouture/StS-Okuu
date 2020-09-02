@@ -8,10 +8,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
-import utsuhoReiuji.DefaultMod;
+import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.characters.TheDefault;
 
-import static utsuhoReiuji.DefaultMod.makeCardPath;
+import static utsuhoReiuji.OkuuMod.makeCardPath;
 
 public class DefaultRareAttack extends AbstractDynamicCard {
 
@@ -24,7 +24,7 @@ public class DefaultRareAttack extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = DefaultMod.makeID(DefaultRareAttack.class.getSimpleName());
+    public static final String ID = OkuuMod.makeID(DefaultRareAttack.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     // /TEXT DECLARATION/
