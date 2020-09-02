@@ -1,0 +1,53 @@
+{
+  "utsuhoReiuji:DefaultCommonAttack": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! Damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+  },
+  "utsuhoReiuji:DefaultCommonSkill": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block. NL utsuhoReiuji:Multiword_Keyword."
+  },
+  "utsuhoReiuji:DefaultCommonPower": {
+    "NAME": "Hold Place",
+    "DESCRIPTION": "Gain !M! utsuhoReiuji:Keyword.",
+    "UPGRADE_DESCRIPTION": "Gain !M! utsuhoReiuji:Keywords."
+  },
+  "utsuhoReiuji:DefaultUncommonAttack": {
+    "NAME": "Big slap",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "utsuhoReiuji:DefaultUncommonSkill": {
+    "NAME": "A Better Defend",
+    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+  },
+  "utsuhoReiuji:DefaultUncommonPower": {
+    "NAME": "Weirdness",
+    "DESCRIPTION": "Gain X utsuhoReiuji:Keywords.",
+    "UPGRADE_DESCRIPTION": "Gain X +1 utsuhoReiuji:Keywords."
+  },
+  "utsuhoReiuji:DefaultRareAttack": {
+    "NAME": "TOUCH",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "utsuhoReiuji:DefaultRareSkill": {
+    "NAME": "For Each Loop x2",
+    "DESCRIPTION": "Apply !M! vulnerable to all enemies, 2 times.",
+    "UPGRADE_DESCRIPTION": "Apply !M! vulnerable to all enemies, 3 times."
+  },
+  "utsuhoReiuji:DefaultRarePower": {
+    "NAME": "In-Progress Form",
+    "DESCRIPTION": "At the start of your turn, play a TOUCH."
+  },
+  "utsuhoReiuji:DefaultAttackWithVariable": {
+    "NAME": "Special Strike",
+    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !utsuhoReiuji:ENERGY_DAMAGE! damage total.)"
+  },
+  "utsuhoReiuji:DefaultSecondMagicNumberSkill": {
+    "NAME": "Cool 2 Number Card",
+    "DESCRIPTION": "Apply !M! vulnerable and !utsuhoReiuji:SecondMagic! poison to an enemy."
+  },
+  "utsuhoReiuji:OrbSkill": {
+    "NAME": "Get Orb",
+    "DESCRIPTION": "Channel 1 Default Orb."
+  }
+}

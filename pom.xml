@@ -3,11 +3,11 @@
 
     <!--Hello! You'll basically should only need to change these names and the steam path (just below)-->
     <!--The author name(s) as they appear in MTS and any other comments are in your ModTheSpire.json-->
-    <groupId>defaultmod</groupId>
-    <artifactId>DefaultMod</artifactId>
-    <name>Default Mod</name>
+    <groupId>okuumod</groupId>
+    <artifactId>OkuuMod</artifactId>
+    <name>Utsuho Reiuji</name>
     <version>0.0.1</version>
-    <description>A default base to start your own mod from.</description>
+    <description>Shine Bright, Hell Raven.</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -16,7 +16,7 @@
         <ModTheSpire.version>3.8.0</ModTheSpire.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
-        <Steam.path>D:\Games\Steam\steamapps</Steam.path>
+        <Steam.path>F:\Vidya\Steam\steamapps</Steam.path>
     </properties>
 
     <dependencies>
