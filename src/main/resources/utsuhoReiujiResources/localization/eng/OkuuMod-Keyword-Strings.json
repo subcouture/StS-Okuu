@@ -3,7 +3,7 @@
     "PROPER_NAME": "Chain Reaction",
     "NAMES": [
       "Chain Reaction",
-      "Chain_Reaction"
+      "chain_reaction"
     ],
     "DESCRIPTION": "Play this card again for each card played this turn."
   },
@@ -11,7 +11,8 @@
     "NAMES": [
     "overload"
   ],
-  "DESCRIPTION": "If you play a card for it's overload cost, it affects ALL characters"
+    "PROPER_NAME": "Overload",
+  "DESCRIPTION": "If you play a card for it's #bOverload cost, it affects ALL characters"
   },
   {
     "NAMES": [

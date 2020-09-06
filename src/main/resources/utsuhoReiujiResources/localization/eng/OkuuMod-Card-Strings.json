@@ -1,11 +1,11 @@
 {
   "utsuhoReiuji:BoilerExplosion": {
     "NAME": "Boiler Explosion",
-    "DESCRIPTION": "Deal !D! Damage. NL utsuhoReiuji:Overload. NL Overload"
+    "DESCRIPTION": "Deal !D! Damage. NL utsuhoreiuji:Overload."
   },
   "utsuhoReiuji:Grapeshot": {
     "NAME": "Grapeshot",
-    "DESCRIPTION": "Deal !D! Damage. NL Chain_Reaction."
+    "DESCRIPTION": "Deal !D! Damage. NL utsuhoreiuji:Chain_Reaction ."
   },
   "utsuhoReiuji:DefaultCommonAttack": {
     "NAME": "Strike",
@@ -13,12 +13,12 @@
   },
   "utsuhoReiuji:DefaultCommonSkill": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block. NL Multiword_Keyword."
+    "DESCRIPTION": "Gain !B! Block. NL utsuhoreiuji:Multiword_Keyword."
   },
   "utsuhoReiuji:DefaultCommonPower": {
     "NAME": "Hold Place",
-    "DESCRIPTION": "Gain !M! utsuhoReiuji:Keyword.",
-    "UPGRADE_DESCRIPTION": "Gain !M! utsuhoReiuji:Keywords."
+    "DESCRIPTION": "Gain !M! utsuhoreiuji:Keyword. NL Keyword keyword keywords",
+    "UPGRADE_DESCRIPTION": "Gain !M! utsuhoreiuji:Keywords."
   },
   "utsuhoReiuji:DefaultUncommonAttack": {
     "NAME": "Big slap",
@@ -30,8 +30,8 @@
   },
   "utsuhoReiuji:DefaultUncommonPower": {
     "NAME": "Weirdness",
-    "DESCRIPTION": "Gain X utsuhoReiuji:Keywords.",
-    "UPGRADE_DESCRIPTION": "Gain X +1 utsuhoReiuji:Keywords."
+    "DESCRIPTION": "Gain X utsuhoreiuji:Keywords.",
+    "UPGRADE_DESCRIPTION": "Gain X +1 utsuhoreiuji:Keywords."
   },
   "utsuhoReiuji:DefaultRareAttack": {
     "NAME": "TOUCH",
@@ -48,11 +48,11 @@
   },
   "utsuhoReiuji:DefaultAttackWithVariable": {
     "NAME": "Special Strike",
-    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !utsuhoReiuji:ENERGY_DAMAGE! damage total.)"
+    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !utsuhoreiuji:ENERGY_DAMAGE! damage total.)"
   },
   "utsuhoReiuji:DefaultSecondMagicNumberSkill": {
     "NAME": "Cool 2 Number Card",
-    "DESCRIPTION": "Apply !M! vulnerable and !utsuhoReiuji:SecondMagic! poison to an enemy."
+    "DESCRIPTION": "Apply !M! vulnerable and !utsuhoreiuji:SecondMagic! poison to an enemy."
   },
   "utsuhoReiuji:OrbSkill": {
     "NAME": "Get Orb",
