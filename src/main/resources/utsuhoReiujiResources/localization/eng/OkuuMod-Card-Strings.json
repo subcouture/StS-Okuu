@@ -1,4 +1,8 @@
 {
+  "utsuhoReiuji:BanishingStrike": {
+    "NAME": "Banishing Strike",
+    "DESCRIPTION": "Deal !D! Damage. Gain Block equal to the unblocked damage dealt. NL Reduce this cards damage by 1 for the rest of this combat."
+  },
   "utsuhoReiuji:BoilerExplosion": {
     "NAME": "Boiler Explosion",
     "DESCRIPTION": "Deal !D! Damage. NL utsuhoreiuji:Overload."
@@ -48,11 +52,11 @@
   },
   "utsuhoReiuji:DefaultAttackWithVariable": {
     "NAME": "Special Strike",
-    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !utsuhoreiuji:ENERGY_DAMAGE! damage total.)"
+    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !utsuhoReiuji:ENERGY_DAMAGE! damage total.)"
   },
   "utsuhoReiuji:DefaultSecondMagicNumberSkill": {
     "NAME": "Cool 2 Number Card",
-    "DESCRIPTION": "Apply !M! vulnerable and !utsuhoreiuji:SecondMagic! poison to an enemy."
+    "DESCRIPTION": "Apply !M! vulnerable and !utsuhoReiuji:SecondMagic! poison to an enemy."
   },
   "utsuhoReiuji:OrbSkill": {
     "NAME": "Get Orb",

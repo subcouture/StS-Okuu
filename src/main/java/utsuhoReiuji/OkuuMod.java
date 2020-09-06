@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.appender.db.jpa.BasicLogEventEntity;
 import utsuhoReiuji.cards.*;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 import utsuhoReiuji.events.IdentityCrisisEvent;
@@ -421,6 +422,7 @@ public class OkuuMod implements
         BaseMod.addCard(new DefaultRarePower());
         BaseMod.addCard(new Grapeshot());
         BaseMod.addCard(new BoilerExplosion());
+        BaseMod.addCard(new BanishingStrike());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -440,6 +442,7 @@ public class OkuuMod implements
         UnlockTracker.unlockCard(DefaultRarePower.ID);
         UnlockTracker.unlockCard(Grapeshot.ID);
         UnlockTracker.unlockCard(BoilerExplosion.ID);
+        UnlockTracker.unlockCard(BanishingStrike.ID);
 
         logger.info("Done adding cards!");
     }
