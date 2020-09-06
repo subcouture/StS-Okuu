@@ -2,13 +2,12 @@ package utsuhoReiuji.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.deprecated.DEPRECATEDDamagePerCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import utsuhoReiuji.OkuuMod;
-import utsuhoReiuji.characters.TheDefault;
+import utsuhoReiuji.characters.UtsuhoReiuji;
 
 import static utsuhoReiuji.OkuuMod.makeCardPath;
 
@@ -28,7 +27,7 @@ public class Grapeshot extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = UtsuhoReiuji.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;

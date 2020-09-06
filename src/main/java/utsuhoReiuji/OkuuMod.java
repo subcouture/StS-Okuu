@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utsuhoReiuji.cards.*;
-import utsuhoReiuji.characters.TheDefault;
+import utsuhoReiuji.characters.UtsuhoReiuji;
 import utsuhoReiuji.events.IdentityCrisisEvent;
 import utsuhoReiuji.potions.PlaceholderPotion;
 import utsuhoReiuji.relics.BottledPlaceholderRelic;
@@ -95,6 +95,9 @@ public class OkuuMod implements
     // Colors (RGB)
     // Character Color
     public static final Color DEFAULT_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
+    public static final Color CHERENKOV_BLUE = CardHelper.getColor(46.0f, 211.0f, 255.0f);
+    public static final Color BLAZING_YELLOW = CardHelper.getColor(246.0f, 247.0f, 2.0f);
+    public static final Color REIUJI_GREEn = CardHelper.getColor(00.0f, 178.0f, 45.0f);
     
     // Potion Colors in RGB
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
@@ -122,8 +125,8 @@ public class OkuuMod implements
     private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "utsuhoReiujiResources/images/1024/card_default_gray_orb.png";
     
     // Character assets
-    private static final String THE_DEFAULT_BUTTON = "utsuhoReiujiResources/images/charSelect/DefaultCharacterButton.png";
-    private static final String THE_DEFAULT_PORTRAIT = "utsuhoReiujiResources/images/charSelect/DefaultCharacterPortraitBG.png";
+    private static final String UTSUHO_REIUJI_BUTTON = "utsuhoReiujiResources/images/charSelect/DefaultCharacterButton.png";
+    private static final String UTSUHO_REIUJI_PORTRAIT = "utsuhoReiujiResources/images/charSelect/DefaultCharacterPortraitBG.png";
     public static final String THE_DEFAULT_SHOULDER_1 = "utsuhoReiujiResources/images/char/defaultCharacter/shoulder.png";
     public static final String THE_DEFAULT_SHOULDER_2 = "utsuhoReiujiResources/images/char/defaultCharacter/shoulder2.png";
     public static final String THE_DEFAULT_CORPSE = "utsuhoReiujiResources/images/char/defaultCharacter/corpse.png";
@@ -200,9 +203,9 @@ public class OkuuMod implements
         
         logger.info("Done subscribing");
         
-        logger.info("Creating the color " + TheDefault.Enums.COLOR_GRAY.toString());
+        logger.info("Creating the color " + UtsuhoReiuji.Enums.COLOR_GRAY.toString());
         
-        BaseMod.addColor(TheDefault.Enums.COLOR_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
+        BaseMod.addColor(UtsuhoReiuji.Enums.COLOR_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
                 DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
@@ -285,13 +288,13 @@ public class OkuuMod implements
     
     @Override
     public void receiveEditCharacters() {
-        logger.info("Beginning to edit characters. " + "Add " + TheDefault.Enums.THE_DEFAULT.toString());
+        logger.info("Beginning to edit characters. " + "Add " + UtsuhoReiuji.Enums.UTSUHO_REIUJI.toString());
         
-        BaseMod.addCharacter(new TheDefault("the Default", TheDefault.Enums.THE_DEFAULT),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDefault.Enums.THE_DEFAULT);
+        BaseMod.addCharacter(new UtsuhoReiuji("Utsuho Reiuji", UtsuhoReiuji.Enums.UTSUHO_REIUJI),
+                UTSUHO_REIUJI_BUTTON, UTSUHO_REIUJI_PORTRAIT, UtsuhoReiuji.Enums.UTSUHO_REIUJI);
         
         receiveEditPotions();
-        logger.info("Added " + TheDefault.Enums.THE_DEFAULT.toString());
+        logger.info("Added " + UtsuhoReiuji.Enums.UTSUHO_REIUJI.toString());
     }
     
     // =============== /LOAD THE CHARACTER/ =================
@@ -356,7 +359,7 @@ public class OkuuMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
+        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, UtsuhoReiuji.Enums.UTSUHO_REIUJI);
         
         logger.info("Done editing potions");
     }
@@ -371,9 +374,9 @@ public class OkuuMod implements
         logger.info("Adding relics");
         
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), UtsuhoReiuji.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), UtsuhoReiuji.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), UtsuhoReiuji.Enums.COLOR_GRAY);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
@@ -417,6 +420,7 @@ public class OkuuMod implements
         BaseMod.addCard(new DefaultRareSkill());
         BaseMod.addCard(new DefaultRarePower());
         BaseMod.addCard(new Grapeshot());
+        BaseMod.addCard(new BoilerExplosion());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -435,7 +439,8 @@ public class OkuuMod implements
         UnlockTracker.unlockCard(DefaultRareSkill.ID);
         UnlockTracker.unlockCard(DefaultRarePower.ID);
         UnlockTracker.unlockCard(Grapeshot.ID);
-        
+        UnlockTracker.unlockCard(BoilerExplosion.ID);
+
         logger.info("Done adding cards!");
     }
     
@@ -481,7 +486,7 @@ public class OkuuMod implements
         BaseMod.loadCustomStringsFile(OrbStrings.class,
                 getModID() + "Resources/localization/eng/OkuuMod-Orb-Strings.json");
         
-        logger.info("Done edittting strings");
+        logger.info("Done editing strings");
     }
     
     // ================ /LOAD THE TEXT/ ===================
