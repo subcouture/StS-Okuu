@@ -1,12 +1,15 @@
 package utsuhoReiuji.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 
@@ -36,6 +39,12 @@ public class BoilerExplosion extends AbstractDynamicCard {
     private static final int DAMAGE = 20;
     private static final int UPGRADE_PLUS_DMG = 20;
 
+    private static final int OVERLOAD = 2;
+
+    private boolean OVERLOADED = false;
+
+
+
     // /STAT DECLARATION/
 
 
@@ -45,14 +54,33 @@ public class BoilerExplosion extends AbstractDynamicCard {
         this.isMultiDamage = true;
     }
 
+    @Override
+    public boolean hasEnoughEnergy() {
+        if (!super.hasEnoughEnergy()){
+            this.costForTurn -= OVERLOAD;
+            OVERLOADED = true;
+        }
+        return super.hasEnoughEnergy();
+    }
+
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        if (OVERLOADED) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }
+
+    }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(p, new DamageInfo(p, this.baseDamage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+        if(OVERLOADED) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new DamageAction(p, new DamageInfo(p, this.baseDamage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+
+        }
     }
 
 

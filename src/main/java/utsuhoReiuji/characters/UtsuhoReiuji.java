@@ -160,17 +160,25 @@ public class UtsuhoReiuji extends CustomPlayer {
         retVal.add(DefaultUncommonAttack.ID);
         retVal.add(DefaultRareAttack.ID);
 
-        retVal.add(DefaultCommonSkill.ID);
-        retVal.add(DefaultUncommonSkill.ID);
-        retVal.add(DefaultRareSkill.ID);
+        retVal.add(BoilerExplosion.ID);
+        retVal.add(BanishingStrike.ID);
+        retVal.add(Grapeshot.ID);
 
-        retVal.add(DefaultCommonPower.ID);
-        retVal.add(DefaultUncommonPower.ID);
-        retVal.add(DefaultRarePower.ID);
+        retVal.add(BoilerExplosion.ID);
+        retVal.add(BanishingStrike.ID);
+        retVal.add(Grapeshot.ID);
 
-        retVal.add(DefaultAttackWithVariable.ID);
-        retVal.add(DefaultSecondMagicNumberSkill.ID);
-        retVal.add(OrbSkill.ID);
+       // retVal.add(DefaultCommonSkill.ID);
+       // retVal.add(DefaultUncommonSkill.ID);
+       // retVal.add(DefaultRareSkill.ID);
+
+       // retVal.add(DefaultCommonPower.ID);
+      //  retVal.add(DefaultUncommonPower.ID);
+       // retVal.add(DefaultRarePower.ID);
+
+       // retVal.add(DefaultAttackWithVariable.ID);
+       // retVal.add(DefaultSecondMagicNumberSkill.ID);
+       // retVal.add(OrbSkill.ID);
         return retVal;
     }
 
