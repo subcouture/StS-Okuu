@@ -2,6 +2,7 @@ package utsuhoReiuji.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -41,6 +42,7 @@ public class BoilerExplosion extends AbstractDynamicCard {
     public BoilerExplosion() { // public BoilerExplosion() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        this.isMultiDamage = true;
     }
 
 
@@ -48,7 +50,9 @@ public class BoilerExplosion extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(p, new DamageInfo(p, this.baseDamage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
     }
 
 

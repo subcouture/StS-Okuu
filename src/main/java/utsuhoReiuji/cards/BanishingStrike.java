@@ -52,7 +52,8 @@ public class BanishingStrike extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new WallopAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
-                new ModifyDamageAction(this.uuid, -1);
+        AbstractDungeon.actionManager.addToBottom(
+                new ModifyDamageAction(this.uuid, -1));
     }
 
 

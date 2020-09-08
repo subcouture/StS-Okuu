@@ -1,7 +1,7 @@
 {
   "utsuhoReiuji:BanishingStrike": {
     "NAME": "Banishing Strike",
-    "DESCRIPTION": "Deal !D! Damage. Gain Block equal to the unblocked damage dealt. NL Reduce this cards damage by 1 for the rest of this combat."
+    "DESCRIPTION": "Deal !D! Damage. Gain Block equal to unblocked damage dealt. NL Reduce this cards damage by 1 for the rest of this combat."
   },
   "utsuhoReiuji:BoilerExplosion": {
     "NAME": "Boiler Explosion",
@@ -37,7 +37,7 @@
     "DESCRIPTION": "Gain X utsuhoreiuji:Keywords.",
     "UPGRADE_DESCRIPTION": "Gain X +1 utsuhoreiuji:Keywords."
   },
-  "utsuhoReiuji:DefaultRareAttack": {
+  "utsuhoReiuji:DefaultRareAttack": { 
     "NAME": "TOUCH",
     "DESCRIPTION": "Deal !D! Damage."
   },
