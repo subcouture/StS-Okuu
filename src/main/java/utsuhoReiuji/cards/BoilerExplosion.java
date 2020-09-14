@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 
@@ -58,7 +59,11 @@ public class BoilerExplosion extends AbstractDynamicCard {
             this.costForTurn -= OVERLOAD;
             OVERLOADED = true;
         }
+        if (OVERLOADED && EnergyPanel.totalCount >= this.costForTurn + OVERLOAD){
+            OVERLOADED = false;
+        }
         return super.hasEnoughEnergy();
+
     }
 
     public void triggerOnGlowCheck() {
@@ -68,6 +73,7 @@ public class BoilerExplosion extends AbstractDynamicCard {
         }
 
     }
+
 
     // Actions the card should do.
     @Override

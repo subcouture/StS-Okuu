@@ -35,14 +35,10 @@ public class ChainReactionAction extends AbstractGameAction{
         if (this.target != null && this.target.currentHealth > 0) {
             int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
-            --count;
-
-            System.out.println(count);
-
             this.addToTop(new DamageAction(this.target, this.info, this.attackEffect));
 
 
-            for(int i = 0; i < count; ++i) {
+            for(int i = 0; i < count - 1; ++i) {
 
                 if (!card.purgeOnUse) {
                     AbstractMonster m = null;
@@ -62,7 +58,6 @@ public class ChainReactionAction extends AbstractGameAction{
 
                     tmp.purgeOnUse = true;
                     AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
-                    --count;
                 }
             }
 

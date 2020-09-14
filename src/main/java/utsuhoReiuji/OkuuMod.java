@@ -423,6 +423,7 @@ public class OkuuMod implements
         BaseMod.addCard(new Grapeshot());
         BaseMod.addCard(new BoilerExplosion());
         BaseMod.addCard(new BanishingStrike());
+        BaseMod.addCard(new EmergencyShutdown());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -443,6 +444,7 @@ public class OkuuMod implements
         UnlockTracker.unlockCard(Grapeshot.ID);
         UnlockTracker.unlockCard(BoilerExplosion.ID);
         UnlockTracker.unlockCard(BanishingStrike.ID);
+        UnlockTracker.unlockCard(EmergencyShutdown.ID);
 
         logger.info("Done adding cards!");
     }

@@ -168,6 +168,9 @@ public class UtsuhoReiuji extends CustomPlayer {
         retVal.add(BanishingStrike.ID);
         retVal.add(Grapeshot.ID);
 
+        retVal.add(EmergencyShutdown.ID);
+        retVal.add(EmergencyShutdown.ID);
+
        // retVal.add(DefaultCommonSkill.ID);
        // retVal.add(DefaultUncommonSkill.ID);
        // retVal.add(DefaultRareSkill.ID);

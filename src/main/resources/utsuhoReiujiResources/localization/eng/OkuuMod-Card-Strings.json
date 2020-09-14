@@ -1,4 +1,8 @@
 {
+  "utsuhoReiuji:EmergencyShutdown": {
+    "NAME": "Emergency Shutdown",
+    "DESCRIPTION": "Gain !M! Intangible. Skip your next turn."
+  },
   "utsuhoReiuji:TwiceAsBright": {
     "NAME": "Twice As Bright",
     "DESCRIPTION": "Double your energy. NL Fill your hand with burns."

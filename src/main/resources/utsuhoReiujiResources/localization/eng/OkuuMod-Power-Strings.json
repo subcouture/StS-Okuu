@@ -1,4 +1,8 @@
 {
+        "utsuhoReiuji:EmergencyShutdownPower": {
+                "NAME": "Emergency Shutdown",
+                "DESCRIPTIONS": ["Skip your next turn."]
+        },
 "utsuhoReiuji:CommonPower": {
         "NAME": "Placeholder Power",
         "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
