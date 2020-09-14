@@ -1,4 +1,8 @@
 {
+  "utsuhoReiuji:TwiceAsBright": {
+    "NAME": "Twice As Bright",
+    "DESCRIPTION": "Double your energy. NL Fill your hand with burns."
+  },
   "utsuhoReiuji:BanishingStrike": {
     "NAME": "Banishing Strike",
     "DESCRIPTION": "Deal !D! Damage. Gain Block equal to unblocked damage dealt. NL Reduce this cards damage by 1 for the rest of this combat."

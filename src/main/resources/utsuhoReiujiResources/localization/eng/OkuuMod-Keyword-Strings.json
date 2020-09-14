@@ -1,5 +1,12 @@
 [
   {
+    "NAMES": [
+      "fusion",
+      "fuse"
+    ],
+    "DESCRIPTION": "Exhaust a card in your hand and replace it with a random card costing 1 higher"
+  },
+  {
     "PROPER_NAME": "Chain Reaction",
     "NAMES": [
       "Chain Reaction",
