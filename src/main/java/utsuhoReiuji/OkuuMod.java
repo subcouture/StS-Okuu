@@ -3,6 +3,7 @@ package utsuhoReiuji;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.devcommands.unlock.Unlock;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -424,6 +425,7 @@ public class OkuuMod implements
         BaseMod.addCard(new BoilerExplosion());
         BaseMod.addCard(new BanishingStrike());
         BaseMod.addCard(new EmergencyShutdown());
+        BaseMod.addCard(new BecquerelAndCall());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -445,6 +447,7 @@ public class OkuuMod implements
         UnlockTracker.unlockCard(BoilerExplosion.ID);
         UnlockTracker.unlockCard(BanishingStrike.ID);
         UnlockTracker.unlockCard(EmergencyShutdown.ID);
+        UnlockTracker.unlockCard(BecquerelAndCall.ID);
 
         logger.info("Done adding cards!");
     }

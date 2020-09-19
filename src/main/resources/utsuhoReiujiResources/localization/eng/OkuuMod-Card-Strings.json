@@ -1,4 +1,10 @@
+
+
 {
+  "utsuhoReiuji:BecquerelAndCall": {
+    "NAME": "Becquerel And Call",
+    "DESCRIPTION": "Gain !M! Intangible. Skip your next turn."
+  },
   "utsuhoReiuji:EmergencyShutdown": {
     "NAME": "Emergency Shutdown",
     "DESCRIPTION": "Gain !M! Intangible. Skip your next turn."
