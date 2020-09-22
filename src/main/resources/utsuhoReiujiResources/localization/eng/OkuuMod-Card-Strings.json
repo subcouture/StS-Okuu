@@ -1,6 +1,26 @@
 
 
 {
+  "utsuhoReiuji:Eight Span Path:": {
+    "NAME": "Eight Span Path",
+    "DESCRIPTION": "All cards gain: NL Hellbound: Gain 1 Strength and 1 Dexterity"
+  },
+  "utsuhoReiuji:EightfoldResolve":{
+    "NAME": "Eightfold Resolve",
+    "DESCRIPTION": "Gain 6 Block. NL Hellbound: Gain 16 Block."
+  },
+  "utsuhoReiuji:EightfoldConduct": {
+    "NAME": "Eightfold Conduct",
+    "DESCRIPTION": "Deal 10 Damage. NL Hellbound: Deal 10 damage to ALL enemies."
+  },
+  "ustuhoReiuji:EightfoldEffort": {
+    "NAME": "Eightfold Effort",
+    "DESCRIPTION": "Gain 1 Energy. NL Hellbound: Gain 1 Energy at the start of each turn."
+  },
+  "utsuhoReiuji:Cooldown":{
+    "NAME": "Cooldown",
+    "DESCRIPTION": "Next turn, gain !B! Block."
+  },
   "utsuhoReiuji:BecquerelAndCall": {
     "NAME": "Becquerel And Call",
     "DESCRIPTION": "Gain !M! Intangible. Skip your next turn."

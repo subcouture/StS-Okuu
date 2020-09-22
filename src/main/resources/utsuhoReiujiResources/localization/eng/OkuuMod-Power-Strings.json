@@ -1,14 +1,14 @@
 {
         "utsuhoReiuji:EmergencyShutdownPower": {
-                "NAME": "Emergency Shutdown",
+                "NAME": "Shut Down",
                 "DESCRIPTIONS": ["Skip your next turn."]
         },
-"utsuhoReiuji:CommonPower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
-},
-"utsuhoReiuji:RarePower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-}
+        "utsuhoReiuji:CommonPower": {
+            "NAME": "Placeholder Power",
+            "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+        },
+        "utsuhoReiuji:RarePower": {
+               "NAME": "Placeholder Power",
+             "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+        }
 }

@@ -3,10 +3,12 @@ package utsuhoReiuji.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import utsuhoReiuji.OkuuMod;
@@ -43,8 +45,8 @@ public class EmergencyShutdownPower extends AbstractPower implements CloneablePo
 
     @Override
     public void atStartOfTurn() {
-        this.addToBot(new PressEndTurnButtonAction());
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "EmergencyShutdownPower"));
+        AbstractDungeon.actionManager.addToBottom(new PressEndTurnButtonAction());
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
     }
 
     @Override
