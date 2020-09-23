@@ -3,7 +3,6 @@ package utsuhoReiuji;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
-import basemod.devcommands.unlock.Unlock;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -22,7 +21,6 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.appender.db.jpa.BasicLogEventEntity;
 import utsuhoReiuji.cards.*;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 import utsuhoReiuji.events.IdentityCrisisEvent;
@@ -426,6 +424,7 @@ public class OkuuMod implements
         BaseMod.addCard(new BanishingStrike());
         BaseMod.addCard(new EmergencyShutdown());
         BaseMod.addCard(new BecquerelAndCall());
+        BaseMod.addCard(new TheTenSuns());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -448,6 +447,7 @@ public class OkuuMod implements
         UnlockTracker.unlockCard(BanishingStrike.ID);
         UnlockTracker.unlockCard(EmergencyShutdown.ID);
         UnlockTracker.unlockCard(BecquerelAndCall.ID);
+        UnlockTracker.unlockCard(TheTenSuns.ID);
 
         logger.info("Done adding cards!");
     }

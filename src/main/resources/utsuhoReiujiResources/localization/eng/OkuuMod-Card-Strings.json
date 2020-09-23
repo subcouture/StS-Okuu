@@ -1,7 +1,11 @@
 
 
 {
-  "utsuhoReiuji:Eight Span Path:": {
+  "utsuhoReiuji:TheTenSuns": {
+    "NAME": "The Ten Suns",
+    "DESCRIPTION": "The next card you play gains Chain Reaction."
+  },
+  "utsuhoReiuji:EightSpanPath:": {
     "NAME": "Eight Span Path",
     "DESCRIPTION": "All cards gain: NL Hellbound: Gain 1 Strength and 1 Dexterity"
   },
@@ -23,7 +27,7 @@
   },
   "utsuhoReiuji:BecquerelAndCall": {
     "NAME": "Becquerel And Call",
-    "DESCRIPTION": "Gain !M! Intangible. Skip your next turn."
+    "DESCRIPTION": "Choose 5 cards in your exhaust pile. Exhaust your deck. Put those cards in your hand. NL They cost 0 this turn."
   },
   "utsuhoReiuji:EmergencyShutdown": {
     "NAME": "Emergency Shutdown",
