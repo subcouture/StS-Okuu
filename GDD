@@ -100,4 +100,6 @@ When you overheat, choose from 1 of 3 criticality errors. End turn, take damage,
 
 Maybe instead move through 3 forms, gamma, beta, alpha, getting stronger each time. Going through a full shift gives 1 heat. Heat works like expected.
 
+Performing ACTION will generate Heat. Each heat increases damage by 25%. At 4 heat, the next action will remove all heat, be doubled, then receive backlash.
 
+On each form shift generate heat? 
