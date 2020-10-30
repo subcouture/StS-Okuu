@@ -425,6 +425,7 @@ public class OkuuMod implements
         BaseMod.addCard(new EmergencyShutdown());
         BaseMod.addCard(new BecquerelAndCall());
         BaseMod.addCard(new TheTenSuns());
+        BaseMod.addCard(new CannonCross());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -448,6 +449,7 @@ public class OkuuMod implements
         UnlockTracker.unlockCard(EmergencyShutdown.ID);
         UnlockTracker.unlockCard(BecquerelAndCall.ID);
         UnlockTracker.unlockCard(TheTenSuns.ID);
+        UnlockTracker.unlockCard(CannonCross.ID);
 
         logger.info("Done adding cards!");
     }

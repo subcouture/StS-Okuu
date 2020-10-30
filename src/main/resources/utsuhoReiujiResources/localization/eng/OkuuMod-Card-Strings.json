@@ -1,9 +1,17 @@
 
 
 {
+  "utsuhoReiuji:NuclearVisor": {
+    "NAME": "Nuclear Visor",
+    "DESCRIPTION": "Gain !B! Block. Whenever you are attacked this turn, deal half your block as damage back."
+  },
   "utsuhoReiuji:TheTenSuns": {
     "NAME": "The Ten Suns",
     "DESCRIPTION": "The next card you play gains Chain Reaction."
+  },
+  "utsuhoReiuji:CannonCross": {
+    "NAME": "Cannon Cross",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, deal twice as much."
   },
   "utsuhoReiuji:EightSpanPath:": {
     "NAME": "Eight Span Path",

@@ -17,7 +17,7 @@ public class CannonCross extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(CannonCross.class.getSimpleName());
-    public static final String IMG = makeCardPath("CannonCross.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
     // /TEXT DECLARATION/
 
@@ -33,7 +33,7 @@ public class CannonCross extends AbstractDynamicCard {
     private static final int UPGRADED_COST = 1;
 
     private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 8;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     // /STAT DECLARATION/
 
@@ -47,8 +47,14 @@ public class CannonCross extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        if(m != null && m.getIntentBaseDmg() >= 0) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new DamageAction(m, new DamageInfo(p, damage*2, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        }
+        else{
+            AbstractDungeon.actionManager.addToBottom(
+                    new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        }
     }
 
 
