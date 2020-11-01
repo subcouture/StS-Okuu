@@ -31,7 +31,7 @@ public class EmergencyShutdown extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
-    public static final CardColor COLOR = UtsuhoReiuji.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = UtsuhoReiuji.Enums.REIUJI_GREEN;
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;

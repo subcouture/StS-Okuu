@@ -87,7 +87,7 @@ public class OkuuMod implements
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "Utsuho Reiuji";
-    private static final String AUTHOR = "subcouture"; // And pretty soon - You!
+    private static final String AUTHOR = "subcouture";
     private static final String DESCRIPTION = "Shine Bright, Hell Raven.";
     
     // =============== INPUT TEXTURE LOCATION =================
@@ -97,7 +97,7 @@ public class OkuuMod implements
     public static final Color DEFAULT_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
     public static final Color CHERENKOV_BLUE = CardHelper.getColor(46.0f, 211.0f, 255.0f);
     public static final Color BLAZING_YELLOW = CardHelper.getColor(246.0f, 247.0f, 2.0f);
-    public static final Color REIUJI_GREEn = CardHelper.getColor(00.0f, 178.0f, 45.0f);
+    public static final Color REIUJI_GREEN = CardHelper.getColor(00.0f, 178.0f, 45.0f);
     
     // Potion Colors in RGB
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
@@ -203,9 +203,9 @@ public class OkuuMod implements
         
         logger.info("Done subscribing");
         
-        logger.info("Creating the color " + UtsuhoReiuji.Enums.COLOR_GRAY.toString());
+        logger.info("Creating the color " + UtsuhoReiuji.Enums.REIUJI_GREEN.toString());
         
-        BaseMod.addColor(UtsuhoReiuji.Enums.COLOR_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
+        BaseMod.addColor(UtsuhoReiuji.Enums.REIUJI_GREEN, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
                 DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
@@ -374,9 +374,9 @@ public class OkuuMod implements
         logger.info("Adding relics");
         
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), UtsuhoReiuji.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), UtsuhoReiuji.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), UtsuhoReiuji.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), UtsuhoReiuji.Enums.REIUJI_GREEN);
+        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), UtsuhoReiuji.Enums.REIUJI_GREEN);
+        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), UtsuhoReiuji.Enums.REIUJI_GREEN);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);

@@ -30,7 +30,7 @@ import utsuhoReiuji.relics.PlaceholderRelic2;
 import java.util.ArrayList;
 
 import static utsuhoReiuji.OkuuMod.*;
-import static utsuhoReiuji.characters.UtsuhoReiuji.Enums.COLOR_GRAY;
+import static utsuhoReiuji.characters.UtsuhoReiuji.Enums.REIUJI_GREEN;
 
 //Wiki-page https://github.com/daviscook477/BaseMod/wiki/Custom-Characters
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
@@ -50,7 +50,7 @@ public class UtsuhoReiuji extends CustomPlayer {
         @SpireEnum
         public static AbstractPlayer.PlayerClass UTSUHO_REIUJI;
         @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
-        public static AbstractCard.CardColor COLOR_GRAY;
+        public static AbstractCard.CardColor REIUJI_GREEN;
         @SpireEnum(name = "DEFAULT_GRAY_COLOR") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
@@ -227,7 +227,7 @@ public class UtsuhoReiuji extends CustomPlayer {
     // Should return the card color enum to be associated with your character.
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return COLOR_GRAY;
+        return REIUJI_GREEN;
     }
 
     // Should return a color object to be used to color the trail of moving cards
