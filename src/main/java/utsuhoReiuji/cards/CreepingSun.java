@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.characters.UtsuhoReiuji;
+import utsuhoReiuji.powers.CreepingSunPower;
 import utsuhoReiuji.powers.RarePower;
 
 import static utsuhoReiuji.OkuuMod.makeCardPath;
@@ -19,7 +20,7 @@ public class CreepingSun extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(CreepingSun.class.getSimpleName());
-    public static final String IMG = makeCardPath("CreepingSun.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
     // /TEXT DECLARATION/
 
@@ -35,6 +36,7 @@ public class CreepingSun extends AbstractDynamicCard {
     private static final int UPGRADED_COST = 1;
 
     private static final int MAGIC = 3;
+    private static final int UPGRADE_PLUS_MAGIC = 2;
 
 
     // /STAT DECLARATION/
@@ -50,7 +52,7 @@ public class CreepingSun extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new RarePower(p, p, magicNumber), magicNumber));
+                new ApplyPowerAction(p, p, new CreepingSunPower(p, p, magicNumber), magicNumber));
     }
 
 
@@ -60,6 +62,7 @@ public class CreepingSun extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

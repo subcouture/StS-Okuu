@@ -172,6 +172,7 @@ public class UtsuhoReiuji extends CustomPlayer {
         retVal.add(EmergencyShutdown.ID);
 
         retVal.add(CannonCross.ID);
+        retVal.add(CreepingSun.ID);
 
 
        // retVal.add(DefaultCommonSkill.ID);

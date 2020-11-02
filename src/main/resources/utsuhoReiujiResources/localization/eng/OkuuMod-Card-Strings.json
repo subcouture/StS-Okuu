@@ -1,9 +1,11 @@
-
-
 {
   "utsuhoReiuji:NuclearVisor": {
     "NAME": "Nuclear Visor",
     "DESCRIPTION": "Gain !B! Block. Whenever you are attacked this turn, deal half your block as damage back."
+  },
+  "utsuhoReiuji:CreepingSun": {
+    "NAME" : "Creeping Sun",
+    "DESCRIPTION": "Until you play an attack, each card you play increases the damage of your next attack by !M!."
   },
   "utsuhoReiuji:TheTenSuns": {
     "NAME": "The Ten Suns",
