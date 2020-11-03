@@ -427,6 +427,7 @@ public class OkuuMod implements
         BaseMod.addCard(new TheTenSuns());
         BaseMod.addCard(new CannonCross());
         BaseMod.addCard(new CreepingSun());
+        BaseMod.addCard(new HighTensionBlade());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -452,6 +453,7 @@ public class OkuuMod implements
         UnlockTracker.unlockCard(TheTenSuns.ID);
         UnlockTracker.unlockCard(CannonCross.ID);
         UnlockTracker.unlockCard(CreepingSun.ID);
+        UnlockTracker.unlockCard(HighTensionBlade.ID);
 
         logger.info("Done adding cards!");
     }
