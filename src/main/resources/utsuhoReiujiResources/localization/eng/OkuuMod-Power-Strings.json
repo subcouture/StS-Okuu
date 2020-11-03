@@ -1,14 +1,22 @@
 {
-        "utsuhoReiuji:EmergencyShutdownPower": {
-                "NAME": "Shut Down",
-                "DESCRIPTIONS": ["Skip your next turn."]
-        },
-        "utsuhoReiuji:CommonPower": {
-            "NAME": "Placeholder Power",
-            "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
-        },
-        "utsuhoReiuji:RarePower": {
-               "NAME": "Placeholder Power",
-             "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-        }
+  "utsuhoReiuji:EmergencyShutdownPower": {
+          "NAME": "Shut Down",
+          "DESCRIPTIONS": ["Skip your next turn."]
+  },
+  "utsuhoReiuji:CommonPower": {
+      "NAME": "Placeholder Power",
+      "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+  },
+  "utsuhoReiuji:RarePower": {
+         "NAME": "Placeholder Power",
+       "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+  },
+  "utsuhoReiuji:CreepingSunPower": {
+    "NAME": "The Creeping Sun",
+    "DESCRIPTIONS" : ["Until you play your next attack, each card you play gains", "damage." ]
+  },
+  "utsuhoReiuji:SelfTokamakPower": {
+    "NAME": "Self Tokamak",
+    "DESCRIPTIONS" : ["At the start of the next turn, gain", "block."]
+  }
 }
