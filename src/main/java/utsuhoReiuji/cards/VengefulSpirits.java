@@ -66,7 +66,7 @@ public class VengefulSpirits extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-
+            upgradeMagicNumber(UPGRADE_PLUS_HITS);
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }

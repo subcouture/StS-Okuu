@@ -3,6 +3,10 @@
     "NAME": "Nuclear Visor",
     "DESCRIPTION": "Gain !B! Block. Whenever you are attacked this turn, deal half your block as damage back."
   },
+  "utsuhoReiuji:VengefulSpirits": {
+    "NAME": "Vengeful Spirits",
+    "DESCRIPTION": "Unplayable. NL Fission: Draw !SecondMagic! cards. Deal 1 damage !M! times."
+  },
   "utsuhoReiuji:HighTensionBlade": {
     "NAME": "High Tension Blade",
     "DESCRIPTION": "Deal !D! Damage. Fission: Gain !B! Block. Exhaust"

@@ -24,6 +24,7 @@ import org.apache.logging.log4j.Logger;
 import utsuhoReiuji.cards.*;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 import utsuhoReiuji.events.IdentityCrisisEvent;
+import utsuhoReiuji.patches.AbstractCardEnum;
 import utsuhoReiuji.potions.PlaceholderPotion;
 import utsuhoReiuji.relics.BottledPlaceholderRelic;
 import utsuhoReiuji.relics.DefaultClickableRelic;
@@ -203,9 +204,9 @@ public class OkuuMod implements
         
         logger.info("Done subscribing");
         
-        logger.info("Creating the color " + UtsuhoReiuji.Enums.REIUJI_GREEN.toString());
+        logger.info("Creating the color " + AbstractCardEnum.REIUJI_GREEN.toString());
         
-        BaseMod.addColor(UtsuhoReiuji.Enums.REIUJI_GREEN, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
+        BaseMod.addColor(AbstractCardEnum.REIUJI_GREEN, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
                 DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
