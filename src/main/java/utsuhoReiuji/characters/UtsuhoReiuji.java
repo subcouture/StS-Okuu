@@ -156,19 +156,11 @@ public class UtsuhoReiuji extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
-        retVal.add(DefaultCommonAttack.ID);
-        retVal.add(DefaultUncommonAttack.ID);
-        retVal.add(DefaultRareAttack.ID);
+        retVal.add(HighTensionBlade.ID);
 
         retVal.add(BoilerExplosion.ID);
         retVal.add(BanishingStrike.ID);
         retVal.add(Grapeshot.ID);
-
-        retVal.add(BoilerExplosion.ID);
-        retVal.add(BanishingStrike.ID);
-        retVal.add(Grapeshot.ID);
-
-        retVal.add(EmergencyShutdown.ID);
         retVal.add(EmergencyShutdown.ID);
 
         retVal.add(CannonCross.ID);
