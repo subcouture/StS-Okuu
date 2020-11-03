@@ -1,14 +1,10 @@
 package utsuhoReiuji.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 import utsuhoReiuji.powers.EmergencyShutdownPower;
@@ -36,15 +32,15 @@ public class EmergencyShutdown extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
-    private static final int AMOUNT = 1;
-    private static final int UPGRADE_PLUS_AMOUNT = 0;
+    private static final int INTANGIBLE = 1;
+    private static final int UPGRADE_PLUS_INTANGIBLE = 0;
 
     // /STAT DECLARATION/
 
 
     public EmergencyShutdown() { // public EmergencyShutdown() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = AMOUNT;
+        baseMagicNumber = magicNumber = INTANGIBLE;
     }
 
 
@@ -63,7 +59,7 @@ public class EmergencyShutdown extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_AMOUNT);
+            upgradeMagicNumber(UPGRADE_PLUS_INTANGIBLE);
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }

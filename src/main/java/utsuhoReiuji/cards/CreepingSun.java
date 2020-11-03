@@ -1,16 +1,12 @@
 package utsuhoReiuji.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 import utsuhoReiuji.powers.CreepingSunPower;
-import utsuhoReiuji.powers.RarePower;
 
 import static utsuhoReiuji.OkuuMod.makeCardPath;
 
@@ -35,8 +31,8 @@ public class CreepingSun extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
 
-    private static final int MAGIC = 3;
-    private static final int UPGRADE_PLUS_MAGIC = 2;
+    private static final int VIGOR = 3;
+    private static final int UPGRADE_PLUS_VIGOR = 2;
 
 
     // /STAT DECLARATION/
@@ -44,7 +40,7 @@ public class CreepingSun extends AbstractDynamicCard {
 
     public CreepingSun() { // public CreepingSun() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = VIGOR;
     }
 
 
@@ -62,7 +58,7 @@ public class CreepingSun extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeMagicNumber(UPGRADE_PLUS_VIGOR);
             initializeDescription();
         }
     }

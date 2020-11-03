@@ -1,14 +1,10 @@
 package utsuhoReiuji.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import utsuhoReiuji.OkuuMod;
-import utsuhoReiuji.actions.ChainReactionAction;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 
 import static utsuhoReiuji.OkuuMod.makeCardPath;
@@ -34,15 +30,15 @@ public class ApollosLight extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
 
-    private static final int MAGIC = 2;
-    private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int HEAL = 2;
+    private static final int UPGRADE_PLUS_HEAL = 1;
 
     // /STAT DECLARATION/
 
 
     public ApollosLight() { // public ApollosLight() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = HEAL;
     }
 
 
@@ -59,7 +55,7 @@ public class ApollosLight extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeMagicNumber(UPGRADE_PLUS_HEAL);
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
