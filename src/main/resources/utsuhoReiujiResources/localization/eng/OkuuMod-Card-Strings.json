@@ -3,6 +3,10 @@
     "NAME": "Nuclear Visor",
     "DESCRIPTION": "Gain !B! Block. Whenever you are attacked this turn, deal half your block as damage back."
   },
+  "utsuhoReiuji:SelfTokamak": {
+    "NAME": "Self Tokamak",
+    "DESCRIPTION": "At the start of the next turn, gain !B! block."
+  },
   "utsuhoReiuji:VengefulSpirits": {
     "NAME": "Vengeful Spirits",
     "DESCRIPTION": "Unplayable. NL Fission: Draw !SecondMagic! cards. Deal 1 damage !M! times."
