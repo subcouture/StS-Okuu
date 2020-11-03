@@ -3,6 +3,10 @@
     "NAME": "Nuclear Visor",
     "DESCRIPTION": "Gain !B! Block. Whenever you are attacked this turn, deal half your block as damage back."
   },
+  "utsuhoReiuji:HighTensionBlade": {
+    "NAME": "High Tension Blade",
+    "DESCRIPTION": "Deal !D! Damage. Fission: Gain !B! Block. Exhaust"
+  },
   "utsuhoReiuji:CreepingSun": {
     "NAME" : "Creeping Sun",
     "DESCRIPTION": "Until you play an attack, each card you play increases the damage of your next attack by !M!."
