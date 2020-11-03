@@ -32,7 +32,7 @@ import utsuhoReiuji.relics.PlaceholderRelic2;
 import utsuhoReiuji.util.IDCheckDontTouchPls;
 import utsuhoReiuji.util.TextureLoader;
 import utsuhoReiuji.variables.DefaultCustomVariable;
-import utsuhoReiuji.variables.DefaultSecondMagicNumber;
+import utsuhoReiuji.variables.SecondMagicNumber;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -400,7 +400,7 @@ public class OkuuMod implements
         logger.info("Add variables");
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
-        BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
+        BaseMod.addDynamicVariable(new SecondMagicNumber());
         
         logger.info("Adding cards");
         // Add the cards

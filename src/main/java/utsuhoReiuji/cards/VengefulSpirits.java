@@ -48,7 +48,7 @@ public class VengefulSpirits extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = HITS;
-        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = CARDS_DRAWN;
+        secondMagicNumber = baseSecondMagicNumber = CARDS_DRAWN;
     }
 
 
