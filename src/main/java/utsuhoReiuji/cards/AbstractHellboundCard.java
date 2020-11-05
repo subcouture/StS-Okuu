@@ -24,11 +24,18 @@ public abstract class AbstractHellboundCard extends AbstractDynamicCard{
     @Override
     public void applyPowers() {
         super.applyPowers();
-        int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        isHellbound = true;
+        for(AbstractCard card : AbstractDungeon.player.hand.group){
+            if(card.type == AbstractCard.CardType.STATUS && card.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")){
+            assert true;} else if (card.type == AbstractCard.CardType.CURSE && card.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
+            assert true;} else if(card.hasEnoughEnergy()){
+                isHellbound = false;
+            }
+        }
     }
 
     @Override
     public void triggerOnGlowCheck() {
-        this.glowColor = AbstractDungeon.actionManager.cardsPlayedThisTurn.size() < this.magicNumber ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
+        this.glowColor = isHellbound ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
     }
 }
