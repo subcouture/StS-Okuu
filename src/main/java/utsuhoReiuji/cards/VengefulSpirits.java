@@ -1,7 +1,7 @@
 package utsuhoReiuji.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -55,10 +55,20 @@ public class VengefulSpirits extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return false;
+    }
+
+    @Override
+    public void triggerOnExhaust() {
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(CARDS_DRAWN));
+        for(int i = 0; i < HITS; ++i) {
+            AbstractDungeon.actionManager.addToBottom(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        }
+    }
 
     // Upgraded stats.
     @Override
@@ -67,6 +77,7 @@ public class VengefulSpirits extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeMagicNumber(UPGRADE_PLUS_HITS);
+            upgradeSecondMagicNumber(UPGRADE_PLUS_CARDS_DRAWN);
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
