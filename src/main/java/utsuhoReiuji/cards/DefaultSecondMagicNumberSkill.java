@@ -77,7 +77,7 @@ public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADE_PLUS_VULNERABLE);
-            this.upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_POISON);
+            this.upgradeSecondMagicNumber(UPGRADE_PLUS_POISON);
             this.initializeDescription();
         }
     }
