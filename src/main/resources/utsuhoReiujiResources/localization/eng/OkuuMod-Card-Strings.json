@@ -3,6 +3,10 @@
     "NAME": "Nuclear Visor",
     "DESCRIPTION": "Gain !B! Block. Whenever you are attacked this turn, deal half your block as damage back."
   },
+  "utsuhoReiuji:EightfoldConduct": {
+    "NAME": "Eightfold Conduct",
+    "DESCRIPTION": "Deal !D! damage. Hellbound: Deal !D! damage to all enemies."
+  },
   "utsuhoReiuji:SelfTokamak": {
     "NAME": "Self Tokamak",
     "DESCRIPTION": "At the start of the next turn, gain !B! block."
@@ -34,10 +38,6 @@
   "utsuhoReiuji:EightfoldResolve":{
     "NAME": "Eightfold Resolve",
     "DESCRIPTION": "Gain 6 Block. NL Hellbound: Gain 16 Block."
-  },
-  "utsuhoReiuji:EightfoldConduct": {
-    "NAME": "Eightfold Conduct",
-    "DESCRIPTION": "Deal 10 Damage. NL Hellbound: Deal 10 damage to ALL enemies."
   },
   "ustuhoReiuji:EightfoldEffort": {
     "NAME": "Eightfold Effort",

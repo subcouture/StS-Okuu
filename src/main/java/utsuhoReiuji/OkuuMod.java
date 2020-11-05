@@ -430,6 +430,7 @@ public class OkuuMod implements
         BaseMod.addCard(new CreepingSun());
         BaseMod.addCard(new HighTensionBlade());
         BaseMod.addCard(new SelfTokamak());
+        BaseMod.addCard(new EightfoldConduct());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -457,6 +458,7 @@ public class OkuuMod implements
         UnlockTracker.unlockCard(CreepingSun.ID);
         UnlockTracker.unlockCard(HighTensionBlade.ID);
         UnlockTracker.unlockCard(SelfTokamak.ID);
+        UnlockTracker.unlockCard(EightfoldConduct.ID);
 
         logger.info("Done adding cards!");
     }

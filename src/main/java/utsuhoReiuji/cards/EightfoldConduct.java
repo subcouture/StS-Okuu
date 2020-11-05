@@ -2,6 +2,7 @@ package utsuhoReiuji.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,20 +10,16 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 
+import java.lang.annotation.Target;
+
 import static utsuhoReiuji.OkuuMod.makeCardPath;
 
-// public class EightfoldConduct extends AbstractDynamicCard
-public class EightfoldConduct extends AbstractDynamicCard {
+public class EightfoldConduct extends AbstractHellboundCard {
 
-    // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(EightfoldConduct.class.getSimpleName());
-    public static final String IMG = makeCardPath("EightfoldConduct.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
-    // /TEXT DECLARATION/
-
-
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
@@ -33,22 +30,30 @@ public class EightfoldConduct extends AbstractDynamicCard {
     private static final int UPGRADED_COST = 0;
 
     private static final int DAMAGE = 5;
-    private static final int UPGRADE_PLUS_DMG = 7;
+    private static final int UPGRADE_PLUS_DMG = 2;
+    //TODO: Work out how to increase multidamage by the hellbound damage.
+    private static final int HELLBOUND_PLUS_DMG = 2;
 
-    // /STAT DECLARATION/
 
 
-    public EightfoldConduct() { // public EightfoldConduct() - This one and the one right under the imports are the most important ones, don't forget them
+    public EightfoldConduct() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
     }
 
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        if(isHellbound){
+            this.isMultiDamage = true;
+            AbstractDungeon.actionManager.addToBottom(
+                    new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+        }
+        else{
+            this.isMultiDamage = false;
+            AbstractDungeon.actionManager.addToBottom(
+                    new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        }
     }
 
 

@@ -3,8 +3,6 @@ package utsuhoReiuji.cards;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
-
 public abstract class AbstractHellboundCard extends AbstractDynamicCard{
 
     public boolean isHellbound = false;
@@ -21,6 +19,7 @@ public abstract class AbstractHellboundCard extends AbstractDynamicCard{
 
     }
 
+    //TODO: Rework the logic here so I don't have to use empty braces.
     @Override
     public void applyPowers() {
         super.applyPowers();
