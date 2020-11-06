@@ -126,11 +126,11 @@ public class OkuuMod implements
     private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "utsuhoReiujiResources/images/1024/card_default_gray_orb.png";
     
     // Character assets
-    private static final String UTSUHO_REIUJI_BUTTON = "utsuhoReiujiResources/images/charSelect/DefaultCharacterButton.png";
+    private static final String UTSUHO_REIUJI_BUTTON = "utsuhoReiujiResources/images/charSelect/OkuuCharacterButton.png";
     private static final String UTSUHO_REIUJI_PORTRAIT = "utsuhoReiujiResources/images/charSelect/UtsuhoPortraitBG.png";
     public static final String THE_DEFAULT_SHOULDER_1 = "utsuhoReiujiResources/images/char/defaultCharacter/shoulder.png";
     public static final String THE_DEFAULT_SHOULDER_2 = "utsuhoReiujiResources/images/char/defaultCharacter/shoulder2.png";
-    public static final String THE_DEFAULT_CORPSE = "utsuhoReiujiResources/images/char/defaultCharacter/okuucorpse.png";
+    public static final String THE_DEFAULT_CORPSE = "utsuhoReiujiResources/images/char/defaultCharacter/okuuCorpse.png";
     
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
     public static final String BADGE_IMAGE = "utsuhoReiujiResources/images/Badge.png";
