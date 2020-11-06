@@ -39,18 +39,17 @@ public class EightfoldConduct extends AbstractHellboundCard {
     public EightfoldConduct() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        this.isMultiDamage = true;
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if(isHellbound){
-            this.isMultiDamage = true;
             AbstractDungeon.actionManager.addToBottom(
                     new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
         }
         else{
-            this.isMultiDamage = false;
             AbstractDungeon.actionManager.addToBottom(
                     new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
