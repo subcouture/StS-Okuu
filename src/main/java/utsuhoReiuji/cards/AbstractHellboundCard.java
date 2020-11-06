@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public abstract class AbstractHellboundCard extends AbstractDynamicCard{
 
+
     public boolean isHellbound = false;
 
     public AbstractHellboundCard(final String id,
@@ -27,7 +28,7 @@ public abstract class AbstractHellboundCard extends AbstractDynamicCard{
         for(AbstractCard card : AbstractDungeon.player.hand.group){
             if(card.type == AbstractCard.CardType.STATUS && card.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")){
             assert true;} else if (card.type == AbstractCard.CardType.CURSE && card.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
-            assert true;} else if(card.hasEnoughEnergy()){
+            assert true;} else if(card.hasEnoughEnergy() && !card.cardID.equals(this.cardID)) {
                 isHellbound = false;
             }
         }
