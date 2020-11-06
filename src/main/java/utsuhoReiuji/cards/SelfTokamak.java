@@ -20,7 +20,7 @@ public class SelfTokamak extends AbstractDynamicCard {
 
 
     public static final String ID = OkuuMod.makeID(SelfTokamak.class.getSimpleName());
-    public static final String IMG = makeCardPath("BoilerExplosion.png");
+    public static final String IMG = makeCardPath("SelfTokamak.png");
 
 
 
