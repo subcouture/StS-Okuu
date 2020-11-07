@@ -1,6 +1,7 @@
 package utsuhoReiuji.characters;
 
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -66,10 +67,18 @@ public class UtsuhoReiuji extends CustomPlayer {
     public static final int MAX_HP = 75;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 3;
-    public static final int ORB_SLOTS = 3;
+    private static final int START_ORBS = 0;
+    public static final int ORB_SLOTS = 1;
 
     // =============== /BASE STATS/ =================
 
+    // =============== TEXTURE ATLASES =================
+
+    private static final String OKUU_SKELETON_IDLE_ATLAS = "utsuhoReiujiResources/images/char/okuuSprites/Dragonbones/idle/OkuuIdle.atlas";
+    private static final String OKUU_SKELETON_IDLE_JSON = "utsuhoReiujiResources/images/char/okuuSprites/Dragonbones/idle/OkuuIdle.json";
+
+
+    // =============== /TEXTURE ATLASES/ =================
 
     // =============== STRINGS =================
 
@@ -103,8 +112,7 @@ public class UtsuhoReiuji extends CustomPlayer {
     public UtsuhoReiuji(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
                 "utsuhoReiujiResources/images/char/defaultCharacter/orb/vfx.png", null,
-                new SpriterAnimation(
-                        "utsuhoReiujiResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));
+                new SpineAnimation(OKUU_SKELETON_IDLE_ATLAS, OKUU_SKELETON_IDLE_JSON, 0.47f));
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================  
@@ -122,10 +130,10 @@ public class UtsuhoReiuji extends CustomPlayer {
         // =============== ANIMATIONS =================  
 
         loadAnimation(
-                THE_DEFAULT_SKELETON_ATLAS,
-                THE_DEFAULT_SKELETON_JSON,
-                1.0f);
-        AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
+                OKUU_SKELETON_IDLE_ATLAS,
+                OKUU_SKELETON_IDLE_JSON,
+                0.47f);
+        AnimationState.TrackEntry e = state.setAnimation(0, "animtion0", true);
         e.setTime(e.getEndTime() * MathUtils.random());
 
         // =============== /ANIMATIONS/ =================
@@ -146,7 +154,7 @@ public class UtsuhoReiuji extends CustomPlayer {
     @Override
     public CharSelectInfo getLoadout() {
         return new CharSelectInfo(NAMES[0], TEXT[0],
-                STARTING_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, CARD_DRAW, this, getStartingRelics(),
+                STARTING_HP, MAX_HP, START_ORBS, STARTING_GOLD, CARD_DRAW, this, getStartingRelics(),
                 getStartingDeck(), false);
     }
 

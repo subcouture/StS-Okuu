@@ -1,4 +1,4 @@
-package utsuhoReiuji.cards;
+package utsuhoReiuji.cards.abstractCards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;

@@ -14,12 +14,8 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 
 public class SelfTokamak extends AbstractDynamicCard {
 
-
-
     public static final String ID = OkuuMod.makeID(SelfTokamak.class.getSimpleName());
     public static final String IMG = makeCardPath("SelfTokamak.png");
-
-
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
