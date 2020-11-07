@@ -1,4 +1,4 @@
-package utsuhoReiuji.cards;
+package utsuhoReiuji.cards.defaultCards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -12,54 +12,58 @@ import utsuhoReiuji.characters.UtsuhoReiuji;
 
 import static utsuhoReiuji.OkuuMod.makeCardPath;
 
-// public class UncontainableReaction extends AbstractDynamicCard
-public class TheTenSuns extends AbstractDynamicCard {
+public class DefaultUncommonAttack extends AbstractDynamicCard {
 
-    // TEXT DECLARATION
+    /*
+     * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
+     *
+     * Big Slap Deal 10(15)) damage.
+     */
 
-    public static final String ID = OkuuMod.makeID(TheTenSuns.class.getSimpleName());
-    public static final String IMG = makeCardPath("BoilerExplosion.png");
+    // TEXT DECLARATION 
+
+    public static final String ID = OkuuMod.makeID(DefaultUncommonAttack.class.getSimpleName());
+    public static final String IMG = makeCardPath("Attack.png");
 
     // /TEXT DECLARATION/
 
 
-    // STAT DECLARATION
+    // STAT DECLARATION 	
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.SKILL;       //
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = UtsuhoReiuji.Enums.REIUJI_GREEN;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 1;
-
-    private static final int DAMAGE = 1;
-    private static final int UPGRADE_PLUS_DMG = 1;
+    private static final int DAMAGE = 10;
+    private static final int UPGRADE_PLUS_DMG = 5;
 
     // /STAT DECLARATION/
 
 
-    public TheTenSuns() { // public UncontainableReaction() - This one and the one right under the imports are the most important ones, don't forget them
+    public DefaultUncommonAttack() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
     }
 
-
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+
+
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+
     }
 
-
-    // Upgraded stats.
+    //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

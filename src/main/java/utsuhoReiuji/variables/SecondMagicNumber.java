@@ -2,7 +2,7 @@ package utsuhoReiuji.variables;
 
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import utsuhoReiuji.cards.AbstractDefaultCard;
+import utsuhoReiuji.cards.abstractCards.AbstractDefaultCard;
 
 import static utsuhoReiuji.OkuuMod.makeID;
 

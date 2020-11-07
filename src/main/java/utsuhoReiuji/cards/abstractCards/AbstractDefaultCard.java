@@ -1,4 +1,4 @@
-package utsuhoReiuji.cards;
+package utsuhoReiuji.cards.abstractCards;
 
 import basemod.abstracts.CustomCard;
 

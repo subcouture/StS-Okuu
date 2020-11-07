@@ -8,9 +8,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import utsuhoReiuji.OkuuMod;
+import utsuhoReiuji.cards.abstractCards.AbstractHellboundCard;
 import utsuhoReiuji.characters.UtsuhoReiuji;
-
-import java.lang.annotation.Target;
 
 import static utsuhoReiuji.OkuuMod.makeCardPath;
 

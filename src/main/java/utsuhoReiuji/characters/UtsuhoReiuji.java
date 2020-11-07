@@ -23,6 +23,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.cards.*;
+import utsuhoReiuji.cards.defaultCards.DefaultCommonAttack;
 import utsuhoReiuji.relics.DefaultClickableRelic;
 import utsuhoReiuji.relics.PlaceholderRelic;
 import utsuhoReiuji.relics.PlaceholderRelic2;

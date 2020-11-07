@@ -1,4 +1,4 @@
-package utsuhoReiuji.cards;
+package utsuhoReiuji.cards.abstractCards;
 
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
