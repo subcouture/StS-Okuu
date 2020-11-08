@@ -133,7 +133,7 @@ public class UtsuhoReiuji extends CustomPlayer {
                 OKUU_SKELETON_IDLE_ATLAS,
                 OKUU_SKELETON_IDLE_JSON,
                 0.47f);
-        AnimationState.TrackEntry e = state.setAnimation(0, "animtion0", true);
+        AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
 
         // =============== /ANIMATIONS/ =================
