@@ -29,21 +29,15 @@ public class SelfTokamak extends AbstractDynamicCard {
     private static final int UPGRADE_PLUS_BLOCK = 6;
 
 
-
-
     public SelfTokamak() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
     }
 
-
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SelfTokamakPower(p, p, block)));
     }
-
-
 
     @Override
     public void upgrade() {
