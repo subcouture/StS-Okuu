@@ -20,8 +20,8 @@ import javassist.CtBehavior;
 
 public class GalaxyChromaKeyRenderPatch {
     private static ShaderProgram shader = new ShaderProgram(
-            Gdx.files.internal("utsuhoReiujiResources/shaders/vertexShader.vs"),
-            Gdx.files.internal("utsuhoReiujiResources/shaders/fragShader.fs")
+            Gdx.files.internal("utsuhoReiujiResources/shaders/chromakey/vertexShader.vs"),
+            Gdx.files.internal("utsuhoReiujiResources/shaders/chromakey/fragShader.fs")
     );
 
     @SpireInsertPatch(
