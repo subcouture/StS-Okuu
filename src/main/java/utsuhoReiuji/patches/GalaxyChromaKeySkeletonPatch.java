@@ -1,6 +1,8 @@
 package utsuhoReiuji.patches;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -24,14 +26,19 @@ public class GalaxyChromaKeySkeletonPatch {
             Gdx.files.internal("utsuhoReiujiResources/shaders/chromakey/fragShader.fs")
     );
 
+    private static Texture galaxyTexture = new Texture("utsuhoReiujiResources/images/char/okuuSprites/loopingGalaxy.png");
+
+
     @SpireInsertPatch(
             locator=LocatorSkeletonStart.class
     )
     public static void InsertSkeletonStart(AbstractPlayer __instance, SpriteBatch sb)
     {
             shader.begin();
-
             CardCrawlGame.psb.setShader(shader);
+            galaxyTexture.bind(1);
+            shader.setUniformi("u_galaxyTexture", 1);
+            Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
     }
 
     @SpireInsertPatch(
