@@ -21,12 +21,13 @@ import javassist.CtBehavior;
 )
 
 public class GalaxyChromaKeySkeletonPatch {
-    private static ShaderProgram shader = new ShaderProgram(
-            Gdx.files.internal("utsuhoReiujiResources/shaders/chromakey/vertexShader.vs"),
-            Gdx.files.internal("utsuhoReiujiResources/shaders/chromakey/fragShader.fs")
+    public static ShaderProgram shader = new ShaderProgram(
+//            Gdx.files.internal("utsuhoReiujiResources/shaders/chromakey/vertexShader.vs"),
+            Gdx.files.internal("E:/Game Projects/tools/shaders/vertexShader.vs"),
+            Gdx.files.internal("E:/Game Projects/tools/shaders/fragShader.fs")
     );
 
-    private static Texture galaxyTexture = new Texture("utsuhoReiujiResources/images/char/okuuSprites/loopingGalaxy.png");
+    private static Texture galaxyTexture = new Texture(Gdx.files.internal("utsuhoReiujiResources/images/char/okuuSprites/loopingGalaxy.png"));
 
 
     @SpireInsertPatch(

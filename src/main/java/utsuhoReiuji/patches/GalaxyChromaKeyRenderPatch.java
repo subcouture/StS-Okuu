@@ -14,19 +14,20 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import javassist.CtBehavior;
 
-
 @SpirePatch(
         clz= AbstractPlayer.class,
         method="render"
 )
 
+
+//TODO Remember to remove this after finished debugging
 public class GalaxyChromaKeyRenderPatch {
-    private static ShaderProgram shader = new ShaderProgram(
-            Gdx.files.internal("utsuhoReiujiResources/shaders/chromakey/vertexShader.vs"),
-            Gdx.files.internal("utsuhoReiujiResources/shaders/chromakey/fragShader.fs")
+    public static ShaderProgram shader = new ShaderProgram(
+            Gdx.files.internal("E:/Game Projects/tools/shaders/vertexShader.vs"),
+            Gdx.files.internal("E:/Game Projects/tools/shaders/fragShader.fs")
     );
 
-    private static Texture galaxyTexture = new Texture("utsuhoReiujiResources/images/char/okuuSprites/loopingGalaxy.png");
+    private static Texture galaxyTexture = new Texture(Gdx.files.internal("utsuhoReiujiResources/images/char/okuuSprites/loopingGalaxy.png"));
 
     @SpireInsertPatch(
             locator=LocatorImageStart.class,

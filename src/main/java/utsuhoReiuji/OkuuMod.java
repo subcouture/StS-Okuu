@@ -6,14 +6,17 @@ import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -25,6 +28,8 @@ import utsuhoReiuji.cards.*;
 import utsuhoReiuji.cards.defaultCards.*;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 import utsuhoReiuji.events.IdentityCrisisEvent;
+import utsuhoReiuji.patches.GalaxyChromaKeyRenderPatch;
+import utsuhoReiuji.patches.GalaxyChromaKeySkeletonPatch;
 import utsuhoReiuji.potions.PlaceholderPotion;
 import utsuhoReiuji.relics.BottledPlaceholderRelic;
 import utsuhoReiuji.relics.DefaultClickableRelic;
@@ -75,7 +80,8 @@ public class OkuuMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        PostUpdateSubscriber {
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(OkuuMod.class.getName());
@@ -228,6 +234,7 @@ public class OkuuMod implements
             e.printStackTrace();
         }
         logger.info("Done adding mod settings");
+
         
     }
     
@@ -511,6 +518,7 @@ public class OkuuMod implements
     // ================ /LOAD THE TEXT/ ===================
     
     // ================ LOAD THE KEYWORDS ===================
+
     
     @Override
     public void receiveEditKeywords() {
@@ -540,6 +548,25 @@ public class OkuuMod implements
     // in order to avoid conflicts if any other mod uses the same ID.
     public static String makeID(String idText) {
         return getModID() + ":" + idText;
+    }
+
+
+    //TODO remember to remove this post debugging
+    @Override
+    public void receivePostUpdate() {
+        if (Gdx.input.isKeyJustPressed(Input.Keys.R)) {
+            GalaxyChromaKeyRenderPatch.shader.dispose();
+            GalaxyChromaKeyRenderPatch.shader = new ShaderProgram(
+                    Gdx.files.internal("E:/Game Projects/tools/shaders/vertexShader.vs"),
+                    Gdx.files.internal("E:/Game Projects/tools/shaders/fragShader.fs")
+            );
+
+            GalaxyChromaKeySkeletonPatch.shader.dispose();
+            GalaxyChromaKeySkeletonPatch.shader = new ShaderProgram(
+                    Gdx.files.internal("E:/Game Projects/tools/shaders/vertexShader.vs"),
+                    Gdx.files.internal("E:/Game Projects/tools/shaders/fragShader.fs")
+            );
+        }
     }
 }
 
