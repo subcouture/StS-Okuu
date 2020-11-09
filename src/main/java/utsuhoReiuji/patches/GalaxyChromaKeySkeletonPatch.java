@@ -29,15 +29,20 @@ public class GalaxyChromaKeySkeletonPatch {
 
     private static Texture galaxyTexture = new Texture(Gdx.files.internal("utsuhoReiujiResources/images/char/okuuSprites/loopingGalaxy.png"));
 
+    public static float currentTime = 0.0f;
 
     @SpireInsertPatch(
             locator=LocatorSkeletonStart.class
     )
     public static void InsertSkeletonStart(AbstractPlayer __instance, SpriteBatch sb)
     {
+            currentTime += Gdx.graphics.getDeltaTime();
             shader.begin();
             CardCrawlGame.psb.setShader(shader);
+            shader.setUniformf("Time", currentTime);
             galaxyTexture.bind(1);
+            Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_S, GL20.GL_REPEAT);
+            Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_T, GL20.GL_REPEAT);
             shader.setUniformi("u_galaxyTexture", 1);
             Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
     }
