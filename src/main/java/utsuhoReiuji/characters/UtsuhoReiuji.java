@@ -4,6 +4,7 @@ import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
@@ -74,8 +75,8 @@ public class UtsuhoReiuji extends CustomPlayer {
 
     // =============== TEXTURE ATLASES =================
 
-    private static final String OKUU_SKELETON_IDLE_ATLAS = "utsuhoReiujiResources/images/char/okuuSprites/Dragonbones/idle/OkuuIdle.atlas";
-    private static final String OKUU_SKELETON_IDLE_JSON = "utsuhoReiujiResources/images/char/okuuSprites/Dragonbones/idle/OkuuIdle.json";
+    private static final String OKUU_SKELETON_IDLE_ATLAS = "utsuhoReiujiResources/images/char/okuuSprites/Dragonbones/idle/skeleton.atlas";
+    private static final String OKUU_SKELETON_IDLE_JSON = "utsuhoReiujiResources/images/char/okuuSprites/Dragonbones/idle/skeleton.json";
 
 
     // =============== /TEXTURE ATLASES/ =================
@@ -129,9 +130,12 @@ public class UtsuhoReiuji extends CustomPlayer {
 
         // =============== ANIMATIONS =================
         loadAnimation(OKUU_SKELETON_IDLE_ATLAS, OKUU_SKELETON_IDLE_JSON, 0.47f);
-        AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
+        for(Texture tex: atlas.getTextures()){
+            tex.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+        }
+        AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
-        e.setTimeScale(0.8f);
+//        e.setTimeScale(0.8f);
 
         // =============== /ANIMATIONS/ =================
 
