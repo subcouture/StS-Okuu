@@ -32,6 +32,7 @@ public class GalaxyChromaKeyRenderPatch {
 
     public static float currentTime = 0.0f;
 
+    //TODO Update delta time outside of this function
     private static Texture galaxyTexture = new Texture(Gdx.files.internal("utsuhoReiujiResources/images/char/okuuSprites/loopingGalaxy.png"));
 
     @SpireInsertPatch(

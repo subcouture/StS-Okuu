@@ -11,11 +11,11 @@ Shadow
   orig: 123, 31
   offset: 0, 0
   index: -1
-okuu_idle02
+okuu_idle22
   rotate: false
-  xy: 108, 444
-  size: 105, 108
-  orig: 105, 108
+  xy: 108, 333
+  size: 105, 109
+  orig: 105, 109
   offset: 0, 0
   index: -1
 okuu_idle05
@@ -25,25 +25,18 @@ okuu_idle05
   orig: 108, 108
   offset: 0, 0
   index: -1
-okuu_idle16
+okuu_idle15
   rotate: false
-  xy: 321, 553
-  size: 104, 109
-  orig: 104, 109
+  xy: 328, 332
+  size: 105, 109
+  orig: 105, 109
   offset: 0, 0
   index: -1
-okuu_idle24
+okuu_idle18
   rotate: false
-  xy: 221, 222
-  size: 108, 108
-  orig: 108, 108
-  offset: 0, 0
-  index: -1
-okuu_idle00
-  rotate: false
-  xy: 337, 1
-  size: 110, 108
-  orig: 110, 108
+  xy: 335, 111
+  size: 108, 109
+  orig: 108, 109
   offset: 0, 0
   index: -1
 okuu_idle07
@@ -53,34 +46,6 @@ okuu_idle07
   orig: 108, 108
   offset: 0, 0
   index: -1
-okuu_idle21
-  rotate: false
-  xy: 328, 332
-  size: 105, 109
-  orig: 105, 109
-  offset: 0, 0
-  index: -1
-okuu_idle09
-  rotate: false
-  xy: 1, 444
-  size: 105, 108
-  orig: 105, 108
-  offset: 0, 0
-  index: -1
-okuu_idle10
-  rotate: false
-  xy: 107, 554
-  size: 104, 108
-  orig: 104, 108
-  offset: 0, 0
-  index: -1
-okuu_idle14
-  rotate: false
-  xy: 221, 332
-  size: 105, 109
-  orig: 105, 109
-  offset: 0, 0
-  index: -1
 okuu_idle06
   rotate: false
   xy: 225, 1
@@ -88,60 +53,11 @@ okuu_idle06
   orig: 110, 108
   offset: 0, 0
   index: -1
-okuu_idle19
+okuu_idle09
   rotate: false
-  xy: 113, 1
-  size: 110, 109
-  orig: 110, 109
-  offset: 0, 0
-  index: -1
-okuu_idle03
-  rotate: false
-  xy: 322, 443
+  xy: 215, 443
   size: 105, 108
   orig: 105, 108
-  offset: 0, 0
-  index: -1
-okuu_idle11
-  rotate: false
-  xy: 1, 112
-  size: 108, 109
-  orig: 108, 109
-  offset: 0, 0
-  index: -1
-okuu_idle15
-  rotate: false
-  xy: 1, 333
-  size: 105, 109
-  orig: 105, 109
-  offset: 0, 0
-  index: -1
-okuu_idle01
-  rotate: false
-  xy: 1, 223
-  size: 108, 108
-  orig: 108, 108
-  offset: 0, 0
-  index: -1
-okuu_idle22
-  rotate: false
-  xy: 108, 333
-  size: 105, 109
-  orig: 105, 109
-  offset: 0, 0
-  index: -1
-okuu_idle12
-  rotate: false
-  xy: 1, 1
-  size: 110, 109
-  orig: 110, 109
-  offset: 0, 0
-  index: -1
-okuu_idle23
-  rotate: false
-  xy: 215, 553
-  size: 104, 109
-  orig: 104, 109
   offset: 0, 0
   index: -1
 okuu_idle13
@@ -153,14 +69,77 @@ okuu_idle13
   index: -1
 okuu_idle08
   rotate: false
-  xy: 215, 443
+  xy: 1, 444
   size: 105, 108
   orig: 105, 108
   offset: 0, 0
   index: -1
-okuu_idle18
+okuu_idle00
   rotate: false
-  xy: 335, 111
+  xy: 337, 1
+  size: 110, 108
+  orig: 110, 108
+  offset: 0, 0
+  index: -1
+okuu_idle23
+  rotate: false
+  xy: 321, 553
+  size: 104, 109
+  orig: 104, 109
+  offset: 0, 0
+  index: -1
+okuu_idle02
+  rotate: false
+  xy: 108, 444
+  size: 105, 108
+  orig: 105, 108
+  offset: 0, 0
+  index: -1
+okuu_idle19
+  rotate: false
+  xy: 113, 1
+  size: 110, 109
+  orig: 110, 109
+  offset: 0, 0
+  index: -1
+okuu_idle12
+  rotate: false
+  xy: 1, 1
+  size: 110, 109
+  orig: 110, 109
+  offset: 0, 0
+  index: -1
+okuu_idle10
+  rotate: false
+  xy: 107, 554
+  size: 104, 108
+  orig: 104, 108
+  offset: 0, 0
+  index: -1
+okuu_idle16
+  rotate: false
+  xy: 215, 553
+  size: 104, 109
+  orig: 104, 109
+  offset: 0, 0
+  index: -1
+okuu_idle03
+  rotate: false
+  xy: 322, 443
+  size: 105, 108
+  orig: 105, 108
+  offset: 0, 0
+  index: -1
+okuu_idle24
+  rotate: false
+  xy: 1, 223
+  size: 108, 108
+  orig: 108, 108
+  offset: 0, 0
+  index: -1
+okuu_idle20
+  rotate: false
+  xy: 1, 112
   size: 108, 109
   orig: 108, 109
   offset: 0, 0
@@ -172,10 +151,31 @@ okuu_idle04
   orig: 104, 108
   offset: 0, 0
   index: -1
-okuu_idle20
+okuu_idle14
+  rotate: false
+  xy: 1, 333
+  size: 105, 109
+  orig: 105, 109
+  offset: 0, 0
+  index: -1
+okuu_idle11
   rotate: false
   xy: 111, 112
   size: 108, 109
   orig: 108, 109
+  offset: 0, 0
+  index: -1
+okuu_idle01
+  rotate: false
+  xy: 221, 222
+  size: 108, 108
+  orig: 108, 108
+  offset: 0, 0
+  index: -1
+okuu_idle21
+  rotate: false
+  xy: 221, 332
+  size: 105, 109
+  orig: 105, 109
   offset: 0, 0
   index: -1
