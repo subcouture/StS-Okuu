@@ -18,7 +18,7 @@ public class MeltingHurricane extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(MeltingHurricane.class.getSimpleName());
-    public static final String IMG = makeCardPath("MeltingHurricane.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
     // /TEXT DECLARATION/
 

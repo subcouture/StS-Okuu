@@ -1,5 +1,6 @@
 package utsuhoReiuji;
 
+import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -409,7 +410,8 @@ public class OkuuMod implements
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new SecondMagicNumber());
-        
+
+        /*
         logger.info("Adding cards");
         // Add the cards
         // Don't comment out/delete these cards (yet). You need 1 of each type and rarity (technically) for your game not to crash
@@ -466,6 +468,13 @@ public class OkuuMod implements
         UnlockTracker.unlockCard(HighTensionBlade.ID);
         UnlockTracker.unlockCard(SelfTokamak.ID);
         UnlockTracker.unlockCard(EightfoldConduct.ID);
+
+         */
+
+        new AutoAdd("${project.artifactId}")
+                .packageFilter("utsuhoReiuji.cards")
+                .setDefaultSeen(true)
+                .cards();
 
         logger.info("Done adding cards!");
     }

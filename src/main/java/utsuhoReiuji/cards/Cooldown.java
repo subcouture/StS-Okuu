@@ -18,7 +18,7 @@ public class Cooldown extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(Cooldown.class.getSimpleName());
-    public static final String IMG = makeCardPath("Cooldown.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
     // /TEXT DECLARATION/
 

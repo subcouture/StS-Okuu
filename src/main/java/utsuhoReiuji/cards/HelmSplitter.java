@@ -19,7 +19,7 @@ public class HelmSplitter extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(HelmSplitter.class.getSimpleName());
-    public static final String IMG = makeCardPath("HelmSplitter.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
     // /TEXT DECLARATION/
 

@@ -16,7 +16,7 @@ public class ApollosLight extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(ApollosLight.class.getSimpleName());
-    public static final String IMG = makeCardPath("ApollosLight.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
     // /TEXT DECLARATION/
 

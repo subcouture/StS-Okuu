@@ -19,7 +19,7 @@ public class FissionCrush extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(FissionCrush.class.getSimpleName());
-    public static final String IMG = makeCardPath("FissionCrush.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
     // /TEXT DECLARATION/
 

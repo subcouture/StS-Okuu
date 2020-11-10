@@ -18,7 +18,7 @@ public class FlareUp extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(FlareUp.class.getSimpleName());
-    public static final String IMG = makeCardPath("FlareUp.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
     // /TEXT DECLARATION/
 
