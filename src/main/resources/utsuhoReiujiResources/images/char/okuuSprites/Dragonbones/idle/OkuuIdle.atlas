@@ -13,35 +13,35 @@ Shadow
   index: -1
 okuu_idle22
   rotate: false
-  xy: 108, 333
+  xy: 328, 332
   size: 105, 109
   orig: 105, 109
   offset: 0, 0
   index: -1
 okuu_idle05
   rotate: false
-  xy: 331, 222
+  xy: 1, 223
   size: 108, 108
   orig: 108, 108
   offset: 0, 0
   index: -1
 okuu_idle15
   rotate: false
-  xy: 328, 332
+  xy: 108, 333
   size: 105, 109
   orig: 105, 109
   offset: 0, 0
   index: -1
 okuu_idle18
   rotate: false
-  xy: 335, 111
+  xy: 111, 112
   size: 108, 109
   orig: 108, 109
   offset: 0, 0
   index: -1
 okuu_idle07
   rotate: false
-  xy: 111, 223
+  xy: 331, 222
   size: 108, 108
   orig: 108, 108
   offset: 0, 0
@@ -55,21 +55,21 @@ okuu_idle06
   index: -1
 okuu_idle09
   rotate: false
-  xy: 215, 443
+  xy: 322, 443
   size: 105, 108
   orig: 105, 108
   offset: 0, 0
   index: -1
 okuu_idle13
   rotate: false
-  xy: 225, 111
+  xy: 335, 111
   size: 108, 109
   orig: 108, 109
   offset: 0, 0
   index: -1
 okuu_idle08
   rotate: false
-  xy: 1, 444
+  xy: 215, 443
   size: 105, 108
   orig: 105, 108
   offset: 0, 0
@@ -90,7 +90,7 @@ okuu_idle23
   index: -1
 okuu_idle02
   rotate: false
-  xy: 108, 444
+  xy: 1, 444
   size: 105, 108
   orig: 105, 108
   offset: 0, 0
@@ -111,7 +111,7 @@ okuu_idle12
   index: -1
 okuu_idle10
   rotate: false
-  xy: 107, 554
+  xy: 1, 554
   size: 104, 108
   orig: 104, 108
   offset: 0, 0
@@ -125,14 +125,14 @@ okuu_idle16
   index: -1
 okuu_idle03
   rotate: false
-  xy: 322, 443
+  xy: 108, 444
   size: 105, 108
   orig: 105, 108
   offset: 0, 0
   index: -1
 okuu_idle24
   rotate: false
-  xy: 1, 223
+  xy: 221, 222
   size: 108, 108
   orig: 108, 108
   offset: 0, 0
@@ -146,7 +146,7 @@ okuu_idle20
   index: -1
 okuu_idle04
   rotate: false
-  xy: 1, 554
+  xy: 107, 554
   size: 104, 108
   orig: 104, 108
   offset: 0, 0
@@ -160,14 +160,14 @@ okuu_idle14
   index: -1
 okuu_idle11
   rotate: false
-  xy: 111, 112
+  xy: 225, 111
   size: 108, 109
   orig: 108, 109
   offset: 0, 0
   index: -1
 okuu_idle01
   rotate: false
-  xy: 221, 222
+  xy: 111, 223
   size: 108, 108
   orig: 108, 108
   offset: 0, 0
