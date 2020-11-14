@@ -22,7 +22,7 @@ import javassist.CtBehavior;
 
 public class GalaxyChromaKeySkeletonPatch {
     public static ShaderProgram shader = new ShaderProgram(
-//            Gdx.files.internal("utsuhoReiujiResources/shaders/chromakey/vertexShader.vs"),
+//            Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
             Gdx.files.internal("E:/Game Projects/tools/shaders/vertexShader.vs"),
             Gdx.files.internal("E:/Game Projects/tools/shaders/fragShader.fs")
     );

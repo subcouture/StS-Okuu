@@ -1,7 +1,7 @@
 {
-  "modid": "${project.artifactId}",
+  "modid": "subcouture:${project.artifactId}",
   "name": "${project.name}",
-  "author_list": ["Gremious"],
+  "author_list": ["subcouture"],
   "credits": "Basemod, ModTheSpire",
   "description": "${project.description}",
   "version": "${project.version}",
