@@ -177,6 +177,8 @@ public class UtsuhoReiuji extends CustomPlayer {
         retVal.add(CreepingSun.ID);
         retVal.add(EightfoldConduct.ID);
 
+        retVal.add(BurnOut.ID);
+
 
        // retVal.add(DefaultCommonSkill.ID);
        // retVal.add(DefaultUncommonSkill.ID);

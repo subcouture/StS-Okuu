@@ -1,5 +1,5 @@
 {
-  "modid": "subcouture:${project.artifactId}",
+  "modid": "subcouture:OkuuMod",
   "name": "${project.name}",
   "author_list": ["subcouture"],
   "credits": "Basemod, ModTheSpire",

@@ -471,7 +471,7 @@ public class OkuuMod implements
 
          */
 
-        new AutoAdd("subcouture:${project.artifactId}")
+        new AutoAdd("subcouture:OkuuMod")
                 .packageFilter("utsuhoReiuji.cards")
                 .setDefaultSeen(true)
                 .cards();
