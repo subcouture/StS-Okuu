@@ -1,5 +1,5 @@
 
-OkuuIdle.png
+skeleton.png
 size: 512,1024
 format: RGBA8888
 filter: Linear,Linear
@@ -20,7 +20,7 @@ okuu_idle19
   index: -1
 okuu_idle22
   rotate: false
-  xy: 328, 332
+  xy: 108, 333
   size: 105, 109
   orig: 105, 109
   offset: 0, 0
@@ -34,7 +34,7 @@ okuu_idle10
   index: -1
 okuu_idle00
   rotate: false
-  xy: 337, 1
+  xy: 225, 1
   size: 110, 108
   orig: 110, 108
   offset: 0, 0
@@ -48,7 +48,7 @@ okuu_idle23
   index: -1
 okuu_idle01
   rotate: false
-  xy: 1, 223
+  xy: 331, 222
   size: 108, 108
   orig: 108, 108
   offset: 0, 0
@@ -62,35 +62,35 @@ okuu_idle07
   index: -1
 okuu_idle03
   rotate: false
-  xy: 108, 444
+  xy: 1, 444
   size: 105, 108
   orig: 105, 108
   offset: 0, 0
   index: -1
 okuu_idle06
   rotate: false
-  xy: 225, 1
+  xy: 337, 1
   size: 110, 108
   orig: 110, 108
   offset: 0, 0
   index: -1
 okuu_idle13
   rotate: false
-  xy: 1, 112
+  xy: 335, 111
   size: 108, 109
   orig: 108, 109
   offset: 0, 0
   index: -1
 okuu_idle14
   rotate: false
-  xy: 1, 333
+  xy: 328, 332
   size: 105, 109
   orig: 105, 109
   offset: 0, 0
   index: -1
 okuu_idle24
   rotate: false
-  xy: 331, 222
+  xy: 221, 222
   size: 108, 108
   orig: 108, 108
   offset: 0, 0
@@ -111,21 +111,21 @@ okuu_idle04
   index: -1
 okuu_idle21
   rotate: false
-  xy: 108, 333
+  xy: 1, 333
   size: 105, 109
   orig: 105, 109
   offset: 0, 0
   index: -1
 okuu_idle05
   rotate: false
-  xy: 221, 222
+  xy: 1, 223
   size: 108, 108
   orig: 108, 108
   offset: 0, 0
   index: -1
 okuu_idle20
   rotate: false
-  xy: 335, 111
+  xy: 111, 112
   size: 108, 109
   orig: 108, 109
   offset: 0, 0
@@ -146,14 +146,14 @@ okuu_idle16
   index: -1
 okuu_idle09
   rotate: false
-  xy: 322, 443
+  xy: 108, 444
   size: 105, 108
   orig: 105, 108
   offset: 0, 0
   index: -1
 okuu_idle18
   rotate: false
-  xy: 225, 111
+  xy: 1, 112
   size: 108, 109
   orig: 108, 109
   offset: 0, 0
@@ -167,14 +167,14 @@ okuu_idle15
   index: -1
 okuu_idle08
   rotate: false
-  xy: 1, 444
+  xy: 322, 443
   size: 105, 108
   orig: 105, 108
   offset: 0, 0
   index: -1
 okuu_idle11
   rotate: false
-  xy: 111, 112
+  xy: 225, 111
   size: 108, 109
   orig: 108, 109
   offset: 0, 0
