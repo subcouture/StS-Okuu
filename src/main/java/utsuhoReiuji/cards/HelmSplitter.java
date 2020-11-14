@@ -46,6 +46,7 @@ public class HelmSplitter extends AbstractDynamicCard {
     }
 
 
+    //TODO write card text for helmsplitter
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

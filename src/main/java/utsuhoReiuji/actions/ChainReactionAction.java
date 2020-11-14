@@ -29,6 +29,7 @@ public class ChainReactionAction extends AbstractGameAction{
         this(target, card, info, AttackEffect.NONE);
     }
 
+    //TODO make this work with more than just attacks
     @Override
     public void update() {
         this.isDone = true;

@@ -45,6 +45,7 @@ public class FlareUp extends AbstractDynamicCard {
     }
 
 
+    //TODO write radiate into a cardmod so it's easier to apply?
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

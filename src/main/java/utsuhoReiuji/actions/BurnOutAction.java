@@ -28,6 +28,7 @@ public class BurnOutAction extends AbstractGameAction {
     }
 
 
+    //TODO work out why card loops to hand infinitely
     @Override
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {

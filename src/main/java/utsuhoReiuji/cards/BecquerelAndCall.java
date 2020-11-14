@@ -45,6 +45,7 @@ public class BecquerelAndCall extends AbstractDynamicCard {
     }
 
 
+    //TODO implement the graceful charity effect
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
