@@ -133,6 +133,11 @@ public class UtsuhoReiuji extends CustomPlayer {
         for(Texture tex: atlas.getTextures()){
             tex.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
         }
+
+        this.stateData.setMix("Idle", "PhysicalAttack", 0.2f);
+        this.stateData.setMix("PhysicalAttack", "Idle", 0.2f);
+
+
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
 //        e.setTimeScale(0.8f);
@@ -148,6 +153,17 @@ public class UtsuhoReiuji extends CustomPlayer {
         // =============== /TEXT BUBBLE LOCATION/ =================
 
     }
+
+    // =========== ATTACK AND HIT ANIMATIONS =====================
+
+    @Override
+    public void useFastAttackAnimation(){
+        AnimationState.TrackEntry e = state.setAnimation(0, "PhysicalAttack", false);
+        state.addAnimation(0,"Idle", true, 1.1f);
+    }
+
+
+    // =========== /ATTACK AND HIT ANIMATIONS/ =====================
 
     // =============== /CHARACTER CLASS END/ =================
 
@@ -312,5 +328,6 @@ public class UtsuhoReiuji extends CustomPlayer {
     public String getVampireText() {
         return TEXT[2];
     }
+
 
 }
