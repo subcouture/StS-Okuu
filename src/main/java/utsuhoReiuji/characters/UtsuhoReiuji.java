@@ -11,6 +11,7 @@ import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -160,6 +161,17 @@ public class UtsuhoReiuji extends CustomPlayer {
     public void useFastAttackAnimation(){
         AnimationState.TrackEntry e = state.setAnimation(0, "PhysicalAttack", false);
         state.addAnimation(0,"Idle", true, 1.1f);
+    }
+
+    @Override
+    public void damage(DamageInfo info)
+    {
+        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output > currentBlock) {
+            AnimationState.TrackEntry e = state.setAnimation(0, "Hit", false);
+            state.addAnimation(0,"Idle", true, 0.3f);
+            //e.setTimeScale(1f);
+        }
+        super.damage(info);
     }
 
 
