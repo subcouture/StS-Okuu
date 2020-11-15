@@ -1,4 +1,4 @@
-/*package utsuhoReiuji.patches;
+package utsuhoReiuji.patches;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -86,4 +86,3 @@ public class GalaxyChromaKeyRenderPatch {
         }
     }
 }
-*/

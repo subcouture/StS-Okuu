@@ -198,7 +198,7 @@ public class UtsuhoReiuji extends CustomPlayer {
     // =========== /ATTACK AND HIT ANIMATIONS/ =====================
 
     //====================== SHADERS ========================
-
+/*
 
     public static ShaderProgram shader = new ShaderProgram(
             Gdx.files.internal("E:/Game Projects/tools/shaders/vertexShader.vs"),
@@ -240,7 +240,7 @@ public class UtsuhoReiuji extends CustomPlayer {
         }
     }
 
-    /*@Override
+    @Override
     public void render(SpriteBatch sb){
         this.stance.render(sb);
         if ((AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.getCurrRoom() instanceof MonsterRoom) && !this.isDead) {
