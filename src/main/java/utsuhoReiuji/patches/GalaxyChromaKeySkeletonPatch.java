@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import javassist.CtBehavior;
+import utsuhoReiuji.characters.UtsuhoReiuji;
 
 
 @SpirePatch(
@@ -36,6 +37,7 @@ public class GalaxyChromaKeySkeletonPatch {
     )
     public static void InsertSkeletonStart(AbstractPlayer __instance, SpriteBatch sb)
     {
+        if(__instance instanceof UtsuhoReiuji) {
             currentTime += Gdx.graphics.getDeltaTime();
             shader.begin();
             CardCrawlGame.psb.setShader(shader);
@@ -45,6 +47,7 @@ public class GalaxyChromaKeySkeletonPatch {
             Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_T, GL20.GL_REPEAT);
             shader.setUniformi("u_galaxyTexture", 1);
             Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
+        }
     }
 
     @SpireInsertPatch(
@@ -52,8 +55,10 @@ public class GalaxyChromaKeySkeletonPatch {
     )
     public static void InsertSkeletonEnd(AbstractPlayer __instance, SpriteBatch sb)
     {
+        if(__instance instanceof UtsuhoReiuji) {
             CardCrawlGame.psb.setShader(null);
             shader.end();
+        }
     }
 
     private static class LocatorSkeletonStart extends SpireInsertLocator

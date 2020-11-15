@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import javassist.CtBehavior;
+import utsuhoReiuji.characters.UtsuhoReiuji;
 
 import java.sql.Time;
 
@@ -41,16 +42,18 @@ public class GalaxyChromaKeyRenderPatch {
             localvars={"atlas"}
     )
     public static void InsertImageStart(AbstractPlayer __instance, SpriteBatch sb, TextureAtlas atlas) {
-        currentTime += Gdx.graphics.getDeltaTime();
-        if (atlas == null) {
-            shader.begin();
-            sb.setShader(shader);
-            shader.setUniformf("Time", currentTime);
-            galaxyTexture.bind(1);
-            Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_S, GL20.GL_REPEAT);
-            Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_T, GL20.GL_REPEAT);
-            shader.setUniformi("u_galaxyTexture", 1);
-            Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
+        if(__instance instanceof UtsuhoReiuji) {
+            currentTime += Gdx.graphics.getDeltaTime();
+            if (atlas == null) {
+                shader.begin();
+                sb.setShader(shader);
+                shader.setUniformf("Time", currentTime);
+                galaxyTexture.bind(1);
+                Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_S, GL20.GL_REPEAT);
+                Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_T, GL20.GL_REPEAT);
+                shader.setUniformi("u_galaxyTexture", 1);
+                Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
+            }
         }
     }
 
@@ -59,10 +62,11 @@ public class GalaxyChromaKeyRenderPatch {
             localvars={"atlas"}
     )
     public static void InsertImageEnd(AbstractPlayer __instance, SpriteBatch sb, TextureAtlas atlas) {
-
-        if (atlas == null) {
-            sb.setShader(null);
-            shader.end();
+        if(__instance instanceof UtsuhoReiuji) {
+            if (atlas == null) {
+                sb.setShader(null);
+                shader.end();
+            }
         }
     }
 
