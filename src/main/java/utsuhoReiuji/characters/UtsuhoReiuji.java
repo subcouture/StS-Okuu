@@ -3,9 +3,13 @@ package utsuhoReiuji.characters;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
@@ -16,10 +20,15 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
+import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -32,6 +41,7 @@ import utsuhoReiuji.relics.PlaceholderRelic;
 import utsuhoReiuji.relics.PlaceholderRelic2;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import static utsuhoReiuji.OkuuMod.*;
 import static utsuhoReiuji.characters.UtsuhoReiuji.Enums.REIUJI_GREEN;
@@ -137,11 +147,13 @@ public class UtsuhoReiuji extends CustomPlayer {
 
         this.stateData.setMix("Idle", "PhysicalAttack", 0.2f);
         this.stateData.setMix("PhysicalAttack", "Idle", 0.2f);
+        this.stateData.setMix("Idle", "Death", 0.0f);
+        this.stateData.setMix("PhysicalAttack", "Death", 0.0f);
 
 
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
-//        e.setTimeScale(0.8f);
+        e.setTimeScale(1f);
 
         // =============== /ANIMATIONS/ =================
 
@@ -161,6 +173,7 @@ public class UtsuhoReiuji extends CustomPlayer {
     public void useFastAttackAnimation(){
         AnimationState.TrackEntry e = state.setAnimation(0, "PhysicalAttack", false);
         state.addAnimation(0,"Idle", true, 1.1f);
+        e.setTimeScale(1f);
     }
 
     @Override
@@ -169,13 +182,110 @@ public class UtsuhoReiuji extends CustomPlayer {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output > currentBlock) {
             AnimationState.TrackEntry e = state.setAnimation(0, "Hit", false);
             state.addAnimation(0,"Idle", true, 0.3f);
-            //e.setTimeScale(1f);
+            e.setTimeScale(1f);
         }
         super.damage(info);
     }
 
+    @Override
+    public void playDeathAnimation(){
+        AnimationState.TrackEntry e = state.setAnimation(0, "Death", false);
+        e.setTimeScale(0.5f);
+        //state.addAnimation(0,"Death", false, 0f);
+    }
+
 
     // =========== /ATTACK AND HIT ANIMATIONS/ =====================
+
+    //====================== SHADERS ========================
+
+
+    public static ShaderProgram shader = new ShaderProgram(
+            Gdx.files.internal("E:/Game Projects/tools/shaders/vertexShader.vs"),
+            Gdx.files.internal("E:/Game Projects/tools/shaders/fragShader.fs")
+    );
+
+    private static Texture galaxyTexture = new Texture(Gdx.files.internal("utsuhoReiujiResources/images/char/okuuSprites/loopingGalaxy.png"));
+
+    public static float currentTime = 0.0f;
+
+    @Override
+    public void renderPlayerImage(SpriteBatch sb){
+        if (this.atlas != null) {
+            this.state.update(Gdx.graphics.getDeltaTime());
+            this.state.apply(this.skeleton);
+            this.skeleton.updateWorldTransform();
+            currentTime += Gdx.graphics.getDeltaTime();
+            shader.begin();
+            CardCrawlGame.psb.setShader(shader);
+            shader.setUniformf("Time", currentTime);
+            galaxyTexture.bind(1);
+            Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_S, GL20.GL_REPEAT);
+            Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_T, GL20.GL_REPEAT);
+            shader.setUniformi("u_galaxyTexture", 1);
+            Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
+            this.skeleton.setPosition(this.drawX + this.animX, this.drawY + this.animY);
+            this.skeleton.setColor(this.tint.color);
+            this.skeleton.setFlip(this.flipHorizontal, this.flipVertical);
+            CardCrawlGame.psb.setShader(null);
+            shader.end();
+            sb.end();
+            CardCrawlGame.psb.begin();
+            sr.draw(CardCrawlGame.psb, this.skeleton);
+            CardCrawlGame.psb.end();
+            sb.begin();
+        } else {
+            sb.setColor(Color.WHITE);
+            sb.draw(this.img, this.drawX - (float)this.img.getWidth() * Settings.scale / 2.0F + this.animX, this.drawY, (float)this.img.getWidth() * Settings.scale, (float)this.img.getHeight() * Settings.scale, 0, 0, this.img.getWidth(), this.img.getHeight(), this.flipHorizontal, this.flipVertical);
+        }
+    }
+
+    /*@Override
+    public void render(SpriteBatch sb){
+        this.stance.render(sb);
+        if ((AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.getCurrRoom() instanceof MonsterRoom) && !this.isDead) {
+            this.renderHealth(sb);
+            if (!this.orbs.isEmpty()) {
+                Iterator var2 = this.orbs.iterator();
+
+                while(var2.hasNext()) {
+                    AbstractOrb o = (AbstractOrb)var2.next();
+                    o.render(sb);
+                }
+            }
+        }
+
+        if (!(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
+            currentTime += Gdx.graphics.getDeltaTime();
+            if (atlas == null) {
+                shader.begin();
+                sb.setShader(shader);
+                shader.setUniformf("Time", currentTime);
+                galaxyTexture.bind(1);
+                Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_S, GL20.GL_REPEAT);
+                Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_T, GL20.GL_REPEAT);
+                shader.setUniformi("u_galaxyTexture", 1);
+                Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
+            }
+            if (this.atlas != null) {
+
+                this.renderPlayerImage(sb);
+            } else {
+                sb.setColor(Color.WHITE);
+                sb.draw(this.img, this.drawX - (float)this.img.getWidth() * Settings.scale / 2.0F + this.animX, this.drawY, (float)this.img.getWidth() * Settings.scale, (float)this.img.getHeight() * Settings.scale, 0, 0, this.img.getWidth(), this.img.getHeight(), this.flipHorizontal, this.flipVertical);
+            }
+            if (atlas == null) {
+                sb.setShader(null);
+                shader.end();
+            }
+            this.hb.render(sb);
+            this.healthHb.render(sb);
+        } else {
+            sb.setColor(Color.WHITE);
+            this.renderShoulderImg(sb);
+        }
+    }*/
+    // ===================== /SHADERS/ =====================
 
     // =============== /CHARACTER CLASS END/ =================
 

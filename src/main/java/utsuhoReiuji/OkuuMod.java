@@ -29,8 +29,6 @@ import utsuhoReiuji.cards.*;
 import utsuhoReiuji.cards.defaultCards.*;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 import utsuhoReiuji.events.IdentityCrisisEvent;
-import utsuhoReiuji.patches.GalaxyChromaKeyRenderPatch;
-import utsuhoReiuji.patches.GalaxyChromaKeySkeletonPatch;
 import utsuhoReiuji.potions.PlaceholderPotion;
 import utsuhoReiuji.relics.BottledPlaceholderRelic;
 import utsuhoReiuji.relics.DefaultClickableRelic;
@@ -81,8 +79,7 @@ public class OkuuMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber,
-        PostUpdateSubscriber {
+        PostInitializeSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(OkuuMod.class.getName());
@@ -560,7 +557,7 @@ public class OkuuMod implements
     }
 
 
-    //TODO remember to remove this post debugging
+/*    //TODO remember to remove this post debugging
     @Override
     public void receivePostUpdate() {
         if (Gdx.input.isKeyJustPressed(Input.Keys.R)) {
@@ -576,7 +573,7 @@ public class OkuuMod implements
                     Gdx.files.internal("E:/Game Projects/tools/shaders/fragShader.fs")
             );
         }
-    }
+    }*/
 }
 
 //                                                            /*&&&&

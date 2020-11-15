@@ -8,10 +8,10 @@ import os
 # Function to rename multiple files 
 def main(): 
   
-    for count, filename in enumerate(os.listdir("ExtractedSpritesAttack")): 
-        dst ="okuu_attack" + '{:02}'.format(count) + ".png"
-        src ='ExtractedSpritesAttack/'+ filename 
-        dst ='ExtractedSpritesAttack/'+ dst 
+    for count, filename in enumerate(os.listdir("ExtractedSpritesDown")): 
+        dst ="okuu_down" + '{:02}'.format(count) + ".png"
+        src ='ExtractedSpritesDown/'+ filename 
+        dst ='ExtractedSpritesDown/'+ dst 
           
         # rename() function will 
         # rename all the files 

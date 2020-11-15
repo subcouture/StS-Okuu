@@ -1,4 +1,4 @@
-package utsuhoReiuji.patches;
+/*package utsuhoReiuji.patches;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -12,6 +12,7 @@ import com.esotericsoftware.spine.SkeletonMeshRenderer;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import javassist.CtBehavior;
 
@@ -80,8 +81,9 @@ public class GalaxyChromaKeyRenderPatch {
         @Override
         public int[] Locate(CtBehavior ctMethodToPatch) throws Exception
         {
-            Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractPlayer.class, "isDead");
+            Matcher finalMatcher = new Matcher.MethodCallMatcher(Hitbox.class, "render");
             return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
         }
     }
 }
+*/
