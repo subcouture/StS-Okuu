@@ -12,17 +12,18 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import javassist.CtBehavior;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 
+//TODO work out if the image version of this patch is actually necessary
+
+
 @SpirePatch(
         clz= AbstractPlayer.class,
         method="render"
 )
 
-
-//TODO Remember to remove this after finished debugging
 public class GalaxyChromaKeyRenderPatch {
     public static ShaderProgram shader = new ShaderProgram(
-            Gdx.files.internal("E:/Game Projects/tools/shaders/vertexShader.vs"),
-            Gdx.files.internal("E:/Game Projects/tools/shaders/fragShader.fs")
+            Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
+            Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
     );
 
     public static float currentTime = 0.0f;

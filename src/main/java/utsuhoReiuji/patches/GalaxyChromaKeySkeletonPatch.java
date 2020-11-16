@@ -22,8 +22,8 @@ import utsuhoReiuji.characters.UtsuhoReiuji;
 public class GalaxyChromaKeySkeletonPatch {
     public static ShaderProgram shader = new ShaderProgram(
 //            Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
-            Gdx.files.internal("E:/Game Projects/tools/shaders/vertexShader.vs"),
-            Gdx.files.internal("E:/Game Projects/tools/shaders/fragShader.fs")
+            Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
+            Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
     );
 
     private static Texture galaxyTexture = new Texture(Gdx.files.internal("utsuhoReiujiResources/images/char/okuuSprites/loopingGalaxy.png"));

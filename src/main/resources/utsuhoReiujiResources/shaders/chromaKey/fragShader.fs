@@ -1,6 +1,7 @@
 //SpriteBatch will use texture unit 0
 uniform sampler2D u_texture;
 uniform sampler2D u_galaxyTexture;
+uniform float Time;
 
 //"in" varyings from our vertex shader
 varying vec4 v_color;
@@ -36,7 +37,7 @@ vec3 rgb2hsv(vec3 rgb)
 
 float chromaKey(vec3 color)
 {
-	vec3 backgroundColor = vec3(0.9, 0.1, 0.9);
+	vec3 backgroundColor = vec3(1, 0, 1);
 	vec3 weights = vec3(4., 1., 0.);
 
 	vec3 hsv = rgb2hsv(color);
@@ -56,8 +57,12 @@ vec3 changeSaturation(vec3 color, float saturation)
 
 void main() {
     //sample the texture
+	
     vec4 texColor = texture2D(u_texture, v_texCoord);
-    vec3 c = texture2D(u_galaxyTexture, (gl_FragCoord.xy / textureSize(u_galaxyTexture, 0))).rgb;
+    vec3 c = texture2D(u_galaxyTexture, vec2(gl_FragCoord.x/(textureSize(u_galaxyTexture, 0).x) + Time/100, gl_FragCoord.y/(textureSize(u_galaxyTexture, 0).y) + Time/100)).rgb;
+	//vec3 c = texture2D(u_galaxyTexture, gl_FragCoord/textureSize(u_galaxyTexture, 0)).rgb;
+	
+	
 	//textureLength = textureSize(u_galaxyTexture, 0).x;
 	
 	//vec3 c = texture2D(u_galaxyTexture, textureSize(u_galaxyTexture)).rgb;
