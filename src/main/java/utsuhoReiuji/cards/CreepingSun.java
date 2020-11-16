@@ -38,8 +38,6 @@ public class CreepingSun extends AbstractDynamicCard {
 
     // /STAT DECLARATION/
 
-
-    //TODO add creepingSun power text
     public CreepingSun() { // public CreepingSun() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = VIGOR;

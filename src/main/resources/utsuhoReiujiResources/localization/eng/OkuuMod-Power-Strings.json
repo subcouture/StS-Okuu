@@ -13,7 +13,7 @@
   },
   "utsuhoReiuji:SelfTokamakPower": {
     "NAME": "Self Tokamak",
-    "DESCRIPTIONS" : ["At the start of the next turn, gain", "block."]
+    "DESCRIPTIONS" : ["At the start of the next turn, gain #b", "Block."]
   },
   "utsuhoReiuji:CreepingSunPower": {
     "NAME": "Creeping Sun",
