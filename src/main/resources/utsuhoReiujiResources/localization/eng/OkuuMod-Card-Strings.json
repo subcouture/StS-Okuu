@@ -47,9 +47,13 @@
     "NAME": "Cooldown",
     "DESCRIPTION": "Next turn, gain !B! Block."
   },
-  "utsuhoReiuji:BecquerelAndCall": {
-    "NAME": "Becquerel And Call",
+  "utsuhoReiuji:AbyssNova": {
+    "NAME": "Abyss Nova",
     "DESCRIPTION": "Choose 5 cards in your exhaust pile. Exhaust your deck. Put those cards in your hand. NL They cost 0 this turn."
+  },
+  "utsuhoReiuji:BecquerelAndCall" : {
+    "NAME" : "Becquerel And Call",
+    "DESCRIPTION" : "Draw !M! cards, then place !utsuhoReiuji:SecondMagic! cards on top of your deck."
   },
   "utsuhoReiuji:EmergencyShutdown": {
     "NAME": "Emergency Shutdown",

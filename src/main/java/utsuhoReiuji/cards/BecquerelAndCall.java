@@ -2,6 +2,8 @@ package utsuhoReiuji.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.PutOnDeckAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -26,31 +28,33 @@ public class BecquerelAndCall extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.ATTACK;       //
+    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
+    private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = UtsuhoReiuji.Enums.REIUJI_GREEN;
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
 
-    private static final int DAMAGE = 1;
-    private static final int UPGRADE_PLUS_DMG = 1;
+    private static final int DRAW = 3;
+
+    private static final int RETURN = 2;
+    private static final int UPGRADED_RETURN = -1;
 
     // /STAT DECLARATION/
 
 
     public BecquerelAndCall() { // public BecquerelAndCall() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        baseMagicNumber = magicNumber = DRAW;
+        secondMagicNumber = baseSecondMagicNumber = RETURN;
     }
 
-
-    //TODO implement the graceful charity effect
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new DrawCardAction(p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(
+                new PutOnDeckAction(p, p, secondMagicNumber, false));
     }
 
 
@@ -59,7 +63,7 @@ public class BecquerelAndCall extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeSecondMagicNumber(UPGRADED_RETURN);
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
