@@ -11,12 +11,13 @@
          "NAME": "Placeholder Power",
        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
   },
-  "utsuhoReiuji:CreepingSunPower": {
-    "NAME": "The Creeping Sun",
-    "DESCRIPTIONS" : ["Until you play your next attack, each card you play gains", "damage." ]
-  },
   "utsuhoReiuji:SelfTokamakPower": {
     "NAME": "Self Tokamak",
     "DESCRIPTIONS" : ["At the start of the next turn, gain", "block."]
+  },
+  "utsuhoReiuji:CreepingSunPower": {
+    "NAME": "Creeping Sun",
+    "DESCRIPTIONS" : ["Increase the damage dealt by your next attack damage by", "for each card you play until your next attack."]
   }
+
 }
