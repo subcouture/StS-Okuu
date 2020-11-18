@@ -38,5 +38,19 @@
       "multikeyword"
     ],
     "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+  },
+  {
+    "PROPER_NAME" : "Hellbound",
+    "NAMES": [
+      "hellbound"
+    ],
+    "DESCRIPTION": "If this is the only non-unplayable card in your hand, apply an additional effect"
+  },
+  {
+    "PROPER_NAME" : "Radiate",
+    "NAMES": [
+      "radiate"
+    ],
+    "DESCRIPTION": "If you cannot play this card, you may instead play it for its Radiate cost. If you do, if affects #b EVERYONE."
   }
 ]
