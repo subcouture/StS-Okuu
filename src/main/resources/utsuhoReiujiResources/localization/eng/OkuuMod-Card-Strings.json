@@ -133,5 +133,18 @@
   "utsuhoReiuji:BurnOut": {
     "NAME" : "Burn Out",
     "DESCRIPTION" : "Deal !D! damage. Exhaust a card. If a card is exhausted this way, return this card to your hand. Ethereal."
+  },
+  "utsuhoReiuji:HelmSplitter": {
+    "NAME" : "Helm Splitter",
+    "DESCRIPTION" : "Deal !D! damage. NL Discard a card at random.",
+    "UPGRADE_DESCRIPTION" : "Deal !D! damage. NL Discard a card."
+  },
+  "utsuhoReiuji:MeltingHurricane": {
+    "NAME" : "Melting Hurricane",
+    "DESCRIPTION" : "Deal !D! damage 4 times. NL Fission: Gain 1 Strength"
+  },
+  "utsuhoReiuji:FlareUp": {
+    "NAME" : "Flare Up",
+    "DESCRIPTION" : "Gain !M! Strength. Take !D! damage. Radiate 0."
   }
 }
