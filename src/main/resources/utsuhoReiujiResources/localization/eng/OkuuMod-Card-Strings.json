@@ -13,7 +13,7 @@
   },
   "utsuhoReiuji:VengefulSpirits": {
     "NAME": "Vengeful Spirits",
-    "DESCRIPTION": "Unplayable. NL Fission: Draw !SecondMagic! cards. Deal 1 damage !M! times."
+    "DESCRIPTION": "Unplayable. NL Fission: Draw !utsuhoReiuji:SecondM! cards. Deal 1 damage !M! times."
   },
   "utsuhoReiuji:HighTensionBlade": {
     "NAME": "High Tension Blade",
@@ -25,7 +25,7 @@
   },
   "utsuhoReiuji:TheTenSuns": {
     "NAME": "The Ten Suns",
-    "DESCRIPTION": "The next card you play gains Chain Reaction."
+    "DESCRIPTION": "The next card you play gains utsuhoreiuji:Chain_Reaction ."
   },
   "utsuhoReiuji:CannonCross": {
     "NAME": "Cannon Cross",
@@ -53,7 +53,7 @@
   },
   "utsuhoReiuji:BecquerelAndCall" : {
     "NAME" : "Becquerel And Call",
-    "DESCRIPTION" : "Draw !M! cards, then place !utsuhoReiuji:SecondMagic! cards on top of your deck."
+    "DESCRIPTION" : "Draw !M! cards, then place !utsuhoReiuji:SecondM! cards on top of your deck."
   },
   "utsuhoReiuji:EmergencyShutdown": {
     "NAME": "Emergency Shutdown",
@@ -120,10 +120,18 @@
   },
   "utsuhoReiuji:DefaultSecondMagicNumberSkill": {
     "NAME": "Cool 2 Number Card",
-    "DESCRIPTION": "Apply !M! vulnerable and !utsuhoReiuji:SecondMagic! poison to an enemy."
+    "DESCRIPTION": "Apply !M! vulnerable and !utsuhoReiuji:SecondM! poison to an enemy."
   },
   "utsuhoReiuji:OrbSkill": {
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
+  },
+  "utsuhoReiuji:ApollosLight": {
+    "NAME" : "Apollo's Light",
+    "DESCRIPTION" : "Heal !M! health. NL utsuhoreiuji:Chain_Reaction"
+  },
+  "utsuhoReiuji:BurnOut": {
+    "NAME" : "Burn Out",
+    "DESCRIPTION" : "Deal !D! damage. Exhaust a card. If a card is exhausted this way, return this card to your hand. Ethereal."
   }
 }

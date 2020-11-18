@@ -552,7 +552,7 @@ public class OkuuMod implements
     }
 
 
-/* 
+/*
     @Override
     public void receivePostUpdate() {
         if (Gdx.input.isKeyJustPressed(Input.Keys.R)) {
