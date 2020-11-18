@@ -1,10 +1,12 @@
 package utsuhoReiuji.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.sun.tools.javac.jvm.Code;
 import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.actions.ChainReactionAction;
 import utsuhoReiuji.cards.abstractCards.AbstractDynamicCard;
@@ -50,7 +52,9 @@ public class Grapeshot extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ChainReactionAction(m, this, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE)
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(
+                new ChainReactionAction(this, AbstractDungeon.actionManager.cardsPlayedThisTurn.size())
         );
     }
 

@@ -2,6 +2,7 @@ package utsuhoReiuji.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -10,23 +11,45 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ChainReactionAction extends AbstractGameAction{
-    private DamageInfo info;
-    private AbstractCard card;
+import javax.swing.*;
 
-    public ChainReactionAction(AbstractCreature target, AbstractCard card, DamageInfo info, AttackEffect effect){
-        this.info = info;
-        this.setValues(target, info);
-        this.actionType = ActionType.DAMAGE;
-        this.attackEffect = effect;
+public class ChainReactionAction extends AbstractGameAction{
+    //private UseCardAction action;
+    private AbstractCard card;
+    private int amount;
+
+    public ChainReactionAction(AbstractCard card, int amount){
+        //this.action = action;
+        this.amount = amount;
         this.card = card;
     }
 
-    public ChainReactionAction(AbstractCreature target, AbstractCard card, DamageInfo info) {
-        this(target, card, info, AttackEffect.NONE);
+    @Override
+    public void update() {
+        if(!card.purgeOnUse){
+            AbstractMonster m = null;
+            if (target != null) {
+                m = (AbstractMonster)target;
+            }
+
+            for(int i = 0; i <= amount;i++) {
+                AbstractCard tmp = card.makeSameInstanceOf();
+                AbstractDungeon.player.limbo.addToBottom(tmp);
+                tmp.current_x = card.current_x;
+                tmp.current_y = card.current_y;
+                tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+                tmp.target_y = (float) Settings.HEIGHT / 2.0F;
+                if (m != null) {
+                    tmp.calculateCardDamage(m);
+                }
+
+                tmp.purgeOnUse = true;
+                AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
+            }
+        }
     }
 
-    //TODO make this work with more than just attacks
+    /*
     @Override
     public void update() {
         this.isDone = true;
@@ -61,5 +84,5 @@ public class ChainReactionAction extends AbstractGameAction{
 
         }
 
-    }
+    }*/
 }
