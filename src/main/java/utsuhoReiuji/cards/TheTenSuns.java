@@ -1,6 +1,7 @@
 package utsuhoReiuji.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.cards.abstractCards.AbstractDynamicCard;
 import utsuhoReiuji.characters.UtsuhoReiuji;
+import utsuhoReiuji.powers.TheTenSunsPower;
 
 import static utsuhoReiuji.OkuuMod.makeCardPath;
 
@@ -25,9 +27,9 @@ public class TheTenSuns extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.SKILL;       //
+    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
+    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
+    private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = UtsuhoReiuji.Enums.REIUJI_GREEN;
 
     private static final int COST = 1;
@@ -49,7 +51,7 @@ public class TheTenSuns extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new ApplyPowerAction(p, p, new TheTenSunsPower(p,p, 1)));
     }
 
 
@@ -62,5 +64,6 @@ public class TheTenSuns extends AbstractDynamicCard {
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
+
     }
 }

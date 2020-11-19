@@ -18,6 +18,10 @@
   "utsuhoReiuji:CreepingSunPower": {
     "NAME": "Creeping Sun",
     "DESCRIPTIONS" : ["Increase the damage dealt by your next attack damage by", "for each card you play until your next attack."]
+  },
+  "utsuhoReiuji:TheTenSunsPower": {
+    "NAME" : "The Ten Suns",
+    "DESCRIPTIONS" : ["The next ", "card", "cards", "you play gain Chain Reaction" ]
   }
 
 }

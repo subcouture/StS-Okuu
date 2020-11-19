@@ -1,5 +1,6 @@
 package utsuhoReiuji.cards;
 
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -48,6 +49,11 @@ public class ApollosLight extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new HealAction(p, p, magicNumber));
+        if(!this.purgeOnUse) {
+            for(int i = 1; i < AbstractDungeon.actionManager.cardsPlayedThisTurn.size(); i++) {
+                GameActionManager.queueExtraCard(this, m);
+            }
+        }
     }
 
 
