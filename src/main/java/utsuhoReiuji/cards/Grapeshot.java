@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.sun.tools.javac.jvm.Code;
@@ -54,7 +55,11 @@ public class Grapeshot extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        GameActionManager.queueExtraCard(this, m);
+        if(!this.purgeOnUse) {
+            for(int i = 1; i < AbstractDungeon.actionManager.cardsPlayedThisTurn.size(); i++) {
+                GameActionManager.queueExtraCard(this, m);
+            }
+        }
     }
 
 

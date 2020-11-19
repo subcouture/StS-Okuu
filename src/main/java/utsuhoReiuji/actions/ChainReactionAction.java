@@ -1,6 +1,7 @@
 package utsuhoReiuji.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -24,6 +25,21 @@ public class ChainReactionAction extends AbstractGameAction{
         this.card = card;
     }
 
+    @Override
+    public void update(){
+        if(!card.purgeOnUse) {
+            AbstractMonster m = null;
+            if (target != null) {
+                m = (AbstractMonster)target;
+            }
+            for(int i = 1; i < amount; i++) {
+                GameActionManager.queueExtraCard(card, m);
+            }
+        }
+    }
+
+
+    /*
     @Override
     public void update() {
         if(!card.purgeOnUse){
@@ -49,7 +65,6 @@ public class ChainReactionAction extends AbstractGameAction{
         }
     }
 
-    /*
     @Override
     public void update() {
         this.isDone = true;
