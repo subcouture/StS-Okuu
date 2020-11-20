@@ -63,11 +63,11 @@ public class UtsuhoReiuji extends CustomPlayer {
 
     // =============== BASE STATS =================
 
-    public static final int ENERGY_PER_TURN = 3;
+    public static final int ENERGY_PER_TURN = 5;
     public static final int STARTING_HP = 75;
     public static final int MAX_HP = 75;
     public static final int STARTING_GOLD = 99;
-    public static final int CARD_DRAW = 3;
+    public static final int CARD_DRAW = 5;
     private static final int START_ORBS = 0;
     public static final int ORB_SLOTS = 1;
 
@@ -305,6 +305,8 @@ public class UtsuhoReiuji extends CustomPlayer {
         retVal.add(EightfoldConduct.ID);
 
         retVal.add(BurnOut.ID);
+
+        retVal.add(TheTenSuns.ID);
 
 
        // retVal.add(DefaultCommonSkill.ID);
