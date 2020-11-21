@@ -132,7 +132,7 @@
   },
   "utsuhoReiuji:BurnOut": {
     "NAME" : "Burn Out",
-    "DESCRIPTION" : "Deal !D! damage. Exhaust a card. If a card is exhausted this way, return this card to your hand. Ethereal."
+    "DESCRIPTION" :"Ethereal. NL Deal !D! damage. Exhaust a card. If a card is exhausted this way, return this card to your hand."
   },
   "utsuhoReiuji:HelmSplitter": {
     "NAME" : "Helm Splitter",
@@ -146,5 +146,13 @@
   "utsuhoReiuji:FlareUp": {
     "NAME" : "Flare Up",
     "DESCRIPTION" : "Gain !M! Strength. Take !D! damage. Radiate 0."
+  },
+  "utsuhoReiuji:GluttonousCrow": {
+    "NAME" : "Gluttonous Crow",
+    "DESCRIPTION" : "Draw !M! cards. They become Ethereal."
+  },
+  "utsuhoReiuji:FissionCrush": {
+    "NAME": "Fission Crush",
+    "DESCRIPTION": "Deal !D! damage. Reduce this card's damage by 1 this combat."
   }
 }

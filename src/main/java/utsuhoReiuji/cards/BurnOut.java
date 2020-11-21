@@ -36,6 +36,7 @@ public class BurnOut extends AbstractDynamicCard {
     public BurnOut() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        this.isEthereal = true;
     }
 
 
