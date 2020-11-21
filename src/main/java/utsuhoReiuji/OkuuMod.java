@@ -512,6 +512,10 @@ public class OkuuMod implements
         // OrbStrings
         BaseMod.loadCustomStringsFile(OrbStrings.class,
                 getModID() + "Resources/localization/eng/OkuuMod-Orb-Strings.json");
+
+        // CardAdditionStrings
+        //String runModStrings = Gdx.files.internal("utsuhoReiujiResources/localisation/eng/OkuuMod-Card-Addition-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        //BaseMod.loadCustomStrings(RunModStrings.class, runModStrings);
         
         logger.info("Done editing strings");
     }
