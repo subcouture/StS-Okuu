@@ -23,7 +23,7 @@ public class EtherealCardMod extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + (!CommonKeywordIconsField.useIcons.get(card)?" NL " + HelperClass.capitalize(GameDictionary.ETHEREAL.NAMES[0] + " " + LocalizedStrings.PERIOD):"");
+        return (!CommonKeywordIconsField.useIcons.get(card)?HelperClass.capitalize(GameDictionary.ETHEREAL.NAMES[0] + LocalizedStrings.PERIOD) + " NL ":"") + rawDescription;
     }
 
     public boolean isApplicable(AbstractCard card){

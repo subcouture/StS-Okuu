@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import utsuhoReiuji.OkuuMod;
+import utsuhoReiuji.actions.GluttonousCrowFollowUpAction;
 import utsuhoReiuji.cards.abstractCards.AbstractDynamicCard;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 
@@ -18,7 +19,7 @@ public class GluttonousCrow extends AbstractDynamicCard {
 
 
     public static final String ID = OkuuMod.makeID(GluttonousCrow.class.getSimpleName());
-    public static final String IMG = makeCardPath("GluttonousCrow.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -41,7 +42,7 @@ public class GluttonousCrow extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(magicNumber, new ScrapeFollowUpAction()));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(magicNumber, new GluttonousCrowFollowUpAction()));
     }
 
 

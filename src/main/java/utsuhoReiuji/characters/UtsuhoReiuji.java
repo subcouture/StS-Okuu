@@ -308,6 +308,8 @@ public class UtsuhoReiuji extends CustomPlayer {
 
         retVal.add(TheTenSuns.ID);
 
+        retVal.add(GluttonousCrow.ID);
+
 
        // retVal.add(DefaultCommonSkill.ID);
        // retVal.add(DefaultUncommonSkill.ID);
