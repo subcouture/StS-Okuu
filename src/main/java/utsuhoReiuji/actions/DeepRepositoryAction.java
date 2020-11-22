@@ -32,12 +32,45 @@ public class DeepRepositoryAction extends AbstractGameAction {
             if (this.p.exhaustPile.isEmpty()) {
                 this.isDone = true;
             }
-            else if (this.p.exhaustPile.size() == cardsToSelect) {
-                if (cardsToSelect == 1 && ( this.p.exhaustPile.group.get(0)).cardID.equals(DeepRepository.ID)) {
+            else if (this.p.exhaustPile.size() == 1) {
+                if ( ( this.p.exhaustPile.group.get(0)).cardID.equals(DeepRepository.ID)) {
                     this.isDone = true;
                 }
                 else{
+                    AbstractCard c = this.p.exhaustPile.getTopCard();
+                    c.unfadeOut();
+                    this.p.hand.addToHand(c);
+                    if (AbstractDungeon.player.hasPower("Corruption") && c.type == AbstractCard.CardType.SKILL) {
+                        c.setCostForTurn(-9);
+                    }
 
+                    this.p.exhaustPile.removeCard(c);
+
+                    c.unhover();
+                    c.fadingOut = false;
+                    this.isDone = true;
+                }
+
+            }
+            else if (this.p.exhaustPile.size() == 2 && this.cardsToSelect == 2){
+                ArrayList<AbstractCard> cards = this.p.exhaustPile.group;
+                for(AbstractCard c : cards){
+                    if(c.cardID.equals(DeepRepository.ID)){
+                        assert true;
+                    }
+                    else{
+                        c.unfadeOut();
+                        this.p.hand.addToHand(c);
+                        if (AbstractDungeon.player.hasPower("Corruption") && c.type == AbstractCard.CardType.SKILL) {
+                            c.setCostForTurn(-9);
+                        }
+
+                        this.p.exhaustPile.removeCard(c);
+
+                        c.unhover();
+                        c.fadingOut = false;
+                        this.isDone = true;
+                    }
                 }
             }
         }
