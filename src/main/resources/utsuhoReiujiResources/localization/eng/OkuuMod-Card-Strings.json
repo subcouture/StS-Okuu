@@ -154,5 +154,9 @@
   "utsuhoReiuji:FissionCrush": {
     "NAME": "Fission Crush",
     "DESCRIPTION": "Deal !D! damage. Reduce this card's damage by 1 this combat."
+  },
+  "utsuhoReiuji:DeepRepository": {
+    "NAME" : "Deep Repository",
+    "DESCRIPTION": "Choose !M! cards from your exhaust pile, put them at the bottom of your draw pile."
   }
 }
