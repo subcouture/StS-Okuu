@@ -310,6 +310,8 @@ public class UtsuhoReiuji extends CustomPlayer {
 
         retVal.add(GluttonousCrow.ID);
 
+        retVal.add(DeepRepository.ID);
+
 
        // retVal.add(DefaultCommonSkill.ID);
        // retVal.add(DefaultUncommonSkill.ID);

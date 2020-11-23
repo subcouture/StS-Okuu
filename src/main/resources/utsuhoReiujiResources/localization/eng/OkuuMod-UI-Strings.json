@@ -1,8 +1,8 @@
 {
-  "ExhumeAction": {
+  "DeepRepository": {
     "TEXT": [
-      "Select a Card to Return to Your Hand",
-      "Select Cards to Return to Your Hand"
+      "Select a Card to Return to Your Deck",
+      "Select Cards to Return to Your Deck"
     ]
   }
 }

@@ -3,6 +3,8 @@ package utsuhoReiuji.actions;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.red.Corruption;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -105,12 +107,40 @@ public class DeepRepositoryAction extends AbstractGameAction {
                 }
                 else {
                     AbstractDungeon.gridSelectScreen.open(this.p.exhaustPile, cardsToSelect, TEXT[0], false);
+                    this.tickDuration();
                 }
             }
+        } else {
+            if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+                for (cardList = AbstractDungeon.gridSelectScreen.selectedCards.iterator(); cardList.hasNext(); card.unhover()) {
+                    card = (AbstractCard) cardList.next();
+                    this.p.hand.addToHand(card);
+                    if (AbstractDungeon.player.hasPower(Corruption.ID) && card.type == AbstractCard.CardType.SKILL) {
+                        card.setCostForTurn(-9);
+                    }
+
+                    this.p.exhaustPile.removeCard(card);
+                }
+
+                AbstractDungeon.gridSelectScreen.selectedCards.clear();
+                this.p.hand.refreshHandLayout();
+                this.p.exhaustPile.group.addAll(this.deepRepositories);
+                this.deepRepositories.clear();
+
+                for (cardList = this.p.exhaustPile.group.iterator(); cardList.hasNext(); card.target_y = 0.0F) {
+                    card = (AbstractCard) cardList.next();
+                    card.unhover();
+                    card.target_x = (float) CardGroup.DISCARD_PILE_X;
+                }
+            }
+
+
+            this.tickDuration();
         }
     }
+
     static {
-        uiStrings = CardCrawlGame.languagePack.getUIString("ExhumeAction");
+        uiStrings = CardCrawlGame.languagePack.getUIString("DeepRepositoryAction");
         TEXT = uiStrings.TEXT;
     }
 
