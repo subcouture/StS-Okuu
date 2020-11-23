@@ -16,7 +16,7 @@ import java.util.Iterator;
 
 public class DeepRepositoryAction extends AbstractGameAction {
     private AbstractPlayer p;
-    private ArrayList deepRepositories = new ArrayList();
+    //private ArrayList deepRepositories = new ArrayList();
 
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
@@ -32,6 +32,11 @@ public class DeepRepositoryAction extends AbstractGameAction {
     }
 
     @Override
+    public void update(){
+
+    }
+
+    /*@Override
     public void update() {
         Iterator<AbstractCard> cardList;
         AbstractCard card;
@@ -136,7 +141,7 @@ public class DeepRepositoryAction extends AbstractGameAction {
 
             this.tickDuration();
         }
-    }
+    }*/
 
     static {
         uiStrings = CardCrawlGame.languagePack.getUIString("DeepRepositoryAction");

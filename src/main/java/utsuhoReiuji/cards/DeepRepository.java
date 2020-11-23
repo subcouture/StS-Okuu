@@ -1,8 +1,10 @@
 package utsuhoReiuji.cards;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,6 +13,8 @@ import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.actions.DeepRepositoryAction;
 import utsuhoReiuji.cards.abstractCards.AbstractDynamicCard;
 import utsuhoReiuji.characters.UtsuhoReiuji;
+
+import java.util.function.Predicate;
 
 import static utsuhoReiuji.OkuuMod.makeCardPath;
 
@@ -41,7 +45,7 @@ public class DeepRepository extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DeepRepositoryAction(magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(AbstractDungeon.player.exhaustPile, AbstractDungeon.player.drawPile, deepRepositoryPredicateNegator(Predicate.isEqual(DeepRepository.ID)) , magicNumber));
     }
 
 
@@ -53,5 +57,9 @@ public class DeepRepository extends AbstractDynamicCard {
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
+    }
+
+    private Predicate<AbstractCard> deepRepositoryPredicateNegator(Predicate<AbstractCard> predicate){
+        return predicate.negate();
     }
 }
