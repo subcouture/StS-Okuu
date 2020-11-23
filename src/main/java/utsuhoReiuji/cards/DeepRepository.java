@@ -18,7 +18,7 @@ public class DeepRepository extends AbstractDynamicCard {
 
 
     public static final String ID = OkuuMod.makeID(DeepRepository.class.getSimpleName());
-    public static final String IMG = makeCardPath("DeepRepository.png");
+    public static final String IMG = makeCardPath("SelfTokamak.png");
 
 
     private static final CardRarity RARITY = CardRarity.COMMON;

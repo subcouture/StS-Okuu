@@ -1,6 +1,5 @@
 package utsuhoReiuji.actions;
 
-import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -85,7 +84,7 @@ public class DeepRepositoryAction extends AbstractGameAction {
                 cardList = this.p.exhaustPile.group.iterator();
 
                 while(cardList.hasNext()){
-                    card = (AbstractCard)cardList.next();
+                    card = cardList.next();
                     card.stopGlowing();
                     card.unhover();
                     card.unfadeOut();
@@ -93,7 +92,7 @@ public class DeepRepositoryAction extends AbstractGameAction {
                 cardList = this.p.exhaustPile.group.iterator();
 
                 while(cardList.hasNext()){
-                    card = (AbstractCard)cardList.next();
+                    card = cardList.next();
                     if (card.cardID.equals(DeepRepository.ID)){
                         cardList.remove();
                         this.deepRepositories.add(card);
@@ -113,7 +112,7 @@ public class DeepRepositoryAction extends AbstractGameAction {
         } else {
             if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
                 for (cardList = AbstractDungeon.gridSelectScreen.selectedCards.iterator(); cardList.hasNext(); card.unhover()) {
-                    card = (AbstractCard) cardList.next();
+                    card = cardList.next();
                     this.p.hand.addToHand(card);
                     if (AbstractDungeon.player.hasPower(Corruption.ID) && card.type == AbstractCard.CardType.SKILL) {
                         card.setCostForTurn(-9);
@@ -128,7 +127,7 @@ public class DeepRepositoryAction extends AbstractGameAction {
                 this.deepRepositories.clear();
 
                 for (cardList = this.p.exhaustPile.group.iterator(); cardList.hasNext(); card.target_y = 0.0F) {
-                    card = (AbstractCard) cardList.next();
+                    card = cardList.next();
                     card.unhover();
                     card.target_x = (float) CardGroup.DISCARD_PILE_X;
                 }
