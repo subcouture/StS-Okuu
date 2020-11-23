@@ -16,7 +16,7 @@ import java.util.Iterator;
 
 public class DeepRepositoryAction extends AbstractGameAction {
     private AbstractPlayer p;
-    private ArrayList<AbstractCard> deepRepositories = new ArrayList();
+    private ArrayList deepRepositories = new ArrayList();
 
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
@@ -112,7 +112,7 @@ public class DeepRepositoryAction extends AbstractGameAction {
         } else {
             if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
                 for (cardList = AbstractDungeon.gridSelectScreen.selectedCards.iterator(); cardList.hasNext(); card.unhover()) {
-                    card = cardList.next();
+                    card = (AbstractCard) cardList.next();
                     this.p.hand.addToHand(card);
                     if (AbstractDungeon.player.hasPower(Corruption.ID) && card.type == AbstractCard.CardType.SKILL) {
                         card.setCostForTurn(-9);
@@ -127,7 +127,7 @@ public class DeepRepositoryAction extends AbstractGameAction {
                 this.deepRepositories.clear();
 
                 for (cardList = this.p.exhaustPile.group.iterator(); cardList.hasNext(); card.target_y = 0.0F) {
-                    card = cardList.next();
+                    card = (AbstractCard) cardList.next();
                     card.unhover();
                     card.target_x = (float) CardGroup.DISCARD_PILE_X;
                 }

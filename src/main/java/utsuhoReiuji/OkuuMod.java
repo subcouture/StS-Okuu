@@ -518,8 +518,8 @@ public class OkuuMod implements
         //BaseMod.loadCustomStrings(RunModStrings.class, runModStrings);
 
         //UIStrings
-        BaseMod.loadCustomStrings(UIStrings.class,
-                getModID() + "Resources/localization/eng/OkuuMod-UI-Strings.json");
+        //BaseMod.loadCustomStrings(UIStrings.class,
+        //       getModID() + "Resources/localization/eng/OkuuMod-UI-Strings.json");
 
         logger.info("Done editing strings");
     }
