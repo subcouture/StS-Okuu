@@ -11,102 +11,25 @@ Shadow
   orig: 123, 31
   offset: 0, 0
   index: -1
-okuu_attack08
+okuu_idle23
   rotate: false
-  xy: 108, 562
-  size: 100, 106
-  orig: 100, 106
+  xy: 515, 450
+  size: 104, 109
+  orig: 104, 109
   offset: 0, 0
   index: -1
-okuu_down09
+okuu_idle10
   rotate: false
-  xy: 1, 337
-  size: 120, 99
-  orig: 120, 99
-  offset: 0, 0
-  index: -1
-okuu_idle01
-  rotate: false
-  xy: 405, 342
-  size: 108, 108
-  orig: 108, 108
-  offset: 0, 0
-  index: -1
-okuu_down05
-  rotate: false
-  xy: 307, 1
-  size: 157, 97
-  orig: 157, 97
-  offset: 0, 0
-  index: -1
-okuu_idle12
-  rotate: false
-  xy: 128, 336
-  size: 110, 109
-  orig: 110, 109
-  offset: 0, 0
-  index: -1
-okuu_attack01
-  rotate: false
-  xy: 755, 222
-  size: 116, 101
-  orig: 116, 101
-  offset: 0, 0
-  index: -1
-okuu_idle07
-  rotate: false
-  xy: 535, 340
-  size: 108, 108
-  orig: 108, 108
-  offset: 0, 0
-  index: -1
-okuu_down06
-  rotate: false
-  xy: 466, 1
-  size: 147, 101
-  orig: 147, 101
-  offset: 0, 0
-  index: -1
-okuu_attack02
-  rotate: false
-  xy: 729, 111
-  size: 111, 107
-  orig: 111, 107
-  offset: 0, 0
-  index: -1
-okuu_idle00
-  rotate: false
-  xy: 841, 1
-  size: 110, 108
-  orig: 110, 108
-  offset: 0, 0
-  index: -1
-okuu_down04
-  rotate: false
-  xy: 268, 345
-  size: 135, 91
-  orig: 135, 91
-  offset: 0, 0
-  index: -1
-okuu_down07
-  rotate: false
-  xy: 1, 113
-  size: 131, 108
-  orig: 131, 108
+  xy: 621, 658
+  size: 104, 108
+  orig: 104, 108
   offset: 0, 0
   index: -1
 okuu_idle11
   rotate: false
-  xy: 535, 118
+  xy: 645, 220
   size: 108, 109
   orig: 108, 109
-  offset: 0, 0
-  index: -1
-okuu_idle04
-  rotate: false
-  xy: 350, 452
-  size: 104, 108
-  orig: 104, 108
   offset: 0, 0
   index: -1
 okuu_idle16
@@ -116,18 +39,18 @@ okuu_idle16
   orig: 104, 109
   offset: 0, 0
   index: -1
-okuu_hit01
+okuu_down08
   rotate: false
-  xy: 223, 656
-  size: 101, 106
-  orig: 101, 106
+  xy: 128, 235
+  size: 123, 99
+  orig: 123, 99
   offset: 0, 0
   index: -1
-okuu_idle02
+okuu_down07
   rotate: false
-  xy: 760, 767
-  size: 105, 108
-  orig: 105, 108
+  xy: 1, 113
+  size: 131, 108
+  orig: 131, 108
   offset: 0, 0
   index: -1
 okuu_attack03
@@ -137,25 +60,53 @@ okuu_attack03
   orig: 152, 101
   offset: 0, 0
   index: -1
-okuu_idle19
+okuu_idle03
   rotate: false
-  xy: 1, 438
-  size: 110, 109
-  orig: 110, 109
+  xy: 760, 657
+  size: 105, 108
+  orig: 105, 108
   offset: 0, 0
   index: -1
-okuu_attack05
+okuu_idle09
   rotate: false
-  xy: 424, 223
-  size: 109, 117
-  orig: 109, 117
+  xy: 760, 547
+  size: 105, 108
+  orig: 105, 108
   offset: 0, 0
   index: -1
-okuu_idle10
+okuu_idle24
   rotate: false
-  xy: 621, 658
-  size: 104, 108
-  orig: 104, 108
+  xy: 113, 447
+  size: 108, 108
+  orig: 108, 108
+  offset: 0, 0
+  index: -1
+okuu_idle00
+  rotate: false
+  xy: 841, 1
+  size: 110, 108
+  orig: 110, 108
+  offset: 0, 0
+  index: -1
+okuu_attack06
+  rotate: false
+  xy: 268, 231
+  size: 110, 112
+  orig: 110, 112
+  offset: 0, 0
+  index: -1
+okuu_idle01
+  rotate: false
+  xy: 405, 342
+  size: 108, 108
+  orig: 108, 108
+  offset: 0, 0
+  index: -1
+okuu_idle07
+  rotate: false
+  xy: 240, 438
+  size: 108, 108
+  orig: 108, 108
   offset: 0, 0
   index: -1
 okuu_down02
@@ -172,11 +123,130 @@ okuu_attack04
   orig: 150, 110
   offset: 0, 0
   index: -1
+okuu_idle13
+  rotate: false
+  xy: 535, 229
+  size: 108, 109
+  orig: 108, 109
+  offset: 0, 0
+  index: -1
 okuu_idle21
   rotate: false
-  xy: 760, 325
+  xy: 760, 436
   size: 105, 109
   orig: 105, 109
+  offset: 0, 0
+  index: -1
+okuu_attack07
+  rotate: false
+  xy: 424, 223
+  size: 109, 117
+  orig: 109, 117
+  offset: 0, 0
+  index: -1
+okuu_down04
+  rotate: false
+  xy: 268, 345
+  size: 135, 91
+  orig: 135, 91
+  offset: 0, 0
+  index: -1
+okuu_idle15
+  rotate: false
+  xy: 1, 549
+  size: 105, 109
+  orig: 105, 109
+  offset: 0, 0
+  index: -1
+okuu_down11
+  rotate: false
+  xy: 456, 625
+  size: 138, 61
+  orig: 138, 61
+  offset: 0, 0
+  index: -1
+okuu_down09
+  rotate: false
+  xy: 1, 337
+  size: 120, 99
+  orig: 120, 99
+  offset: 0, 0
+  index: -1
+okuu_down06
+  rotate: false
+  xy: 466, 1
+  size: 147, 101
+  orig: 147, 101
+  offset: 0, 0
+  index: -1
+okuu_idle08
+  rotate: false
+  xy: 645, 437
+  size: 105, 108
+  orig: 105, 108
+  offset: 0, 0
+  index: -1
+okuu_down05
+  rotate: false
+  xy: 307, 1
+  size: 157, 97
+  orig: 157, 97
+  offset: 0, 0
+  index: -1
+okuu_idle19
+  rotate: false
+  xy: 1, 438
+  size: 110, 109
+  orig: 110, 109
+  offset: 0, 0
+  index: -1
+okuu_down01
+  rotate: false
+  xy: 153, 104
+  size: 113, 129
+  orig: 113, 129
+  offset: 0, 0
+  index: -1
+okuu_attack09
+  rotate: false
+  xy: 645, 331
+  size: 113, 104
+  orig: 113, 104
+  offset: 0, 0
+  index: -1
+okuu_idle06
+  rotate: false
+  xy: 729, 1
+  size: 110, 108
+  orig: 110, 108
+  offset: 0, 0
+  index: -1
+okuu_attack02
+  rotate: false
+  xy: 729, 111
+  size: 111, 107
+  orig: 111, 107
+  offset: 0, 0
+  index: -1
+okuu_idle02
+  rotate: false
+  xy: 760, 767
+  size: 105, 108
+  orig: 105, 108
+  offset: 0, 0
+  index: -1
+okuu_attack08
+  rotate: false
+  xy: 108, 562
+  size: 100, 106
+  orig: 100, 106
+  offset: 0, 0
+  index: -1
+okuu_idle04
+  rotate: false
+  xy: 350, 452
+  size: 104, 108
+  orig: 104, 108
   offset: 0, 0
   index: -1
 okuu_down10
@@ -188,128 +258,30 @@ okuu_down10
   index: -1
 okuu_idle18
   rotate: false
-  xy: 535, 229
-  size: 108, 109
-  orig: 108, 109
-  offset: 0, 0
-  index: -1
-okuu_attack09
-  rotate: false
-  xy: 645, 331
-  size: 113, 104
-  orig: 113, 104
-  offset: 0, 0
-  index: -1
-okuu_down00
-  rotate: false
-  xy: 307, 100
-  size: 115, 129
-  orig: 115, 129
-  offset: 0, 0
-  index: -1
-okuu_attack06
-  rotate: false
-  xy: 268, 231
-  size: 110, 112
-  orig: 110, 112
-  offset: 0, 0
-  index: -1
-okuu_idle24
-  rotate: false
-  xy: 240, 438
-  size: 108, 108
-  orig: 108, 108
-  offset: 0, 0
-  index: -1
-okuu_idle13
-  rotate: false
   xy: 842, 111
   size: 108, 109
   orig: 108, 109
   offset: 0, 0
   index: -1
-okuu_idle14
+okuu_attack01
   rotate: false
-  xy: 760, 436
-  size: 105, 109
-  orig: 105, 109
-  offset: 0, 0
-  index: -1
-okuu_idle06
-  rotate: false
-  xy: 729, 1
-  size: 110, 108
-  orig: 110, 108
-  offset: 0, 0
-  index: -1
-okuu_hit00
-  rotate: false
-  xy: 223, 548
-  size: 103, 106
-  orig: 103, 106
-  offset: 0, 0
-  index: -1
-okuu_idle15
-  rotate: false
-  xy: 1, 549
-  size: 105, 109
-  orig: 105, 109
-  offset: 0, 0
-  index: -1
-okuu_idle05
-  rotate: false
-  xy: 113, 447
-  size: 108, 108
-  orig: 108, 108
-  offset: 0, 0
-  index: -1
-okuu_idle22
-  rotate: false
-  xy: 873, 222
-  size: 105, 109
-  orig: 105, 109
-  offset: 0, 0
-  index: -1
-okuu_idle08
-  rotate: false
-  xy: 760, 547
-  size: 105, 108
-  orig: 105, 108
+  xy: 755, 222
+  size: 116, 101
+  orig: 116, 101
   offset: 0, 0
   index: -1
 okuu_idle20
   rotate: false
-  xy: 645, 220
+  xy: 535, 118
   size: 108, 109
   orig: 108, 109
   offset: 0, 0
   index: -1
-okuu_idle03
-  rotate: false
-  xy: 645, 437
-  size: 105, 108
-  orig: 105, 108
-  offset: 0, 0
-  index: -1
-okuu_down08
-  rotate: false
-  xy: 128, 235
-  size: 123, 99
-  orig: 123, 99
-  offset: 0, 0
-  index: -1
-okuu_attack07
+okuu_attack05
   rotate: false
   xy: 424, 104
   size: 109, 117
   orig: 109, 117
-  offset: 0, 0
-  index: -1
-okuu_down11
-  rotate: false
-  xy: 456, 625
-  size: 138, 61
-  orig: 138, 61
   offset: 0, 0
   index: -1
 okuu_attack00
@@ -319,24 +291,52 @@ okuu_attack00
   orig: 125, 112
   offset: 0, 0
   index: -1
-okuu_down01
+okuu_hit00
   rotate: false
-  xy: 153, 104
-  size: 113, 129
-  orig: 113, 129
+  xy: 223, 548
+  size: 103, 106
+  orig: 103, 106
   offset: 0, 0
   index: -1
-okuu_idle23
+okuu_idle22
   rotate: false
-  xy: 515, 450
-  size: 104, 109
-  orig: 104, 109
+  xy: 873, 222
+  size: 105, 109
+  orig: 105, 109
   offset: 0, 0
   index: -1
-okuu_idle09
+okuu_idle14
   rotate: false
-  xy: 760, 657
-  size: 105, 108
-  orig: 105, 108
+  xy: 760, 325
+  size: 105, 109
+  orig: 105, 109
+  offset: 0, 0
+  index: -1
+okuu_down00
+  rotate: false
+  xy: 307, 100
+  size: 115, 129
+  orig: 115, 129
+  offset: 0, 0
+  index: -1
+okuu_idle05
+  rotate: false
+  xy: 535, 340
+  size: 108, 108
+  orig: 108, 108
+  offset: 0, 0
+  index: -1
+okuu_idle12
+  rotate: false
+  xy: 128, 336
+  size: 110, 109
+  orig: 110, 109
+  offset: 0, 0
+  index: -1
+okuu_hit01
+  rotate: false
+  xy: 223, 656
+  size: 101, 106
+  orig: 101, 106
   offset: 0, 0
   index: -1

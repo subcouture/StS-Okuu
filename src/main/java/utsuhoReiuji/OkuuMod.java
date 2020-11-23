@@ -516,7 +516,11 @@ public class OkuuMod implements
         // CardAdditionStrings
         //String runModStrings = Gdx.files.internal("utsuhoReiujiResources/localisation/eng/OkuuMod-Card-Addition-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         //BaseMod.loadCustomStrings(RunModStrings.class, runModStrings);
-        
+
+        //UIStrings
+        BaseMod.loadCustomStrings(UIStrings.class,
+                getModID() + "Resources/localization/eng/OkuuMod-UI-Strings.json");
+
         logger.info("Done editing strings");
     }
     

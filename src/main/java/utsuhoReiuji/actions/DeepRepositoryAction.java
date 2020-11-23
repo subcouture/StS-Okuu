@@ -1,10 +1,13 @@
 package utsuhoReiuji.actions;
 
+import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import utsuhoReiuji.cards.DeepRepository;
 
 import java.util.ArrayList;
@@ -12,7 +15,10 @@ import java.util.Iterator;
 
 public class DeepRepositoryAction extends AbstractGameAction {
     private AbstractPlayer p;
-    private ArrayList<AbstractCard> exhumes = new ArrayList();
+    private ArrayList<AbstractCard> deepRepositories = new ArrayList();
+
+    private static final UIStrings uiStrings;
+    public static final String[] TEXT;
 
     int cardsToSelect;
 
@@ -73,6 +79,39 @@ public class DeepRepositoryAction extends AbstractGameAction {
                     }
                 }
             }
+            else{
+                cardList = this.p.exhaustPile.group.iterator();
+
+                while(cardList.hasNext()){
+                    card = (AbstractCard)cardList.next();
+                    card.stopGlowing();
+                    card.unhover();
+                    card.unfadeOut();
+                }
+                cardList = this.p.exhaustPile.group.iterator();
+
+                while(cardList.hasNext()){
+                    card = (AbstractCard)cardList.next();
+                    if (card.cardID.equals(DeepRepository.ID)){
+                        cardList.remove();
+                        this.deepRepositories.add(card);
+                    }
+                }
+
+                if (this.p.exhaustPile.isEmpty()){
+                    this.p.exhaustPile.group.addAll(this.deepRepositories);
+                    this.deepRepositories.clear();
+                    this.isDone = true;
+                }
+                else {
+                    AbstractDungeon.gridSelectScreen.open(this.p.exhaustPile, cardsToSelect, TEXT[0], false);
+                }
+            }
         }
     }
+    static {
+        uiStrings = CardCrawlGame.languagePack.getUIString("ExhumeAction");
+        TEXT = uiStrings.TEXT;
+    }
+
 }
