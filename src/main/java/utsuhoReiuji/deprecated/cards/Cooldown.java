@@ -1,4 +1,4 @@
-/*package utsuhoReiuji.cards;
+package utsuhoReiuji.deprecated.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -64,4 +64,3 @@ public class Cooldown extends AbstractDynamicCard {
         }
     }
 }
-*/

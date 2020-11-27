@@ -41,8 +41,6 @@ public class EightfoldConduct extends AbstractHellboundCard {
         this.isMultiDamage = true;
     }
 
-
-    //TODO write the hellbound check
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if(isHellbound){

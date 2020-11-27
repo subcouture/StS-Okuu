@@ -409,57 +409,10 @@ public class OkuuMod implements
         // Don't comment out/delete these cards (yet). You need 1 of each type and rarity (technically) for your game not to crash
         // when generating card rewards/shop screen items.
 
-        BaseMod.addCard(new OrbSkill());
-        BaseMod.addCard(new DefaultSecondMagicNumberSkill());
-        BaseMod.addCard(new DefaultCommonAttack());
-        BaseMod.addCard(new DefaultAttackWithVariable());
-        BaseMod.addCard(new DefaultCommonSkill());
-        BaseMod.addCard(new DefaultCommonPower());
-        BaseMod.addCard(new DefaultUncommonSkill());
-        BaseMod.addCard(new DefaultUncommonAttack());
-        BaseMod.addCard(new DefaultUncommonPower());
-        BaseMod.addCard(new DefaultRareAttack());
-        BaseMod.addCard(new DefaultRareSkill());
-        BaseMod.addCard(new DefaultRarePower());
-        BaseMod.addCard(new Grapeshot());
-        BaseMod.addCard(new BoilerExplosion());
-        BaseMod.addCard(new BanishingStrike());
-        BaseMod.addCard(new EmergencyShutdown());
-        BaseMod.addCard(new BecquerelAndCall());
-        BaseMod.addCard(new TheTenSuns());
-        BaseMod.addCard(new CannonCross());
-        BaseMod.addCard(new CreepingSun());
-        BaseMod.addCard(new HighTensionBlade());
-        BaseMod.addCard(new SelfTokamak());
-        BaseMod.addCard(new EightfoldConduct());
-
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
-        UnlockTracker.unlockCard(OrbSkill.ID);
-        UnlockTracker.unlockCard(DefaultSecondMagicNumberSkill.ID);
-        UnlockTracker.unlockCard(DefaultCommonAttack.ID);
-        UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
-        UnlockTracker.unlockCard(DefaultCommonSkill.ID);
-        UnlockTracker.unlockCard(DefaultCommonPower.ID);
-        UnlockTracker.unlockCard(DefaultUncommonSkill.ID);
-        UnlockTracker.unlockCard(DefaultUncommonAttack.ID);
-        UnlockTracker.unlockCard(DefaultUncommonPower.ID);
-        UnlockTracker.unlockCard(DefaultRareAttack.ID);
-        UnlockTracker.unlockCard(DefaultRareSkill.ID);
-        UnlockTracker.unlockCard(DefaultRarePower.ID);
-        UnlockTracker.unlockCard(Grapeshot.ID);
-        UnlockTracker.unlockCard(BoilerExplosion.ID);
-        UnlockTracker.unlockCard(BanishingStrike.ID);
-        UnlockTracker.unlockCard(EmergencyShutdown.ID);
-        UnlockTracker.unlockCard(BecquerelAndCall.ID);
-        UnlockTracker.unlockCard(TheTenSuns.ID);
-        UnlockTracker.unlockCard(CannonCross.ID);
-        UnlockTracker.unlockCard(CreepingSun.ID);
-        UnlockTracker.unlockCard(HighTensionBlade.ID);
-        UnlockTracker.unlockCard(SelfTokamak.ID);
-        UnlockTracker.unlockCard(EightfoldConduct.ID);
 
          */
 
