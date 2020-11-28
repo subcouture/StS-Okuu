@@ -2,6 +2,7 @@ package utsuhoReiuji.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -30,6 +31,8 @@ public class EightfoldResolve extends AbstractHellboundCard {
     private static final int BLOCK = 6;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
+    private static final int HELLBOUND_BLOCK = 6;
+
 
     public EightfoldResolve() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -39,7 +42,12 @@ public class EightfoldResolve extends AbstractHellboundCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        if(isHellbound){
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block + HELLBOUND_BLOCK));
+        }
+        else {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        }
     }
 
 
