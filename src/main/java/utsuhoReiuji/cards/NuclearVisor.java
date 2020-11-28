@@ -1,12 +1,15 @@
 package utsuhoReiuji.cards;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.GainPowerEffect;
 import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.cards.abstractCards.AbstractDynamicCard;
 import utsuhoReiuji.characters.UtsuhoReiuji;
+import utsuhoReiuji.powers.NuclearVisorPower;
 
 import static utsuhoReiuji.OkuuMod.makeCardPath;
 
@@ -31,7 +34,7 @@ public class NuclearVisor extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int UPGRADED_COST = 2;
 
-    private static final int BLOCK = 9;
+    private static final int BLOCK = 12;
     private static final int UPGRADE_PLUS_BLOCK = 4;
 
     // /STAT DECLARATION/
@@ -47,6 +50,7 @@ public class NuclearVisor extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new NuclearVisorPower(p,p)));
     }
 
 
