@@ -33,7 +33,7 @@ public class JupitersDescentPower extends AbstractPower implements CloneablePowe
         this.owner = owner;
         this.source = source;
 
-        type = PowerType.DEBUFF;
+        type = PowerType.BUFF;
         isTurnBased = false;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);

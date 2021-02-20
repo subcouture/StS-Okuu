@@ -22,6 +22,10 @@
   "utsuhoReiuji:TheTenSunsPower": {
     "NAME" : "The Ten Suns",
     "DESCRIPTIONS" : ["The next ", "card", "cards", "you play gain Chain Reaction" ]
+  },
+  "utsuhoReiuji:JupitersDescentPower": {
+    "NAME" : "Jupiter's Descent",
+    "DESCRIPTIONS" : ["At the start of your turn, look at the top two cards of your deck. Play one and exhaust the other."]
   }
 
 }
