@@ -403,19 +403,6 @@ public class OkuuMod implements
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new SecondMagicNumber());
 
-        /*
-        logger.info("Adding cards");
-        // Add the cards
-        // Don't comment out/delete these cards (yet). You need 1 of each type and rarity (technically) for your game not to crash
-        // when generating card rewards/shop screen items.
-
-        logger.info("Making sure the cards are unlocked.");
-        // Unlock the cards
-        // This is so that they are all "seen" in the library, for people who like to look at the card list
-        // before playing your mod.
-
-         */
-
         new AutoAdd("subcouture:OkuuMod")
                 .packageFilter("utsuhoReiuji.cards")
                 .setDefaultSeen(true)
