@@ -30,13 +30,13 @@ public class HellGeyser extends AbstractDynamicCard {
     private static final int DAMAGE = 30;
     private static final int UPGRADE_PLUS_DMG = 10;
 
-
+    //TODO ensure that Hell Geyser interacts correctly with vulnerable/weakness/strength and the like.
+    //TODO observe the effect of doubling/chain reaction on Hell Geyser
     public HellGeyser() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.isMultiDamage = true;
     }
-
 
     // Actions the card should do.
     @Override

@@ -59,6 +59,6 @@ public class JupitersDescentPower extends AbstractPower implements CloneablePowe
 
     @Override
     public AbstractPower makeCopy() {
-        return new EmergencyShutdownPower(owner, source);
+        return new JupitersDescentPower(owner, source);
     }
 }
