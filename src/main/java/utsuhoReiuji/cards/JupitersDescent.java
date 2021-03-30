@@ -16,7 +16,7 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 public class JupitersDescent extends AbstractDynamicCard {
 
     public static final String ID = OkuuMod.makeID(JupitersDescent.class.getSimpleName());
-    public static final String IMG = makeCardPath("JupitersDescent.png");// "public static final String IMG = makeCardPath("JupitersDescent.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");// "public static final String IMG = makeCardPath("JupitersDescent.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.

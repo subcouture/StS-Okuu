@@ -2,6 +2,7 @@ package utsuhoReiuji.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,11 +17,11 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 public class HellGeyser extends AbstractDynamicCard {
 
     public static final String ID = OkuuMod.makeID(HellGeyser.class.getSimpleName());
-    public static final String IMG = makeCardPath("HellGeyser.png");// "public static final String IMG = makeCardPath("HellGeyser.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.ATTACK;       //
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = UtsuhoReiuji.Enums.REIUJI_GREEN;
 
     private static final int COST = 3;
@@ -33,14 +34,27 @@ public class HellGeyser extends AbstractDynamicCard {
     public HellGeyser() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        this.isMultiDamage = true;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        if(m.currentHealth + m.currentBlock > damage){
+            AbstractDungeon.actionManager.addToBottom(
+                    new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        }
+        else{
+            AbstractDungeon.actionManager.addToBottom(
+                    new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+            int i;
+            for(i = 0; i < this.multiDamage.length; i++) {
+                multiDamage[i] = multiDamage[i]- (m.currentBlock + m.currentHealth);
+            }
+            AbstractDungeon.actionManager.addToBottom(
+                            new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+        }
     }
 
 

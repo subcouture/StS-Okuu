@@ -17,7 +17,7 @@ public class AtomicFire extends AbstractDynamicCard {
 
 
     public static final String ID = OkuuMod.makeID(AtomicFire.class.getSimpleName());
-    public static final String IMG = makeCardPath("AtomicFire.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
 
     private static final CardRarity RARITY = CardRarity.COMMON;

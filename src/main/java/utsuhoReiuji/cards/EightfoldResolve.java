@@ -17,7 +17,7 @@ public class EightfoldResolve extends AbstractHellboundCard {
 
 
     public static final String ID = OkuuMod.makeID(EightfoldResolve.class.getSimpleName());
-    public static final String IMG = makeCardPath("EightfoldResolve.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
 
     private static final CardRarity RARITY = CardRarity.COMMON;
