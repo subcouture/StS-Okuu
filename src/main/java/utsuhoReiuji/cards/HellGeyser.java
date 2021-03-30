@@ -46,12 +46,11 @@ public class HellGeyser extends AbstractDynamicCard {
                     new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
         }
         else{
-            AbstractDungeon.actionManager.addToBottom(
-                    new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-            int i;
-            for(i = 0; i < this.multiDamage.length; i++) {
+            for(int i = 0; i < this.multiDamage.length; i++) {
                 multiDamage[i] = multiDamage[i]- (m.currentBlock + m.currentHealth);
             }
+            AbstractDungeon.actionManager.addToBottom(
+                    new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
             AbstractDungeon.actionManager.addToBottom(
                             new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
         }

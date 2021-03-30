@@ -312,6 +312,8 @@ public class UtsuhoReiuji extends CustomPlayer {
 
         retVal.add(DeepRepository.ID);
 
+        retVal.add(HellGeyser.ID);
+
 
        // retVal.add(DefaultCommonSkill.ID);
        // retVal.add(DefaultUncommonSkill.ID);
