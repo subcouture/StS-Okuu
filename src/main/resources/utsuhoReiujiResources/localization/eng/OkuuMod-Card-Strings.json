@@ -158,5 +158,9 @@
   "utsuhoReiuji:DeepRepository": {
     "NAME" : "Deep Repository",
     "DESCRIPTION": "Choose !M! cards from your exhaust pile, put them at the bottom of your draw pile."
+  },
+  "utsuhoReiuji:JupitersDescent": {
+    "NAME" : "Jupiter's Descent",
+    "DESCRIPTION": "At the beginning of each turn, look at the top two cards of your deck. Play one, and exhaust the other."
   }
 }
