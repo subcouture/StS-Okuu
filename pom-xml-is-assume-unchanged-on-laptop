@@ -1,0 +1,3 @@
+git update-index --no-assume-unchanged pom.xml
+
+if you make changes on the laptop version run this to mark the pom
