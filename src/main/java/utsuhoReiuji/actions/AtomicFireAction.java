@@ -27,6 +27,7 @@ public class AtomicFireAction extends AbstractGameAction {
         this.damageTypeForTurn = damageTypeForTurn;
         this.energyOnUse = energyOnUse;
     }
+
     @Override
     public void update() {
         int effect = EnergyPanel.totalCount;

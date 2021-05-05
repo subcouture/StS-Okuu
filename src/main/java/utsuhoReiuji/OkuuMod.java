@@ -7,9 +7,11 @@ import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -24,6 +26,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 import utsuhoReiuji.events.IdentityCrisisEvent;
+import utsuhoReiuji.patches.GalaxyChromaKeyRenderPatch;
+import utsuhoReiuji.patches.GalaxyChromaKeySkeletonPatch;
 import utsuhoReiuji.potions.PlaceholderPotion;
 import utsuhoReiuji.relics.BottledPlaceholderRelic;
 import utsuhoReiuji.relics.DefaultClickableRelic;
@@ -74,7 +78,8 @@ public class OkuuMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber{
+        PostInitializeSubscriber,
+        PostUpdateSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(OkuuMod.class.getName());
@@ -500,23 +505,23 @@ public class OkuuMod implements
     }
 
 
-/*
+
     @Override
     public void receivePostUpdate() {
         if (Gdx.input.isKeyJustPressed(Input.Keys.R)) {
             GalaxyChromaKeyRenderPatch.shader.dispose();
             GalaxyChromaKeyRenderPatch.shader = new ShaderProgram(
-                    Gdx.files.internal("E:/Game Projects/tools/shaders/vertexShader.vs"),
-                    Gdx.files.internal("E:/Game Projects/tools/shaders/fragShader.fs")
+                    Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
+                    Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
             );
 
             GalaxyChromaKeySkeletonPatch.shader.dispose();
             GalaxyChromaKeySkeletonPatch.shader = new ShaderProgram(
-                    Gdx.files.internal("E:/Game Projects/tools/shaders/vertexShader.vs"),
-                    Gdx.files.internal("E:/Game Projects/tools/shaders/fragShader.fs")
+                    Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
+                    Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
             );
         }
-    }*/
+    }
 }
 
 //                                                            /*&&&&

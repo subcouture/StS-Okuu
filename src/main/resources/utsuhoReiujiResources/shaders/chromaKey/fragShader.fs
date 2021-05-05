@@ -59,8 +59,8 @@ void main() {
     //sample the texture
 	
     vec4 texColor = texture2D(u_texture, v_texCoord);
-    vec3 c = texture2D(u_galaxyTexture, vec2(gl_FragCoord.x/(textureSize(u_galaxyTexture, 0).x) + Time/100, gl_FragCoord.y/(textureSize(u_galaxyTexture, 0).y) + Time/100)).rgb;
-	//vec3 c = texture2D(u_galaxyTexture, gl_FragCoord/textureSize(u_galaxyTexture, 0)).rgb;
+    //vec3 c = texture2D(u_galaxyTexture, vec2(gl_FragCoord.x/(textureSize(u_galaxyTexture, 0).x) + Time/100, gl_FragCoord.y/(textureSize(u_galaxyTexture, 0).y) + Time/100)).rgb;
+	vec3 c = texture2D(u_galaxyTexture, gl_FragCoord/textureSize(u_galaxyTexture, 0)).rgb;
 	
 	
 	//textureLength = textureSize(u_galaxyTexture, 0).x;

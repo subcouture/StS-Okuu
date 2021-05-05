@@ -2,9 +2,13 @@ package utsuhoReiuji.characters;
 
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
@@ -15,10 +19,15 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
+import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -31,6 +40,7 @@ import utsuhoReiuji.relics.PlaceholderRelic;
 import utsuhoReiuji.relics.PlaceholderRelic2;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import static utsuhoReiuji.OkuuMod.*;
 import static utsuhoReiuji.characters.UtsuhoReiuji.Enums.REIUJI_GREEN;
@@ -187,11 +197,10 @@ public class UtsuhoReiuji extends CustomPlayer {
     // =========== /ATTACK AND HIT ANIMATIONS/ =====================
 
     //====================== SHADERS ========================
-/*
 
     public static ShaderProgram shader = new ShaderProgram(
-            Gdx.files.internal("E:/Game Projects/tools/shaders/vertexShader.vs"),
-            Gdx.files.internal("E:/Game Projects/tools/shaders/fragShader.fs")
+            Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
+            Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
     );
 
     private static Texture galaxyTexture = new Texture(Gdx.files.internal("utsuhoReiujiResources/images/char/okuuSprites/loopingGalaxy.png"));
@@ -273,7 +282,7 @@ public class UtsuhoReiuji extends CustomPlayer {
             sb.setColor(Color.WHITE);
             this.renderShoulderImg(sb);
         }
-    }*/
+    }
     // ===================== /SHADERS/ =====================
 
     // =============== /CHARACTER CLASS END/ =================
@@ -313,6 +322,8 @@ public class UtsuhoReiuji extends CustomPlayer {
         retVal.add(DeepRepository.ID);
 
         retVal.add(HellGeyser.ID);
+
+        retVal.add(AstralHeat.ID);
 
 
        // retVal.add(DefaultCommonSkill.ID);
