@@ -197,7 +197,7 @@ public class UtsuhoReiuji extends CustomPlayer {
     // =========== /ATTACK AND HIT ANIMATIONS/ =====================
 
     //====================== SHADERS ========================
-
+/*
     public static ShaderProgram shader = new ShaderProgram(
             Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
             Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
@@ -282,7 +282,7 @@ public class UtsuhoReiuji extends CustomPlayer {
             sb.setColor(Color.WHITE);
             this.renderShoulderImg(sb);
         }
-    }
+    }*/
     // ===================== /SHADERS/ =====================
 
     // =============== /CHARACTER CLASS END/ =================

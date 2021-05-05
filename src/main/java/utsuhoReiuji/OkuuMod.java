@@ -78,8 +78,8 @@ public class OkuuMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber,
-        PostUpdateSubscriber{
+        PostInitializeSubscriber
+        /*PostUpdateSubscriber*/{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(OkuuMod.class.getName());
@@ -504,24 +504,23 @@ public class OkuuMod implements
         return getModID() + ":" + idText;
     }
 
-
-
+    /*
     @Override
     public void receivePostUpdate() {
         if (Gdx.input.isKeyJustPressed(Input.Keys.R)) {
             GalaxyChromaKeyRenderPatch.shader.dispose();
             GalaxyChromaKeyRenderPatch.shader = new ShaderProgram(
-                    Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
-                    Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
+                    Gdx.files.internal("/home/linzi/Development/StS-Okuu/src/main/resources/utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
+                    Gdx.files.internal("/home/linzi/Development/StS-Okuu/src/main/resources/utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
             );
 
             GalaxyChromaKeySkeletonPatch.shader.dispose();
             GalaxyChromaKeySkeletonPatch.shader = new ShaderProgram(
-                    Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
-                    Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
+                    Gdx.files.internal("/home/linzi/Development/StS-Okuu/src/main/resources/utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
+                    Gdx.files.internal("/home/linzi/Development/StS-Okuu/src/main/resources/utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
             );
         }
-    }
+    }*/
 }
 
 //                                                            /*&&&&

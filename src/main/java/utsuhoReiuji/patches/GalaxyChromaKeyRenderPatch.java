@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.Hitbox;
@@ -38,6 +39,7 @@ public class GalaxyChromaKeyRenderPatch {
     public static void InsertImageStart(AbstractPlayer __instance, SpriteBatch sb, TextureAtlas atlas) {
         if(__instance instanceof UtsuhoReiuji) {
             currentTime += Gdx.graphics.getDeltaTime();
+            if(!shader.isCompiled()) System.out.println(shader.getLog());
             if (atlas == null) {
                 shader.begin();
                 sb.setShader(shader);

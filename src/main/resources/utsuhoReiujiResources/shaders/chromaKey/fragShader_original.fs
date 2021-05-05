@@ -1,4 +1,3 @@
-#version 330
 //SpriteBatch will use texture unit 0
 uniform sampler2D u_texture;
 uniform sampler2D u_galaxyTexture;
@@ -53,18 +52,35 @@ vec3 changeSaturation(vec3 color, float saturation)
 	return mix(vec3(luma), color, saturation);
 }
 
+
+
+
 void main() {
     //sample the texture
+
     vec4 texColor = texture2D(u_texture, v_texCoord);
     vec3 c = texture2D(u_galaxyTexture, vec2(gl_FragCoord.x/(textureSize(u_galaxyTexture, 0).x) + Time/100, gl_FragCoord.y/(textureSize(u_galaxyTexture, 0).y) + Time/100)).rgb;
+	//vec3 c = texture2D(u_galaxyTexture, gl_FragCoord/textureSize(u_galaxyTexture, 0)).rgb;
+
+
+	//textureLength = textureSize(u_galaxyTexture, 0).x;
+
+	//vec3 c = texture2D(u_galaxyTexture, textureSize(u_galaxyTexture)).rgb;
 
     float gray = dot(texColor.rgb, vec3(0.299, 0.587, 0.114));
 
-    vec3 texColorNoAlpha = texColor.rgb;
+    //float incrustation = chromaKey(texColor);
 
-    float incrustation = chromaKey(texColorNoAlpha);
+    //texColor.rgb = changeSaturation(texColor.rgb, 0.5)
+    //texColor.rgb = mix(texColor.rgb, galaxyColor.rgb, incrustation);
+
+    //final color
+
+    float incrustation = chromaKey(texColor);
+
     texColor.rgb = mix(texColor.rgb, c.rgb, incrustation);
 
-    //final colorr
-    gl_FragColor = texColor;
+
+	gl_FragColor = vec4(texColor);
+
 }
