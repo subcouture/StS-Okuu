@@ -197,8 +197,8 @@ public class UtsuhoReiuji extends CustomPlayer {
     // =========== /ATTACK AND HIT ANIMATIONS/ =====================
 
     //====================== SHADERS ========================
-/*
-    public static ShaderProgram shader = new ShaderProgram(
+
+    /*public static ShaderProgram shader = new ShaderProgram(
             Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
             Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
     );
