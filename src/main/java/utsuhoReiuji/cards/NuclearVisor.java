@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.GainPowerEffect;
 import utsuhoReiuji.OkuuMod;
 import utsuhoReiuji.cards.abstractCards.AbstractDynamicCard;
 import utsuhoReiuji.characters.UtsuhoReiuji;
