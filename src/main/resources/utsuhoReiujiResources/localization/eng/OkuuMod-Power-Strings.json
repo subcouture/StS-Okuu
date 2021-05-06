@@ -26,6 +26,13 @@
   "utsuhoReiuji:JupitersDescentPower": {
     "NAME" : "Jupiter's Descent",
     "DESCRIPTIONS" : ["At the start of your turn, look at the top two cards of your deck. Play one and exhaust the other."]
-  }
-
+  },
+  "utsuhoReiuji:AstralHeatPower": {
+    "NAME" : "Astral Heat",
+    "DESCRIPTIONS" : ["At the end of this turn, take another turn."]
+  },
+  "utsuhoReiuji:AstralHeatSelfDamagePower": {
+    "NAME" : "Calamity Trigger",
+    "DESCRIPTIONS" : ["At the end of this turn, take #d damage"]
+}
 }
