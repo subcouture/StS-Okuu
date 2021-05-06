@@ -165,6 +165,6 @@
   },
   "utsuhoReiuji:AstralHeat": {
     "NAME" : "Astral Heat",
-    "DESCRIPTION" : "Take another turn after this one. At the end of that turn, take 108 damage."
+    "DESCRIPTION" : "Take another turn after this one. NL At the end of that turn, take !D! damage."
   }
 }
