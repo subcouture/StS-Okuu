@@ -162,5 +162,9 @@
   "utsuhoReiuji:JupitersDescent": {
     "NAME" : "Jupiter's Descent",
     "DESCRIPTION": "At the beginning of each turn, look at the top two cards of your deck. Play one, and exhaust the other."
+  },
+  "utsuhoReiuji:AstralHeat": {
+    "NAME" : "Astral Heat",
+    "DESCRIPTION" : "Take another turn after this one. At the end of that turn, take 108 damage."
   }
 }
