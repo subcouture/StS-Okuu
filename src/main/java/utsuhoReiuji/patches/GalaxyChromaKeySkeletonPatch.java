@@ -13,6 +13,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import javassist.CtBehavior;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 
+//Consult the Render Patch for explanations of what this class does and how it works.
+//It's been a little while since I wrote it, but I think this patch exists so the chromakey continues to work correctly for non-atlas'd sprites
+//Like the death animation, or campfire shoulder animations.
 
 @SpirePatch(
         clz= AbstractPlayer.class,
@@ -21,7 +24,6 @@ import utsuhoReiuji.characters.UtsuhoReiuji;
 
 public class GalaxyChromaKeySkeletonPatch {
     public static ShaderProgram shader = new ShaderProgram(
-//            Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
             Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
             Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
     );

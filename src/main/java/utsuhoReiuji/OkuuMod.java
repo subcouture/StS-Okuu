@@ -504,6 +504,8 @@ public class OkuuMod implements
         return getModID() + ":" + idText;
     }
 
+    //Debug section to reload shaders in real time. Make sure to enable this and the PostUpdateSubscriber when testing shaders.
+    //This must be disabled in any release versions!
     /*
     @Override
     public void receivePostUpdate() {

@@ -198,6 +198,9 @@ public class UtsuhoReiuji extends CustomPlayer {
 
     //====================== SHADERS ========================
 
+    //DEPRECATED
+    //This whole shader section is replaced with the two atlas and skeleton patches. Look there for shader implementation.
+
     /*public static ShaderProgram shader = new ShaderProgram(
             Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
             Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
