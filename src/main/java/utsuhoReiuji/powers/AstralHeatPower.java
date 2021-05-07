@@ -27,12 +27,16 @@ public class AstralHeatPower extends AbstractPower implements CloneablePowerInte
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public AstralHeatPower(final AbstractCreature owner, final AbstractCreature source){
+    private int selfDamage;
+
+    public AstralHeatPower(final AbstractCreature owner, final AbstractCreature source, final int selfDamage){
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.source = source;
+
+        this.selfDamage = selfDamage;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -46,21 +50,17 @@ public class AstralHeatPower extends AbstractPower implements CloneablePowerInte
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         AbstractDungeon.actionManager.addToBottom(new SkipEnemiesTurnAction());
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new AstralHeatSelfDamagePower(owner, owner)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new AstralHeatSelfDamagePower(owner, owner, selfDamage)));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
     }
 
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
+            description = DESCRIPTIONS[0];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new EmergencyShutdownPower(owner, source);
+        return new AstralHeatPower(owner, source, selfDamage);
     }
 }

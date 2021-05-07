@@ -33,6 +33,6 @@
   },
   "utsuhoReiuji:AstralHeatSelfDamagePower": {
     "NAME" : "Calamity Trigger",
-    "DESCRIPTIONS" : ["At the end of this turn, take #d damage"]
+    "DESCRIPTIONS" : ["At the end of this turn, take ", " damage"]
 }
 }

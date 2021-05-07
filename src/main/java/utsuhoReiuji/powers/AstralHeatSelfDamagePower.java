@@ -32,14 +32,14 @@ public class AstralHeatSelfDamagePower extends AbstractPower implements Cloneabl
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public AstralHeatSelfDamagePower(final AbstractCreature owner, final AbstractCreature source){
+    public AstralHeatSelfDamagePower(final AbstractCreature owner, final AbstractCreature source, final int selfDamage){
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.source = source;
 
-        this.selfDamage = 108;
+        this.selfDamage = selfDamage;
 
         type = PowerType.DEBUFF;
         isTurnBased = false;
@@ -60,15 +60,11 @@ public class AstralHeatSelfDamagePower extends AbstractPower implements Cloneabl
 
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
+            description = DESCRIPTIONS[0] + selfDamage + DESCRIPTIONS[1];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new EmergencyShutdownPower(owner, source);
+        return new AstralHeatSelfDamagePower(owner, source, selfDamage);
     }
 }

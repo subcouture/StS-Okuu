@@ -31,12 +31,13 @@ public class AstralHeat extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
+    private static final int SELF_DAMAGE = 108;
 
     // /STAT DECLARATION/
 
 
-    public AstralHeat() { // public EmergencyShutdown() - This one and the one right under the imports are the most important ones, don't forget them
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+    public AstralHeat() { super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        baseMagicNumber = magicNumber = SELF_DAMAGE;
     }
 
 
@@ -44,7 +45,7 @@ public class AstralHeat extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new AstralHeatPower(p,p)));
+                new ApplyPowerAction(p, p, new AstralHeatPower(p,p, magicNumber)));
     }
 
 
