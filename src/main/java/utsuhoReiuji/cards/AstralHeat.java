@@ -17,7 +17,7 @@ public class AstralHeat extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(AstralHeat.class.getSimpleName());
-    public static final String IMG = makeCardPath("EmergencyShutdown.png");
+    public static final String IMG = makeCardPath("AstralHeat.png");
 
     // /TEXT DECLARATION/
 
