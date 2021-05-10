@@ -59,7 +59,7 @@ public class TheTenSunsPower extends AbstractPower implements CloneablePowerInte
             }
             --this.amount;
             if (this.amount == 0) {
-                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "Double Tap"));
+                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "TheTenSunsPower"));
             }
         }
     }
