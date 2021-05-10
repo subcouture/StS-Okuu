@@ -318,6 +318,8 @@ public class UtsuhoReiuji extends CustomPlayer {
 
         retVal.add(AstralHeat.ID);
 
+        retVal.add(JupitersDescent.ID);
+
 
        // retVal.add(DefaultCommonSkill.ID);
        // retVal.add(DefaultUncommonSkill.ID);

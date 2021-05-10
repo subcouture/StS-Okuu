@@ -13,16 +13,17 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import java.util.Iterator;
 
 public class JupitersDescentAction extends AbstractGameAction {
+
     private float startingDuration;
     private static final UIStrings uiStrings = CardCrawlGame.languagePack
             .getUIString("ExhaustAction");
     public static final String[] UISTRING = uiStrings.TEXT;
 
-    public JupitersDescentAction(AbstractCreature target){
+
+    public JupitersDescentAction(){
         this.actionType = ActionType.WAIT;
         this.startingDuration = Settings.ACTION_DUR_FAST;
         this.source = AbstractDungeon.player;
-        this.target = target;
         this.duration = this.startingDuration;
         this.amount = 2;
     }
@@ -38,12 +39,6 @@ public class JupitersDescentAction extends AbstractGameAction {
             Iterator var1;
             AbstractCard c;
             if (this.duration == this.startingDuration) {
-                var1 = AbstractDungeon.player.powers.iterator();
-
-                while(var1.hasNext()) {
-                    AbstractPower p = (AbstractPower)var1.next();
-                    p.onScry();
-                }
 
                 if (AbstractDungeon.player.drawPile.isEmpty()) {
                     this.isDone = true;

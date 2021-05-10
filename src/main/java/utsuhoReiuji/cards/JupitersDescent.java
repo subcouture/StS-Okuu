@@ -17,7 +17,7 @@ public class JupitersDescent extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("BoilerExplosion.png");
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = UtsuhoReiuji.Enums.REIUJI_GREEN;
 

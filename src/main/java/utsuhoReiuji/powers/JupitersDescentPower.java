@@ -44,8 +44,7 @@ public class JupitersDescentPower extends AbstractPower implements CloneablePowe
 
     @Override
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new PressEndTurnButtonAction());
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
+        AbstractDungeon.actionManager.addToBottom(new utsuhoReiuji.actions.JupitersDescentAction());
     }
 
     @Override
