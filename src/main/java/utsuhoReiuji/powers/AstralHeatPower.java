@@ -27,7 +27,7 @@ public class AstralHeatPower extends AbstractPower implements CloneablePowerInte
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    private int selfDamage;
+    private final int selfDamage;
 
     public AstralHeatPower(final AbstractCreature owner, final AbstractCreature source, final int selfDamage){
         name = NAME;
