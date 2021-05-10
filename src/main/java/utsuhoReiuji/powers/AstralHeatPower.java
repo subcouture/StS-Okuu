@@ -27,6 +27,7 @@ public class AstralHeatPower extends AbstractPower implements CloneablePowerInte
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
+    //TODO find out if it's harmful to add variables to the definition of a power, and if powers should be allowed to create other powers.
     private final int selfDamage;
 
     public AstralHeatPower(final AbstractCreature owner, final AbstractCreature source, final int selfDamage){

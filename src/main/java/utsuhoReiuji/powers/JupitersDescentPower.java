@@ -3,6 +3,7 @@ package utsuhoReiuji.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -44,6 +45,11 @@ public class JupitersDescentPower extends AbstractPower implements CloneablePowe
 
     @Override
     public void atStartOfTurn() {
+        if (AbstractDungeon.player.drawPile.size() <= 0) {
+            this.addToTop(new EmptyDeckShuffleAction());
+        }
+
+        this.flash();
         AbstractDungeon.actionManager.addToBottom(new utsuhoReiuji.actions.JupitersDescentAction());
     }
 
