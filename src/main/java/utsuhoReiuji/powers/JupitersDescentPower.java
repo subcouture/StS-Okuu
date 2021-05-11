@@ -45,6 +45,7 @@ public class JupitersDescentPower extends AbstractPower implements CloneablePowe
 
     @Override
     public void atStartOfTurn() {
+        //Guarantee that SOMETHING is played from Jupiter's Descent by shuffling the deck back in if empty on draw phase.
         if (AbstractDungeon.player.drawPile.size() <= 0) {
             this.addToTop(new EmptyDeckShuffleAction());
         }

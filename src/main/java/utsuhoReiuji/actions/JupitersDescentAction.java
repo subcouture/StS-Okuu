@@ -1,6 +1,7 @@
 package utsuhoReiuji.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.Iterator;
@@ -63,6 +65,14 @@ public class JupitersDescentAction extends AbstractGameAction {
             } else if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
                 var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
 
+                while(var1.hasNext()){
+                    c = (AbstractCard)var1.next();
+                    this.addToBot(new PlayTopCardAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), true));
+                }
+
+            }
+
+                /*
                 while(var1.hasNext()) {
                     c = (AbstractCard)var1.next();
                     AbstractDungeon.player.drawPile.moveToDiscardPile(c);
@@ -77,6 +87,8 @@ public class JupitersDescentAction extends AbstractGameAction {
                 c = (AbstractCard)var1.next();
                 c.triggerOnScry();
             }
+                */
+
 
             this.tickDuration();
         }
