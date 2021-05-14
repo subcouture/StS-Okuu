@@ -166,5 +166,9 @@
   "utsuhoReiuji:AstralHeat": {
     "NAME" : "Astral Heat",
     "DESCRIPTION" : "Take another turn after this one. NL At the end of that turn, take [#ff0000]108[] damage."
+  },
+  "utsuhoReiuji:HellGeyser": {
+    "NAME" : "Hell Geyser",
+    "DESCRIPTION" : "Deal !D! damage. If this kills the enemy, deal any remaining damage to all other enemies."
   }
 }
