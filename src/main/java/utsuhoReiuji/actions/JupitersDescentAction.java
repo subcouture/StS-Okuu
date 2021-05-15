@@ -1,7 +1,9 @@
 package utsuhoReiuji.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
+import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,6 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import org.lwjgl.Sys;
 
 import java.util.Iterator;
 
@@ -23,13 +26,18 @@ public class JupitersDescentAction extends AbstractGameAction {
     public static final String[] UISTRING = uiStrings.TEXT;
     private final AbstractPlayer p = AbstractDungeon.player;
 
+    private final int cardsToPlay;
+    private final int cardsToPeek;
+
 
     public JupitersDescentAction(){
         this.actionType = ActionType.WAIT;
         this.startingDuration = Settings.ACTION_DUR_FAST;
         this.source = AbstractDungeon.player;
         this.duration = this.startingDuration;
-        this.amount = 2;
+        this.cardsToPeek = 2;
+        this.cardsToPlay = 1;
+        this.duration = Settings.ACTION_DUR_MED;
     }
 
     //Intended Behaviour: When triggered, opens a gridselect window (similar to scry) with 2 cards.
@@ -37,68 +45,64 @@ public class JupitersDescentAction extends AbstractGameAction {
 
     public void update() {
         AbstractCard card;
-        /*if (this.duration == Settings.ACTION_DUR_MED) {
-            CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            Iterator var5 = this.p.drawPile.group.iterator();
+        CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        //Iterator var5 = this.p.drawPile.group.iterator();
+
+        if (this.cardsToPeek != -1) {
+            for(int i = 0; i < Math.min(this.cardsToPeek, AbstractDungeon.player.drawPile.size()); ++i) {
+                tmp.addToTop((AbstractCard)AbstractDungeon.player.drawPile.group.get(AbstractDungeon.player.drawPile.size() - i - 1));
+            }
+        } else {
+            Iterator var5 = AbstractDungeon.player.drawPile.group.iterator();
 
             while(var5.hasNext()) {
                 AbstractCard c = (AbstractCard)var5.next();
-                if (c.type == AbstractCard.CardType.ATTACK) {
-                    tmp.addToRandomSpot(c);
-                }
+                tmp.addToBottom(c);
             }
+        }
 
+        if (this.duration == Settings.ACTION_DUR_MED) {
             if (tmp.size() == 0) {
                 this.isDone = true;
             } else if (tmp.size() == 1) {
                 card = tmp.getTopCard();
-                if (this.p.hand.size() == 10) {
-                    this.p.drawPile.moveToDiscardPile(card);
-                    this.p.createHandIsFullDialog();
-                } else {
-                    card.unhover();
-                    card.lighten(true);
-                    card.setAngle(0.0F);
-                    card.drawScale = 0.12F;
-                    card.targetDrawScale = 0.75F;
-                    card.current_x = CardGroup.DRAW_PILE_X;
-                    card.current_y = CardGroup.DRAW_PILE_Y;
-                    this.p.drawPile.removeCard(card);
-                    AbstractDungeon.player.hand.addToTop(card);
-                    AbstractDungeon.player.hand.refreshHandLayout();
-                    AbstractDungeon.player.hand.applyPowers();
-                }
-
+                card.unhover();
+                card.lighten(true);
+                card.setAngle(0.0F);
+                card.drawScale = 0.12F;
+                card.targetDrawScale = 0.75F;
+                card.current_x = CardGroup.DRAW_PILE_X;
+                card.current_y = CardGroup.DRAW_PILE_Y;
+                this.p.drawPile.removeCard(card);
+                AbstractDungeon.getCurrRoom().souls.remove(card);
+                this.addToBot(new NewQueueCardAction(card, true, false, true));
                 this.isDone = true;
             } else {
-                AbstractDungeon.gridSelectScreen.open(tmp, this.amount, UISTRING[0], false);
+                AbstractDungeon.gridSelectScreen.open(tmp, this.cardsToPlay, UISTRING[0], false);
                 this.tickDuration();
             }
-        } else {*/
-            //if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
+        } else {
+            if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
                 Iterator var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
 
                 while(var1.hasNext()) {
-                    card = (AbstractCard)var1.next();
-                    card.unhover();
-                    if (this.p.hand.size() == 10) {
-                        this.p.drawPile.moveToDiscardPile(card);
-                        this.p.createHandIsFullDialog();
-                    } else {
-                        this.p.drawPile.removeCard(card);
-                        this.p.hand.addToTop(card);
-                    }
+                    AbstractCard c = (AbstractCard) var1.next();
+                    tmp.group.remove(c);
+                    AbstractDungeon.player.drawPile.group.remove(c);
+                    AbstractDungeon.getCurrRoom().souls.remove(c);
+                    this.addToBot(new NewQueueCardAction(c, true, false, true));
+                }
 
-                    this.p.hand.refreshHandLayout();
-                    this.p.hand.applyPowers();
+                for(int i = 0; i <= tmp.size(); i++){
+                    this.p.drawPile.moveToExhaustPile(tmp.getTopCard());
                 }
 
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();
                 this.p.hand.refreshHandLayout();
-            //}
+            }
 
             this.tickDuration();
-        //}
+        }
     }
 
 
