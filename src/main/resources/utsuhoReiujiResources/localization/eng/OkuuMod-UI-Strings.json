@@ -1,8 +1,13 @@
 {
-  "DeepRepository": {
+  "utsuhoReiuji:DeepRepository": {
     "TEXT": [
       "Select a Card to Return to Your Deck",
       "Select Cards to Return to Your Deck"
+    ]
+  },
+  "utsuhoReiuji:JupitersDescent": {
+    "TEXT": [
+      "Select a Card to Play. The remaining Card will be Exhausted"
     ]
   }
 }

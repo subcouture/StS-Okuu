@@ -15,15 +15,15 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import org.lwjgl.Sys;
+import utsuhoReiuji.OkuuMod;
 
 import java.util.Iterator;
 
 public class JupitersDescentAction extends AbstractGameAction {
 
-    private float startingDuration;
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack
-            .getUIString("ExhaustAction");
-    public static final String[] UISTRING = uiStrings.TEXT;
+    private final float startingDuration;
+    private static  UIStrings uiStrings;
+    public static final String[] TEXT;
     private final AbstractPlayer p = AbstractDungeon.player;
 
     private final int cardsToPlay;
@@ -42,6 +42,8 @@ public class JupitersDescentAction extends AbstractGameAction {
 
     //Intended Behaviour: When triggered, opens a gridselect window (similar to scry) with 2 cards.
     //One can be selected, and that selection should be confirmed. On confirmation, that card is played and goes the the discard pile. The other card is exhausted.
+
+    //TODO work out why JD card is exhausted twice
 
     public void update() {
         AbstractCard card;
@@ -78,7 +80,7 @@ public class JupitersDescentAction extends AbstractGameAction {
                 this.addToBot(new NewQueueCardAction(card, true, false, true));
                 this.isDone = true;
             } else {
-                AbstractDungeon.gridSelectScreen.open(tmp, this.cardsToPlay, UISTRING[0], false);
+                AbstractDungeon.gridSelectScreen.open(tmp, this.cardsToPlay, TEXT[0], false);
                 this.tickDuration();
             }
         } else {
@@ -105,69 +107,9 @@ public class JupitersDescentAction extends AbstractGameAction {
         }
     }
 
+    static {
+        uiStrings = CardCrawlGame.languagePack.getUIString(OkuuMod.makeID("JupitersDescent"));
+        TEXT = uiStrings.TEXT;
+    }
 
-
-    //Copied from ScryAction, needs changing to match intended behaviour
-    /*
-    @Override
-    public void update() {
-        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.isDone = true;
-        } else {
-            Iterator var1;
-            AbstractCard c;
-            if (this.duration == this.startingDuration) {
-
-                if (AbstractDungeon.player.drawPile.isEmpty()) {
-                    this.isDone = true;
-                    return;
-                }
-
-                CardGroup tmpGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-                if (this.amount != -1) {
-                    for(int i = 0; i < Math.min(this.amount, AbstractDungeon.player.drawPile.size()); ++i) {
-                        tmpGroup.addToTop((AbstractCard)AbstractDungeon.player.drawPile.group.get(AbstractDungeon.player.drawPile.size() - i - 1));
-                    }
-                } else {
-                    Iterator<AbstractCard> var5 = AbstractDungeon.player.drawPile.group.iterator();
-
-                    while(var5.hasNext()) {
-                        c = (AbstractCard)var5.next();
-                        tmpGroup.addToBottom(c);
-                    }
-                }
-
-                AbstractDungeon.cardRewardScreen.customCombatOpen(tmpGroup.group, UISTRING[0], false);
-                this.tickDuration();
-            } else if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-                var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
-
-                while(var1.hasNext()){
-                    c = (AbstractCard)var1.next();
-                    this.addToBot(new PlayTopCardAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), true));
-                }
-
-            }
-
-                /*
-                while(var1.hasNext()) {
-                    c = (AbstractCard)var1.next();
-                    AbstractDungeon.player.drawPile.moveToDiscardPile(c);
-                }
-
-                AbstractDungeon.gridSelectScreen.selectedCards.clear();
-            }
-
-            var1 = AbstractDungeon.player.discardPile.group.iterator();
-
-            while(var1.hasNext()) {
-                c = (AbstractCard)var1.next();
-                c.triggerOnScry();
-            }
-
-
-
-            this.tickDuration();
-        }
-    }*/
 }
