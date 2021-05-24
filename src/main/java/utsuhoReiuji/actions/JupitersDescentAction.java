@@ -43,7 +43,7 @@ public class JupitersDescentAction extends AbstractGameAction {
     //Intended Behaviour: When triggered, opens a gridselect window (similar to scry) with 2 cards.
     //One can be selected, and that selection should be confirmed. On confirmation, that card is played and goes the the discard pile. The other card is exhausted.
 
-    //TODO work out why JD card is exhausted twice
+    //TODO work out why non-selected card is exhausted twice
 
     public void update() {
         AbstractCard card;
@@ -95,7 +95,7 @@ public class JupitersDescentAction extends AbstractGameAction {
                     this.addToBot(new NewQueueCardAction(c, true, false, true));
                 }
 
-                for(int i = 0; i <= tmp.size(); i++){
+                for(int i = 0; i < tmp.size(); i++){
                     this.p.drawPile.moveToExhaustPile(tmp.getTopCard());
                 }
 

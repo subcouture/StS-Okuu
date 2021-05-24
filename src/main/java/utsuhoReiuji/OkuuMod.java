@@ -99,6 +99,7 @@ public class OkuuMod implements
     public static final Color CHERENKOV_BLUE = CardHelper.getColor(46.0f, 211.0f, 255.0f);
     public static final Color BLAZING_YELLOW = CardHelper.getColor(246.0f, 247.0f, 2.0f);
     public static final Color REIUJI_GREEN = CardHelper.getColor(00.0f, 178.0f, 45.0f);
+    public static final Color YATAGARASU_RED = CardHelper.getColor(222.0f, 15.0f, 14.0f);
     
     // Potion Colors in RGB
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
@@ -205,9 +206,14 @@ public class OkuuMod implements
         logger.info("Done subscribing");
         
         logger.info("Creating the color " + UtsuhoReiuji.Enums.REIUJI_GREEN.toString());
-        
+
+        //addColor(AbstractCard.CardColor color,
+        // Color bgColor, Color backColor, Color frameColor, Color frameOutlineColor, Color descBoxColor, Color trailVfxColor, Color glowColor,
+        // String attackBg, String skillBg, String powerBg, String energyOrb, String attackBgPortrait, String skillBgPortrait, String powerBgPortrait,
+        // String energyOrbPortrait, String cardEnergyOrb)
+
         BaseMod.addColor(UtsuhoReiuji.Enums.REIUJI_GREEN, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
-                DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
+                DEFAULT_GRAY, DEFAULT_GRAY, CHERENKOV_BLUE, BLAZING_YELLOW,
                 ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
                 ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);

@@ -380,7 +380,7 @@ public class UtsuhoReiuji extends CustomPlayer {
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return OkuuMod.DEFAULT_GRAY;
+        return OkuuMod.CHERENKOV_BLUE;
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -417,14 +417,14 @@ public class UtsuhoReiuji extends CustomPlayer {
     // Should return a Color object to be used to color the miniature card images in run history.
     @Override
     public Color getCardRenderColor() {
-        return OkuuMod.DEFAULT_GRAY;
+        return OkuuMod.REIUJI_GREEN;
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return OkuuMod.DEFAULT_GRAY;
+        return OkuuMod.YATAGARASU_RED;
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects

@@ -14,10 +14,12 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 
 public class AbyssNova extends AbstractDynamicCard {
 
+    //Choose 5(8) cards in your exhaust pile. Exhaust your deck. Put those cards in your hand. They cost 0 this turn.
+
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(AbyssNova.class.getSimpleName());
-    public static final String IMG = makeCardPath("AbyssNova.png");
+    public static final String IMG = makeCardPath("BoilerExplosion.png");
 
     // /TEXT DECLARATION/
 
