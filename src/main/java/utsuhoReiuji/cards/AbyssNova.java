@@ -26,23 +26,23 @@ public class AbyssNova extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.ATTACK;       //
+    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
+    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
+    private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = UtsuhoReiuji.Enums.REIUJI_GREEN;
 
     private static final int COST = 5;
     private static final int UPGRADED_COST = 4;
 
-    private static final int DAMAGE = 0;
-    private static final int UPGRADE_PLUS_DMG = 0;
+    private static final int CARDS = 5;
+    private static final int UPGRADE_PLUS_CARDS = 3;
 
     // /STAT DECLARATION/
 
 
     public AbyssNova() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = CARDS;
     }
 
 

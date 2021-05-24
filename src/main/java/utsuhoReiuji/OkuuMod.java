@@ -212,8 +212,8 @@ public class OkuuMod implements
         // String attackBg, String skillBg, String powerBg, String energyOrb, String attackBgPortrait, String skillBgPortrait, String powerBgPortrait,
         // String energyOrbPortrait, String cardEnergyOrb)
 
-        BaseMod.addColor(UtsuhoReiuji.Enums.REIUJI_GREEN, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
-                DEFAULT_GRAY, DEFAULT_GRAY, CHERENKOV_BLUE, BLAZING_YELLOW,
+        BaseMod.addColor(UtsuhoReiuji.Enums.REIUJI_GREEN, REIUJI_GREEN, REIUJI_GREEN, REIUJI_GREEN,
+                REIUJI_GREEN, REIUJI_GREEN, CHERENKOV_BLUE, BLAZING_YELLOW,
                 ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
                 ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);

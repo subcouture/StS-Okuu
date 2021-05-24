@@ -9,5 +9,10 @@
     "TEXT": [
       "Select a Card to Play. The remaining Card will be Exhausted"
     ]
+  },
+  "utsuhoReiuji:AbyssNova": {
+    "TEXT": [
+      "Select Cards to Add to Hand."
+    ]
   }
 }

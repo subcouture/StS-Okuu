@@ -19,29 +19,27 @@ import utsuhoReiuji.OkuuMod;
 
 import java.util.Iterator;
 
-public class JupitersDescentAction extends AbstractGameAction {
+public class AbyssNovaAction extends AbstractGameAction {
 
     private final float startingDuration;
     private static  UIStrings uiStrings;
     public static final String[] TEXT;
     private final AbstractPlayer p = AbstractDungeon.player;
 
-    private final int cardsToPlay;
-    private final int cardsToPeek;
+    private final int cardsToPick;
 
 
-    public JupitersDescentAction(){
+    public AbyssNovaAction(){
         this.actionType = ActionType.WAIT;
         this.startingDuration = Settings.ACTION_DUR_FAST;
         this.source = AbstractDungeon.player;
         this.duration = this.startingDuration;
-        this.cardsToPeek = 2;
-        this.cardsToPlay = 1;
+        this.cardsToPick = 5;
         this.duration = Settings.ACTION_DUR_MED;
     }
 
-    //Intended Behaviour: When triggered, opens a gridselect window (similar to scry) with 2 cards.
-    //One can be selected, and that selection should be confirmed. On confirmation, that card is played and goes the the discard pile. The other card is exhausted.
+    //Intended Behaviour: A grid select screen is opened, showing all cards in the exhaust pile. The player can select up to 5(8) of them.
+    //When the player finishes selecting, the screen is closed, the deck is exhausted, and the 5 cards are added to the players hand, and are free to play this turn.
 
     public void update() {
         AbstractCard card;
