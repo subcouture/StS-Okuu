@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import utsuhoReiuji.OkuuMod;
+import utsuhoReiuji.actions.AbyssNovaAction;
 import utsuhoReiuji.cards.abstractCards.AbstractDynamicCard;
 import utsuhoReiuji.characters.UtsuhoReiuji;
 
@@ -50,7 +51,7 @@ public class AbyssNova extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new AbyssNovaAction(magicNumber));
     }
 
 
@@ -59,7 +60,7 @@ public class AbyssNova extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_PLUS_CARDS);
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }

@@ -19,6 +19,8 @@ import utsuhoReiuji.OkuuMod;
 
 import java.util.Iterator;
 
+//TODO change add to bottom to add to top
+
 public class JupitersDescentAction extends AbstractGameAction {
 
     private final float startingDuration;

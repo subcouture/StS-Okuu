@@ -16,95 +16,54 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import org.lwjgl.Sys;
 import utsuhoReiuji.OkuuMod;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 
 import java.util.Iterator;
 
 public class AbyssNovaAction extends AbstractGameAction {
 
     private final float startingDuration;
-    private static  UIStrings uiStrings;
+    private static final UIStrings uiStrings;
     public static final String[] TEXT;
     private final AbstractPlayer p = AbstractDungeon.player;
 
     private final int cardsToPick;
 
 
-    public AbyssNovaAction(){
+    public AbyssNovaAction(int cardsToPick){
         this.actionType = ActionType.WAIT;
         this.startingDuration = Settings.ACTION_DUR_FAST;
         this.source = AbstractDungeon.player;
         this.duration = this.startingDuration;
-        this.cardsToPick = 5;
+        this.cardsToPick = cardsToPick;
         this.duration = Settings.ACTION_DUR_MED;
     }
+
+    //how I would expect it to resolve would depend entirely on the card
+    //But how I would probably handle it is just
+    //In action added by card:
+    // - remove select cards from exhaust pile
+    // - add action to top that puts selected cards in hand
+    // - add action to top that exhausts hand and deck (since these are added to top, this will happen before cards are added to hand)
 
     //Intended Behaviour: A grid select screen is opened, showing all cards in the exhaust pile. The player can select up to 5(8) of them.
     //When the player finishes selecting, the screen is closed, the deck is exhausted, and the 5 cards are added to the players hand, and are free to play this turn.
 
+    //TODO Auto add the cards if the pile is less than the required amount.
+
+    //TODO Switch from fetchaction to custom that exhausts the cards THEN puts them in hand.
+
     public void update() {
-        AbstractCard card;
-        CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        //Iterator var5 = this.p.drawPile.group.iterator();
-
-        if (this.cardsToPeek != -1) {
-            for(int i = 0; i < Math.min(this.cardsToPeek, AbstractDungeon.player.drawPile.size()); ++i) {
-                tmp.addToTop((AbstractCard)AbstractDungeon.player.drawPile.group.get(AbstractDungeon.player.drawPile.size() - i - 1));
-            }
-        } else {
-            Iterator var5 = AbstractDungeon.player.drawPile.group.iterator();
-
-            while(var5.hasNext()) {
-                AbstractCard c = (AbstractCard)var5.next();
-                tmp.addToBottom(c);
-            }
+        if(this.p.exhaustPile.isEmpty()){
+            this.isDone = true;
         }
+        AbstractDungeon.actionManager.addToTop(new FetchAction(p.exhaustPile, cardsToPick));
+        AbstractDungeon.actionManager.addToTop(new ExhaustAction());
 
-        if (this.duration == Settings.ACTION_DUR_MED) {
-            if (tmp.size() == 0) {
-                this.isDone = true;
-            } else if (tmp.size() == 1) {
-                card = tmp.getTopCard();
-                card.unhover();
-                card.lighten(true);
-                card.setAngle(0.0F);
-                card.drawScale = 0.12F;
-                card.targetDrawScale = 0.75F;
-                card.current_x = CardGroup.DRAW_PILE_X;
-                card.current_y = CardGroup.DRAW_PILE_Y;
-                this.p.drawPile.removeCard(card);
-                AbstractDungeon.getCurrRoom().souls.remove(card);
-                this.addToBot(new NewQueueCardAction(card, true, false, true));
-                this.isDone = true;
-            } else {
-                AbstractDungeon.gridSelectScreen.open(tmp, this.cardsToPlay, TEXT[0], false);
-                this.tickDuration();
-            }
-        } else {
-            if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
-                Iterator var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
-
-                while(var1.hasNext()) {
-                    AbstractCard c = (AbstractCard) var1.next();
-                    tmp.group.remove(c);
-                    AbstractDungeon.player.drawPile.group.remove(c);
-                    AbstractDungeon.getCurrRoom().souls.remove(c);
-                    this.addToBot(new NewQueueCardAction(c, true, false, true));
-                }
-
-                for(int i = 0; i < tmp.size(); i++){
-                    this.p.drawPile.moveToExhaustPile(tmp.getTopCard());
-                }
-
-                AbstractDungeon.gridSelectScreen.selectedCards.clear();
-                this.p.hand.refreshHandLayout();
-            }
-
-            this.tickDuration();
-        }
     }
 
     static {
-        uiStrings = CardCrawlGame.languagePack.getUIString(OkuuMod.makeID("JupitersDescent"));
+        uiStrings = CardCrawlGame.languagePack.getUIString(OkuuMod.makeID("AbyssNova"));
         TEXT = uiStrings.TEXT;
     }
 

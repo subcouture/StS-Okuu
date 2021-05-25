@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 
 public class BurnOutAction extends AbstractGameAction {
 
+    //TODO change add to bottom to add to top
+
     private static final UIStrings uiStrings = CardCrawlGame.languagePack
             .getUIString("ExhaustAction");
     public static final String[] UISTRING = uiStrings.TEXT;

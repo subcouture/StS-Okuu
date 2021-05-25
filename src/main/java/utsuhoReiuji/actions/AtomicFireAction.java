@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class AtomicFireAction extends AbstractGameAction {
 
+    //TODO change add to bottom to add to top
+
     private boolean freeToPlayOnce;
     private int damage;
     private AbstractPlayer p;
