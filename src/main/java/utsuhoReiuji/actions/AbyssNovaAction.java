@@ -54,13 +54,35 @@ public class AbyssNovaAction extends AbstractGameAction {
     //TODO Switch from fetchaction to custom that exhausts the cards THEN puts them in hand.
 
     public void update() {
+        AbstractCard card;
+        CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+
         if(this.p.exhaustPile.isEmpty()){
             this.isDone = true;
         }
-        AbstractDungeon.actionManager.addToTop(new FetchAction(p.exhaustPile, cardsToPick));
-        AbstractDungeon.actionManager.addToTop(new ExhaustAction());
+        else if(this.p.exhaustPile.size() < cardsToPick){
+            AbstractDungeon.actionManager.addToTop(new FetchAction(this.p.limbo, this.p.limbo.size()));
+            this.isDone = true;
+        }
+        else{
+            AbstractDungeon.actionManager.addToTop(new FetchAction(this.p.exhaustPile, cardsToPick));
+            this.isDone = true;
+        }
+
+        int count = AbstractDungeon.player.hand.size();
+        int i;
+
+        for(i = 0; i < count; ++i) {
+            if (Settings.FAST_MODE) {
+                this.addToTop(new ExhaustAction(1, true, true, false, Settings.ACTION_DUR_XFAST));
+            } else {
+                this.addToTop(new ExhaustAction(1, true, true));
+            }
+        }
+
 
     }
+
 
     static {
         uiStrings = CardCrawlGame.languagePack.getUIString(OkuuMod.makeID("AbyssNova"));

@@ -320,6 +320,8 @@ public class UtsuhoReiuji extends CustomPlayer {
 
         retVal.add(JupitersDescent.ID);
 
+        retVal.add(AbyssNova.ID);
+
 
        // retVal.add(DefaultCommonSkill.ID);
        // retVal.add(DefaultUncommonSkill.ID);
