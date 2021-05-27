@@ -1,5 +1,6 @@
 package utsuhoReiuji.actions;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
@@ -19,6 +20,7 @@ import utsuhoReiuji.OkuuMod;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 
 import java.util.Iterator;
+import java.util.function.Predicate;
 
 public class AbyssNovaAction extends AbstractGameAction {
 
@@ -57,17 +59,9 @@ public class AbyssNovaAction extends AbstractGameAction {
         AbstractCard card;
         CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
-        if(this.p.exhaustPile.isEmpty()){
-            this.isDone = true;
-        }
-        else if(this.p.exhaustPile.size() < cardsToPick){
-            AbstractDungeon.actionManager.addToTop(new FetchAction(this.p.limbo, this.p.limbo.size()));
-            this.isDone = true;
-        }
-        else{
-            AbstractDungeon.actionManager.addToTop(new FetchAction(this.p.exhaustPile, cardsToPick));
-            this.isDone = true;
-        }
+
+        AbstractDungeon.actionManager.addToTop(new FetchAction(this.p.limbo, this.p.limbo.size()));
+        this.isDone = true;
 
         int count = AbstractDungeon.player.hand.size();
         int i;
@@ -77,6 +71,25 @@ public class AbyssNovaAction extends AbstractGameAction {
                 this.addToTop(new ExhaustAction(1, true, true, false, Settings.ACTION_DUR_XFAST));
             } else {
                 this.addToTop(new ExhaustAction(1, true, true));
+            }
+        }
+
+        if (this.duration == Settings.ACTION_DUR_MED) {
+            if (tmp.size() == 0) {
+                this.isDone = true;
+            } else {
+                AbstractDungeon.gridSelectScreen.open(tmp, this.cardsToPick, TEXT[0], false);
+                this.tickDuration();
+            }
+        } else {
+            if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
+                Iterator var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
+
+                while (var1.hasNext()) {
+                    AbstractDungeon.actionManager.addToTop(new MoveCardsAction(this.p.exhaustPile, this.p.limbo, Predicate.isEqual(var1)));
+                }
+
+                this.tickDuration();
             }
         }
 
