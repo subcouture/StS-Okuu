@@ -56,44 +56,63 @@ public class AbyssNovaAction extends AbstractGameAction {
     //TODO Switch from fetchaction to custom that exhausts the cards THEN puts them in hand.
 
     public void update() {
-        AbstractCard card;
-        CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        if (this.duration == Settings.ACTION_DUR_MED) {
+            AbstractCard card;
+            CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+            tmp = selectCardsToLimbo(tmp);
+            Iterator tmpCards = tmp.group.iterator();
 
+            while (tmpCards.hasNext()) {
+                AbstractCard c = (AbstractCard) tmpCards.next();
+                AbstractDungeon.actionManager.addToTop(new FetchAction(this.p.limbo, Predicate.isEqual(c)));
+            }
 
-        AbstractDungeon.actionManager.addToTop(new FetchAction(this.p.limbo, this.p.limbo.size()));
-        this.isDone = true;
+            int count = AbstractDungeon.player.hand.size();
+            int i;
 
-        int count = AbstractDungeon.player.hand.size();
-        int i;
-
-        for(i = 0; i < count; ++i) {
-            if (Settings.FAST_MODE) {
-                this.addToTop(new ExhaustAction(1, true, true, false, Settings.ACTION_DUR_XFAST));
-            } else {
-                this.addToTop(new ExhaustAction(1, true, true));
+            for (i = 0; i < count; ++i) {
+                if (Settings.FAST_MODE) {
+                    this.addToTop(new ExhaustAction(1, true, true, false, Settings.ACTION_DUR_XFAST));
+                } else {
+                    this.addToTop(new ExhaustAction(1, true, true));
+                }
             }
         }
+        this.isDone = true;
+    }
 
-        if (this.duration == Settings.ACTION_DUR_MED) {
-            if (tmp.size() == 0) {
-                this.isDone = true;
-            } else {
-                AbstractDungeon.gridSelectScreen.open(tmp, this.cardsToPick, TEXT[0], false);
-                this.tickDuration();
+    CardGroup selectCardsToLimbo(CardGroup tmp) {
+
+        if (this.p.exhaustPile.size() == 0) {
+            this.isDone = true;
+        } else if (this.p.exhaustPile.size() <= cardsToPick) {
+            for(int i = 0; i < this.p.exhaustPile.size(); i++){
+                AbstractCard c = AbstractDungeon.player.exhaustPile.getTopCard();
+                tmp.group.add(c);
+                AbstractDungeon.player.discardPile.group.remove(c);
+                AbstractDungeon.getCurrRoom().souls.remove(c);
+                AbstractDungeon.player.limbo.group.add(c);
             }
         } else {
-            if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
-                Iterator var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
+            AbstractDungeon.gridSelectScreen.open(tmp, this.cardsToPick, TEXT[0], false);
+            this.tickDuration();
+        }
+        if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
+            Iterator var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
 
-                while (var1.hasNext()) {
-                    AbstractDungeon.actionManager.addToTop(new MoveCardsAction(this.p.exhaustPile, this.p.limbo, Predicate.isEqual(var1)));
-                }
-
-                this.tickDuration();
+            while (var1.hasNext()) {
+                AbstractCard c = (AbstractCard) var1.next();
+                tmp.group.add(c);
+                AbstractDungeon.player.discardPile.group.remove(c);
+                AbstractDungeon.getCurrRoom().souls.remove(c);
+                AbstractDungeon.player.limbo.group.add(c);
             }
+
+            AbstractDungeon.gridSelectScreen.selectedCards.clear();
+            this.p.hand.refreshHandLayout();
         }
 
-
+        return tmp;
     }
 
 
