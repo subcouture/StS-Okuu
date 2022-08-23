@@ -69,6 +69,7 @@ public class UtsuhoReiuji extends CustomPlayer {
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     private static final int START_ORBS = 0;
+
     public static final int ORB_SLOTS = 1;
 
     // =============== /BASE STATS/ =================
@@ -321,6 +322,8 @@ public class UtsuhoReiuji extends CustomPlayer {
         retVal.add(JupitersDescent.ID);
 
         retVal.add(AbyssNova.ID);
+
+        retVal.add(Pressurise.ID);
 
 
        // retVal.add(DefaultCommonSkill.ID);

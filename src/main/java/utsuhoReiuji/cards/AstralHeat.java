@@ -11,7 +11,7 @@ import utsuhoReiuji.powers.AstralHeatPower;
 
 import static utsuhoReiuji.OkuuMod.makeCardPath;
 
-// public class EmergencyShutdown extends AbstractDynamicCard
+// public class AstralHeat extends AbstractDynamicCard
 public class AstralHeat extends AbstractDynamicCard {
 
     // TEXT DECLARATION

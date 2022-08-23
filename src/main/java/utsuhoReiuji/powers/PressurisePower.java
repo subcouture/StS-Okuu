@@ -3,8 +3,7 @@ package utsuhoReiuji.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -17,13 +16,10 @@ import utsuhoReiuji.util.TextureLoader;
 
 import static utsuhoReiuji.OkuuMod.makePowerPath;
 
-// Heat is Okuu's resource. Conceptually similar to grey health in a fighting game, she can avoid damage or gain resources by building it up
-// But one wrong move will cause her to lose it all, so she'll need to plan how she accumulates/spends it wisely.
-// Designed to fit the high risk/reward nature of nuclear energy, with careful management over a razor's edge.
-public class HeatPower extends AbstractPower implements CloneablePowerInterface {
+public class PressurisePower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = OkuuMod.makeID("HeatPower");
+    public static final String POWER_ID = OkuuMod.makeID("PressurisePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -31,34 +27,40 @@ public class HeatPower extends AbstractPower implements CloneablePowerInterface 
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public HeatPower(final AbstractCreature owner, final AbstractCreature source, final int amount){
+    public PressurisePower(final AbstractCreature owner, final AbstractCreature source) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.source = source;
-        this.amount = amount;
 
-        type = PowerType.BUFF;
+        type = AbstractPower.PowerType.BUFF;
         isTurnBased = false;
 
+        // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         updateDescription();
     }
 
-    @Override
-    public void wasHPLost(DamageInfo info, int damageAmount) {
-        if (info.owner != null && info.owner != this.owner && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != this.owner) {
             this.flash();
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(owner, new DamageInfo(owner, amount*2, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner,this.owner, new HeatPower(this.owner,this.owner, damageAmount)));
+            damageAmount = 0;
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
         }
+
+        return damageAmount;
+    }
+
+    public void atStartOfTurn() {
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new HeatPower(owner, source, amount);
+        return new NuclearVisorPower(owner, source);
     }
 }
