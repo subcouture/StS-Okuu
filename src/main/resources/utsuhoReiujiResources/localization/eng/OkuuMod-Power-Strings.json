@@ -34,5 +34,9 @@
   "utsuhoReiuji:AstralHeatSelfDamagePower": {
     "NAME" : "Calamity Trigger",
     "DESCRIPTIONS" : ["At the end of this turn, take ", " damage"]
-}
+  },
+  "utsuhoReiuji:HeatPower": {
+    "NAME" : "Heat",
+    "DESCRIPTIONS" : ["If you receive unblocked attack damage, take", " damage and lose all #yHeat"]
+  }
 }
