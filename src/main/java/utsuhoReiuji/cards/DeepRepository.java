@@ -15,6 +15,8 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 
 public class DeepRepository extends AbstractDynamicCard {
 
+    // Choose 1(2) cards from your exhaust pile, put them at the bottom of your draw pile.
+
 
     public static final String ID = OkuuMod.makeID(DeepRepository.class.getSimpleName());
     public static final String IMG = makeCardPath("SelfTokamak.png");
