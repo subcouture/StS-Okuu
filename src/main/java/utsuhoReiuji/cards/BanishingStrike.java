@@ -15,6 +15,8 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 // public class BanishingStrike extends AbstractDynamicCard
 public class BanishingStrike extends AbstractDynamicCard {
 
+    // Deal 7(9) Damage. Reduce this card's damage by 1 this combat.
+
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(BanishingStrike.class.getSimpleName());

@@ -15,6 +15,8 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 // public class CannonCross extends AbstractDynamicCard
 public class CannonCross extends AbstractDynamicCard {
 
+    // Deal ６(7) damage. If the opponent intends to attack, deal twice as much.
+
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(CannonCross.class.getSimpleName());

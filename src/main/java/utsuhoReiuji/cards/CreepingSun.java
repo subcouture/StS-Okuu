@@ -14,6 +14,8 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 // public class CreepingSun extends AbstractDynamicCard
 public class CreepingSun extends AbstractDynamicCard {
 
+    // Until you play an attack, each card you play increases the damage of your next attack by 3.
+
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(CreepingSun.class.getSimpleName());

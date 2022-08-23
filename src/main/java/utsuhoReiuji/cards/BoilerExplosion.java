@@ -18,6 +18,8 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 // public class BoilerExplosion extends AbstractDynamicCard
 public class BoilerExplosion extends AbstractDynamicCard {
 
+    // Deal 16(20) damage. Radiate 0.
+
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(BoilerExplosion.class.getSimpleName());

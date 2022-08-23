@@ -16,6 +16,8 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 
 public class BurnOut extends AbstractDynamicCard {
 
+    // Deal 8 Damage. Exhaust A Card. If A Card is Exhausted this way, return this to your hand. Ethereal.
+
 
     public static final String ID = OkuuMod.makeID(BurnOut.class.getSimpleName());
     public static final String IMG = makeCardPath("BoilerExplosion.png");

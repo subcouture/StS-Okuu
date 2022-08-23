@@ -14,6 +14,8 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 // public class BecquerelAndCall extends AbstractDynamicCard
 public class BecquerelAndCall extends AbstractDynamicCard {
 
+    // Draw 2(3) cards. Put 2 cards from your hand on top of your draw pile. Fission: Retain a card.
+
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(BecquerelAndCall.class.getSimpleName());

@@ -14,6 +14,8 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 // public class ApollosLight extends AbstractDynamicCard
 public class ApollosLight extends AbstractDynamicCard {
 
+    // Heal 2 hp. Exhaust. Chain Reaction
+
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(ApollosLight.class.getSimpleName());

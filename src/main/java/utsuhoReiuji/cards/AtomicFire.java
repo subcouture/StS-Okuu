@@ -12,6 +12,8 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 
 public class AtomicFire extends AbstractDynamicCard {
 
+    // Deal X damage for each card in your exhaust pile. [Exhaust]
+
 
     public static final String ID = OkuuMod.makeID(AtomicFire.class.getSimpleName());
     public static final String IMG = makeCardPath("BoilerExplosion.png");

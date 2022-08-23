@@ -14,6 +14,8 @@ import static utsuhoReiuji.OkuuMod.makeCardPath;
 // public class AstralHeat extends AbstractDynamicCard
 public class AstralHeat extends AbstractDynamicCard {
 
+    // Take another turn after this one - At the end of that turn, take 108 damage.
+
     // TEXT DECLARATION
 
     public static final String ID = OkuuMod.makeID(AstralHeat.class.getSimpleName());
