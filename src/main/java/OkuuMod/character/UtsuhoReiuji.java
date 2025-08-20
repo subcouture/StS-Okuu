@@ -94,8 +94,8 @@ public class UtsuhoReiuji extends CustomPlayer {
 
     // Texture Atlases
 
-    private static final String OKUU_SKELETON_IDLE_ATLAS = characterPath("/idle/skeleton.atlas");
-    private static final String OKUU_SKELETON_IDLE_JSON = characterPath("/idle/skeleton.json");
+    private static final String OKUU_SKELETON_IDLE_ATLAS = characterPath("animation/idle/skeleton.atlas");
+    private static final String OKUU_SKELETON_IDLE_JSON = characterPath("animation//idle/skeleton.json");
 
     //Textures used for the energy orb
     private static final String[] orbTextures = {

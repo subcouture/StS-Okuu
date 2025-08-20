@@ -1,5 +1,6 @@
 package OkuuMod.patches;
 
+import OkuuMod.character.UtsuhoReiuji;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -11,7 +12,9 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import javassist.CtBehavior;
-import utsuhoReiuji_old.characters.UtsuhoReiuji;
+
+import static OkuuMod.OkuuMod.shaderPath;
+import static OkuuMod.OkuuMod.characterPath;
 
 //Consult the Render Patch for explanations of what this class does and how it works.
 //It's been a little while since I wrote it, but I think this patch exists so the chromakey continues to work correctly for non-atlas'd sprites
@@ -22,13 +25,14 @@ import utsuhoReiuji_old.characters.UtsuhoReiuji;
         method="renderPlayerImage"
 )
 
+
 public class GalaxyChromaKeySkeletonPatch {
     public static ShaderProgram shader = new ShaderProgram(
-            Gdx.files.internal("utsuhoReiujiResources_old/shaders/chromaKey/vertexShader.vs"),
-            Gdx.files.internal("utsuhoReiujiResources_old/shaders/chromaKey/fragShader.fs")
+            Gdx.files.internal(shaderPath("chromaKey/vertexShader.vs")),
+            Gdx.files.internal(shaderPath("chromaKey/fragShader.fs"))
     );
 
-    private static Texture galaxyTexture = new Texture(Gdx.files.internal("ArtWIPs/images/char/okuuSprites/loopingGalaxy.png"));
+    private static Texture galaxyTexture = new Texture(characterPath("animation/loopingGalaxy.png"));
 
     public static float currentTime = 0.0f;
 

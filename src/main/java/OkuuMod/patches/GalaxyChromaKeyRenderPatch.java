@@ -1,5 +1,6 @@
 package OkuuMod.patches;
 
+import OkuuMod.character.UtsuhoReiuji;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -10,7 +11,10 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import javassist.CtBehavior;
-import utsuhoReiuji_old.characters.UtsuhoReiuji;
+
+import static OkuuMod.OkuuMod.shaderPath;
+import static OkuuMod.OkuuMod.characterPath;
+
 
 //TODO work out if the image version of this patch is actually necessary
 
@@ -23,15 +27,15 @@ import utsuhoReiuji_old.characters.UtsuhoReiuji;
 public class GalaxyChromaKeyRenderPatch {
     //import the shader location
     public static ShaderProgram shader = new ShaderProgram(
-            Gdx.files.internal("utsuhoReiujiResources_old/shaders/chromaKey/vertexShader.vs"),
-            Gdx.files.internal("utsuhoReiujiResources_old/shaders/chromaKey/fragShader.fs")
+            Gdx.files.internal(shaderPath("chromaKey/vertexShader.vs")),
+            Gdx.files.internal(shaderPath("chromaKey/fragShader.fs"))
     );
 
     //Initialise time as a float
     public static float currentTime = 0.0f;
 
     //TODO Update delta time outside of this function
-    private static Texture galaxyTexture = new Texture(Gdx.files.internal("ArtWIPs/images/char/okuuSprites/loopingGalaxy.png"));
+    private static Texture galaxyTexture = new Texture(characterPath("animation/loopingGalaxy.png"));
 
     @SpireInsertPatch(
             locator=LocatorImageStart.class,
