@@ -1,9 +1,8 @@
 {
-  "modid": "subcouture:OkuuMod",
+  "modid": "${modID}",
   "name": "${project.name}",
-  "author_list": ["subcouture"],
-  "credits": "Basemod, ModTheSpire",
-  "description": "${project.description}",
+  "author_list": ["${author}"],
+  "description": "!(project.description)",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",
