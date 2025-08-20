@@ -3,13 +3,16 @@ package OkuuMod.character;
 import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
-import basemod.animations.SpriterAnimation;
+import basemod.animations.SpineAnimation;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
+import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.blue.Defend_Blue;
 import com.megacrit.cardcrawl.cards.green.Neutralize;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
@@ -37,7 +40,7 @@ public class UtsuhoReiuji extends CustomPlayer {
     public static final int ORB_SLOTS = 0;
 
     //Strings
-    private static final String ID = makeID("CharacterID"); //This should match whatever you have in the CharacterStrings.json file
+    private static final String ID = makeID("Okuu"); //This should match whatever you have in the CharacterStrings.json file
     private static String[] getNames() { return CardCrawlGame.languagePack.getCharacterString(ID).NAMES; }
     private static String[] getText() { return CardCrawlGame.languagePack.getCharacterString(ID).TEXT; }
 
@@ -89,6 +92,11 @@ public class UtsuhoReiuji extends CustomPlayer {
     private static final String SHOULDER_2 = characterPath("shoulder2.png");
     private static final String CORPSE = characterPath("corpse.png"); //Corpse is when you die.
 
+    // Texture Atlases
+
+    private static final String OKUU_SKELETON_IDLE_ATLAS = characterPath("/idle/skeleton.atlas");
+    private static final String OKUU_SKELETON_IDLE_JSON = characterPath("/idle/skeleton.json");
+
     //Textures used for the energy orb
     private static final String[] orbTextures = {
             characterPath("energyorb/layer1.png"), //When you have energy
@@ -119,7 +127,7 @@ public class UtsuhoReiuji extends CustomPlayer {
     public UtsuhoReiuji() {
         super(getNames()[0], Meta.YOUR_CHARACTER,
                 new CustomEnergyOrb(orbTextures, characterPath("energyorb/vfx.png"), layerSpeeds), //Energy Orb
-                new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
+                new SpineAnimation(OKUU_SKELETON_IDLE_ATLAS, OKUU_SKELETON_IDLE_JSON, 0.47f)); //Animation
 
         initializeClass(null,
                 SHOULDER_2,
@@ -129,10 +137,152 @@ public class UtsuhoReiuji extends CustomPlayer {
                 20.0F, -20.0F, 200.0F, 250.0F, //Character hitbox. x y position, then width and height.
                 new EnergyManager(ENERGY_PER_TURN));
 
+        // =============== ANIMATIONS =================
+        loadAnimation(OKUU_SKELETON_IDLE_ATLAS, OKUU_SKELETON_IDLE_JSON, 0.47f);
+        for(Texture tex: atlas.getTextures()){
+            tex.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+        }
+
+        this.stateData.setMix("Idle", "PhysicalAttack", 0.2f);
+        this.stateData.setMix("PhysicalAttack", "Idle", 0.2f);
+        this.stateData.setMix("Idle", "Death", 0.0f);
+        this.stateData.setMix("PhysicalAttack", "Death", 0.0f);
+
+
+        AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
+        e.setTime(e.getEndTime() * MathUtils.random());
+        e.setTimeScale(1f);
+
+        // =============== /ANIMATIONS/ =================
+
+
         //Location for text bubbles. You can adjust it as necessary later. For most characters, these values are fine.
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 220.0F * Settings.scale);
     }
+
+    // =========== ATTACK AND HIT ANIMATIONS =====================
+
+
+    //====================== SHADERS ========================
+
+    //DEPRECATED
+    //This whole shader section is replaced with the two atlas and skeleton patches. Look there for shader implementation.
+
+    /*public static ShaderProgram shader = new ShaderProgram(
+            Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/vertexShader.vs"),
+            Gdx.files.internal("utsuhoReiujiResources/shaders/chromaKey/fragShader.fs")
+    );
+
+    private static Texture galaxyTexture = new Texture(Gdx.files.internal("utsuhoReiujiResources/images/char/okuuSprites/loopingGalaxy.png"));
+
+    public static float currentTime = 0.0f;
+
+    @Override
+    public void renderPlayerImage(SpriteBatch sb){
+        if (this.atlas != null) {
+            this.state.update(Gdx.graphics.getDeltaTime());
+            this.state.apply(this.skeleton);
+            this.skeleton.updateWorldTransform();
+            currentTime += Gdx.graphics.getDeltaTime();
+            shader.begin();
+            CardCrawlGame.psb.setShader(shader);
+            shader.setUniformf("Time", currentTime);
+            galaxyTexture.bind(1);
+            Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_S, GL20.GL_REPEAT);
+            Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_T, GL20.GL_REPEAT);
+            shader.setUniformi("u_galaxyTexture", 1);
+            Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
+            this.skeleton.setPosition(this.drawX + this.animX, this.drawY + this.animY);
+            this.skeleton.setColor(this.tint.color);
+            this.skeleton.setFlip(this.flipHorizontal, this.flipVertical);
+            CardCrawlGame.psb.setShader(null);
+            shader.end();
+            sb.end();
+            CardCrawlGame.psb.begin();
+            sr.draw(CardCrawlGame.psb, this.skeleton);
+            CardCrawlGame.psb.end();
+            sb.begin();
+        } else {
+            sb.setColor(Color.WHITE);
+            sb.draw(this.img, this.drawX - (float)this.img.getWidth() * Settings.scale / 2.0F + this.animX, this.drawY, (float)this.img.getWidth() * Settings.scale, (float)this.img.getHeight() * Settings.scale, 0, 0, this.img.getWidth(), this.img.getHeight(), this.flipHorizontal, this.flipVertical);
+        }
+    }
+
+    @Override
+    public void render(SpriteBatch sb){
+        this.stance.render(sb);
+        if ((AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.getCurrRoom() instanceof MonsterRoom) && !this.isDead) {
+            this.renderHealth(sb);
+            if (!this.orbs.isEmpty()) {
+                Iterator var2 = this.orbs.iterator();
+
+                while(var2.hasNext()) {
+                    AbstractOrb o = (AbstractOrb)var2.next();
+                    o.render(sb);
+                }
+            }
+        }
+
+        if (!(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
+            currentTime += Gdx.graphics.getDeltaTime();
+            if (atlas == null) {
+                shader.begin();
+                sb.setShader(shader);
+                shader.setUniformf("Time", currentTime);
+                galaxyTexture.bind(1);
+                Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_S, GL20.GL_REPEAT);
+                Gdx.gl.glTexParameterf(GL20.GL_TEXTURE_2D, GL20.GL_TEXTURE_WRAP_T, GL20.GL_REPEAT);
+                shader.setUniformi("u_galaxyTexture", 1);
+                Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
+            }
+            if (this.atlas != null) {
+
+                this.renderPlayerImage(sb);
+            } else {
+                sb.setColor(Color.WHITE);
+                sb.draw(this.img, this.drawX - (float)this.img.getWidth() * Settings.scale / 2.0F + this.animX, this.drawY, (float)this.img.getWidth() * Settings.scale, (float)this.img.getHeight() * Settings.scale, 0, 0, this.img.getWidth(), this.img.getHeight(), this.flipHorizontal, this.flipVertical);
+            }
+            if (atlas == null) {
+                sb.setShader(null);
+                shader.end();
+            }
+            this.hb.render(sb);
+            this.healthHb.render(sb);
+        } else {
+            sb.setColor(Color.WHITE);
+            this.renderShoulderImg(sb);
+        }
+    }*/
+    // ===================== /SHADERS/ =====================
+
+    @Override
+    public void useFastAttackAnimation(){
+        AnimationState.TrackEntry e = state.setAnimation(0, "PhysicalAttack", false);
+        state.addAnimation(0,"Idle", true, 1.1f);
+        e.setTimeScale(1f);
+    }
+
+    @Override
+    public void damage(DamageInfo info)
+    {
+        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output > currentBlock) {
+            AnimationState.TrackEntry e = state.setAnimation(0, "Hit", false);
+            state.addAnimation(0,"Idle", true, 0.3f);
+            e.setTimeScale(1f);
+        }
+        super.damage(info);
+    }
+
+    @Override
+    public void playDeathAnimation(){
+        AnimationState.TrackEntry e = state.setAnimation(0, "Death", false);
+        e.setTimeScale(0.5f);
+        //state.addAnimation(0,"Death", false, 0f);
+    }
+
+
+    // =========== /ATTACK AND HIT ANIMATIONS/ =====================
 
     @Override
     public ArrayList<String> getStartingDeck() {
