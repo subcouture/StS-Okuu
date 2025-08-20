@@ -1,5 +1,6 @@
 package OkuuMod;
 
+import OkuuMod.character.UtsuhoReiuji;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import OkuuMod.util.GeneralUtils;
@@ -268,5 +269,13 @@ public class OkuuMod implements
         else {
             throw new RuntimeException("Failed to determine mod info/ID based on initializer.");
         }
+    }
+
+    /**
+     *
+     */
+    @Override
+    public void receiveEditCharacters() {
+        UtsuhoReiuji.Meta.registerCharacter();
     }
 }

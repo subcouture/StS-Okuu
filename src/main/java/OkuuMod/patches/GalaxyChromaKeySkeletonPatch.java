@@ -28,7 +28,7 @@ public class GalaxyChromaKeySkeletonPatch {
             Gdx.files.internal("utsuhoReiujiResources_old/shaders/chromaKey/fragShader.fs")
     );
 
-    private static Texture galaxyTexture = new Texture(Gdx.files.internal("utsuhoReiujiResources_old/images/char/okuuSprites/loopingGalaxy.png"));
+    private static Texture galaxyTexture = new Texture(Gdx.files.internal("ArtWIPs/images/char/okuuSprites/loopingGalaxy.png"));
 
     public static float currentTime = 0.0f;
 

@@ -76,8 +76,8 @@ public class UtsuhoReiuji extends CustomPlayer {
 
     // =============== TEXTURE ATLASES =================
 
-    private static final String OKUU_SKELETON_IDLE_ATLAS = "utsuhoReiujiResources_old/images/char/okuuSprites/Dragonbones/idle/skeleton.atlas";
-    private static final String OKUU_SKELETON_IDLE_JSON = "utsuhoReiujiResources_old/images/char/okuuSprites/Dragonbones/idle/skeleton.json";
+    private static final String OKUU_SKELETON_IDLE_ATLAS = "ArtWIPs/images/char/okuuSprites/Dragonbones/idle/skeleton.atlas";
+    private static final String OKUU_SKELETON_IDLE_JSON = "ArtWIPs/images/char/okuuSprites/Dragonbones/idle/skeleton.json";
 
 
     // =============== /TEXTURE ATLASES/ =================
@@ -95,17 +95,17 @@ public class UtsuhoReiuji extends CustomPlayer {
     // =============== TEXTURES OF BIG ENERGY ORB ===============
 
     public static final String[] orbTextures = {
-            "utsuhoReiujiResources_old/images/char/defaultCharacter/orb/layer1.png",
-            "utsuhoReiujiResources_old/images/char/defaultCharacter/orb/layer2.png",
-            "utsuhoReiujiResources_old/images/char/defaultCharacter/orb/layer3.png",
-            "utsuhoReiujiResources_old/images/char/defaultCharacter/orb/layer4.png",
-            "utsuhoReiujiResources_old/images/char/defaultCharacter/orb/layer5.png",
-            "utsuhoReiujiResources_old/images/char/defaultCharacter/orb/layer6.png",
-            "utsuhoReiujiResources_old/images/char/defaultCharacter/orb/layer1d.png",
-            "utsuhoReiujiResources_old/images/char/defaultCharacter/orb/layer2d.png",
-            "utsuhoReiujiResources_old/images/char/defaultCharacter/orb/layer3d.png",
-            "utsuhoReiujiResources_old/images/char/defaultCharacter/orb/layer4d.png",
-            "utsuhoReiujiResources_old/images/char/defaultCharacter/orb/layer5d.png",};
+            "ArtWIPs/images/char/defaultCharacter/orb/layer1.png",
+            "ArtWIPs/images/char/defaultCharacter/orb/layer2.png",
+            "ArtWIPs/images/char/defaultCharacter/orb/layer3.png",
+            "ArtWIPs/images/char/defaultCharacter/orb/layer4.png",
+            "ArtWIPs/images/char/defaultCharacter/orb/layer5.png",
+            "ArtWIPs/images/char/defaultCharacter/orb/layer6.png",
+            "ArtWIPs/images/char/defaultCharacter/orb/layer1d.png",
+            "ArtWIPs/images/char/defaultCharacter/orb/layer2d.png",
+            "ArtWIPs/images/char/defaultCharacter/orb/layer3d.png",
+            "ArtWIPs/images/char/defaultCharacter/orb/layer4d.png",
+            "ArtWIPs/images/char/defaultCharacter/orb/layer5d.png",};
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
@@ -113,7 +113,7 @@ public class UtsuhoReiuji extends CustomPlayer {
 
     public UtsuhoReiuji(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
-                "utsuhoReiujiResources_old/images/char/defaultCharacter/orb/vfx.png", null,
+                "ArtWIPs/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpineAnimation(OKUU_SKELETON_IDLE_ATLAS, OKUU_SKELETON_IDLE_JSON, 0.47f));
 
 

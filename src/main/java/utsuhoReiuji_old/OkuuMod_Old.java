@@ -112,31 +112,31 @@ public class OkuuMod_Old implements
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
   
     // Card backgrounds - The actual rectangular card.
-    private static final String ATTACK_DEFAULT_GRAY = "utsuhoReiujiResources_old/images/512/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY = "utsuhoReiujiResources_old/images/512/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY = "utsuhoReiujiResources_old/images/512/bg_power_default_gray.png";
+    private static final String ATTACK_DEFAULT_GRAY = "ArtWIPs/images/512/bg_attack_default_gray.png";
+    private static final String SKILL_DEFAULT_GRAY = "ArtWIPs/images/512/bg_skill_default_gray.png";
+    private static final String POWER_DEFAULT_GRAY = "ArtWIPs/images/512/bg_power_default_gray.png";
     
-    private static final String ENERGY_ORB_DEFAULT_GRAY = "utsuhoReiujiResources_old/images/512/card_default_gray_orb.png";
-    private static final String CARD_ENERGY_ORB = "utsuhoReiujiResources_old/images/512/card_small_orb.png";
+    private static final String ENERGY_ORB_DEFAULT_GRAY = "ArtWIPs/images/512/card_default_gray_orb.png";
+    private static final String CARD_ENERGY_ORB = "ArtWIPs/images/512/card_small_orb.png";
     
-    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "utsuhoReiujiResources_old/images/1024/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "utsuhoReiujiResources_old/images/1024/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "utsuhoReiujiResources_old/images/1024/bg_power_default_gray.png";
-    private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "utsuhoReiujiResources_old/images/1024/card_default_gray_orb.png";
+    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "ArtWIPs/images/1024/bg_attack_default_gray.png";
+    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "ArtWIPs/images/1024/bg_skill_default_gray.png";
+    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "ArtWIPs/images/1024/bg_power_default_gray.png";
+    private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "ArtWIPs/images/1024/card_default_gray_orb.png";
     
     // Character assets
-    private static final String UTSUHO_REIUJI_BUTTON = "utsuhoReiujiResources_old/images/charSelect/OkuuCharacterButton.png";
-    private static final String UTSUHO_REIUJI_PORTRAIT = "utsuhoReiujiResources_old/images/charSelect/UtsuhoPortraitBG.png";
-    public static final String THE_DEFAULT_SHOULDER_1 = "utsuhoReiujiResources_old/images/char/defaultCharacter/shoulder.png";
-    public static final String THE_DEFAULT_SHOULDER_2 = "utsuhoReiujiResources_old/images/char/defaultCharacter/shoulder2.png";
-    public static final String THE_DEFAULT_CORPSE = "utsuhoReiujiResources_old/images/char/defaultCharacter/okuuCorpse.png";
+    private static final String UTSUHO_REIUJI_BUTTON = "OkuuMod/images/character/select/OkuuCharacterButton.png";
+    private static final String UTSUHO_REIUJI_PORTRAIT = "OkuuMod/images/character/select/UtsuhoPortraitBG.png";
+    public static final String THE_DEFAULT_SHOULDER_1 = "ArtWIPs/images/char/defaultCharacter/shoulder.png";
+    public static final String THE_DEFAULT_SHOULDER_2 = "ArtWIPs/images/char/defaultCharacter/shoulder2.png";
+    public static final String THE_DEFAULT_CORPSE = "ArtWIPs/images/char/defaultCharacter/okuuCorpse.png";
     
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
-    public static final String BADGE_IMAGE = "utsuhoReiujiResources_old/images/Badge.png";
+    public static final String BADGE_IMAGE = "ArtWIPs/images/Badge.png";
     
     // Atlas and JSON files for the Animations
-    public static final String THE_DEFAULT_SKELETON_ATLAS = "utsuhoReiujiResources_old/images/char/defaultCharacter/skeleton.atlas";
-    public static final String THE_DEFAULT_SKELETON_JSON = "utsuhoReiujiResources_old/images/char/defaultCharacter/skeleton.json";
+    public static final String THE_DEFAULT_SKELETON_ATLAS = "ArtWIPs/images/char/defaultCharacter/skeleton.atlas";
+    public static final String THE_DEFAULT_SKELETON_JSON = "ArtWIPs/images/char/defaultCharacter/skeleton.json";
     
     // =============== MAKE IMAGE PATHS =================
     
